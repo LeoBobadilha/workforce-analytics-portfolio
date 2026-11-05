@@ -40,7 +40,7 @@ asserts that both agree to 6 decimal places.
 | Countries of Operation | Distinct countries of assignment with ≥ 1 active contract on D, excluding Switzerland (HQ). |
 | Workforce Growth by Country | `Headcount(D) − Headcount(day before period start)` per country. |
 
-### Global Workforce Explorer (map on the Workforce Overview)
+### Global Workforce Explorer (3D globe and 2D map on the Workforce Overview)
 
 | Metric | Definition |
 |---|---|
@@ -51,6 +51,9 @@ asserts that both agree to 6 decimal places.
 | Difference from Workforce Growth by Country | That chart compares D with the day before the selected period starts; the map always compares with the same month-end one year earlier. |
 | Bubble size | Area proportional to the value (diameter ∝ √value), on a scale fixed across the selected period so months are comparable; values below the 5 px visibility floor are enlarged to it. |
 | Colour | Direction of the YoY change: teal growth, burgundy reduction, grey unchanged, dashed outline no baseline. Each state also has a ▲ ▼ = – glyph in labels and lists. |
+| Globe column height | Linear in the value on a scale fixed across the selected period: headcount ÷ largest country headcount (Active staff), or \|YoY change\| ÷ largest \|change\| (YoY change); a minimum visible height of 1.2 % of the tallest column. In YoY mode, a country without a baseline is a ring with no column; in Active-staff mode it gets a column plus a ring. |
+| Globe marker position | The country's Natural Earth label point (the same anchor as the 2D bubble); it represents the country total, not a location of staff. |
+| Guided exploration | The 3 largest positive and 3 largest negative YoY changes at the selected month and filters (countries without a baseline excluded). Equal changes share a rank and are labelled *joint*; order within a tie follows the ranked list (larger headcount, then name). |
 
 ## 2 · Global Workforce Profile
 

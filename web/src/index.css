@@ -43,6 +43,28 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Global Workforce Explorer in 3D view: a dark scene inside the explorer card only.
+   Re-maps the theme tokens, so the explorer's own panels, list and controls follow. */
+.gwe-dark {
+  color-scheme: dark;
+  --color-surface: #0e1b2e;
+  --color-page: #13243b;
+  --color-white: #182c47;
+  --color-ink: #eaf0f6;
+  --color-ink-2: #c9d5e2;
+  --color-muted: #97a8bc;
+  --color-faint: #7a8ca3;
+  --color-line: #253a55;
+  --color-line-2: #1e3149;
+  --color-teal: #4cc9b7;
+  --color-teal-50: #12343a;
+  --color-teal-100: #1a4a50;
+  --color-burgundy: #e383b3;
+  --color-burgundy-50: #3a1f30;
+  --shadow-card: 0 10px 30px rgba(6, 14, 27, 0.22);
+  color: var(--color-ink);
+}
+
 .tabular {
   font-variant-numeric: tabular-nums;
 }

@@ -62,7 +62,9 @@ const KPIS: { group: string; items: [string, string][] }[] = [
       ['Active staff by country', 'Contracts active at the selected month-end (start ≤ D ≤ end) by country of assignment; HQ staff are counted in the HQ country. Same rule as Total Active Staff, so the map total equals the KPI.'],
       ['YoY change', 'Headcount(month-end) − headcount(same month-end one year earlier). % only when the earlier headcount is above zero; zero → "new"; month before the data → "no baseline".'],
       ['Not Workforce Growth by Country', 'That chart compares the reporting date with the start of the selected period; the map always compares with one year earlier.'],
-      ['Bubbles and timeline', 'Bubble area ∝ value, on a scale fixed across the selected period. The month slider is local to the map and stays within the global period, country and category filters.'],
+      ['Bubbles and timeline', 'Bubble area ∝ value, on a scale fixed across the selected period. The month slider is local to the explorer and stays within the global period, country and category filters.'],
+      ['3D globe columns', 'Height linear in the value on the same fixed scale (headcount, or |YoY change|), at the country label point. A ring marks no prior-year baseline. Country totals, not staff locations.'],
+      ['Explore workforce changes', 'The 3 largest increases and 3 largest reductions at the selected month and filters, ranked from the model; equal changes are labelled joint. No causes are implied.'],
     ],
   },
   {

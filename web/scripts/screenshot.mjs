@@ -1,6 +1,7 @@
 // Visual QA + screenshot capture with the locally installed Chrome (playwright-core).
 // Usage: node scripts/screenshot.mjs <baseUrl> <outDir> [route ...] [--width=1600] [--height=1000] [--full]
 //        [--element=<css>] capture one element (scrolled into view) · [--wait=<css>] wait for a selector first
+//        [--reveal=<css>] scroll an element into view (so lazy sections load), then back to the top
 import { chromium } from 'playwright-core';
 import { mkdirSync } from 'node:fs';
 import { join } from 'node:path';
@@ -27,8 +28,10 @@ for (const r of pages) {
   await page.goto(`${base}#${r}`, { waitUntil: 'networkidle' });
   await page.waitForSelector('main h1');
   if (!(await page.getByText('Workforce Analytics').count())) throw new Error(`Unexpected app at ${base}`);
+  if (flags.reveal) await page.locator(flags.reveal).first().scrollIntoViewIfNeeded();
   if (flags.element) await page.locator(flags.element).first().scrollIntoViewIfNeeded();
   if (flags.wait) await page.waitForSelector(flags.wait, { timeout: 20000 });
+  if (flags.reveal) await page.evaluate(() => window.scrollTo(0, 0));
   await page.waitForTimeout(900);
   const file = join(outDir, `${flags.prefix ?? ''}${name}.png`);
   if (flags.element) {

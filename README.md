@@ -35,7 +35,7 @@ nationality diversity.
 
 | # | Dashboard | Highlights |
 |---|---|---|
-| 1 | **Workforce Overview** | Active staff, YoY growth, staff categories, gender balance, countries of operation, monthly evolution, **Global Workforce Explorer** map, National vs International split by country, growth by country, sortable country table |
+| 1 | **Workforce Overview** | Active staff, YoY growth, staff categories, gender balance, countries of operation, monthly evolution, **Global Workforce Explorer** (3D globe and 2D map), National vs International split by country, growth by country, sortable country table |
 | 2 | **Global Workforce Profile** | Global (HQ + Global non-HQ) vs International evolution, current vs previous-year comparison by country and category, grades, contract types, average-age evolution |
 | 3 | **Diversity & Mobility** | Global South / North share and history, diversity by grade, a GN/GS toggle that filters the whole profile (gender, contract types, nationality ranking, geography, expatriation), surges by National vs International staff |
 | 4 | **Recruitment & Vacancies** | Open vacancies, vacancy rate, due-vacancy rate, time to hire vs planned duration (by country and grade), New vs Replacement, internal vs external, closure outcomes, funnel, open-vacancy register |
@@ -52,36 +52,90 @@ nationality diversity.
 Full-page captures of each dashboard are in [`docs/screenshots/full/`](docs/screenshots/full/). Interaction evidence:
 [tooltip](docs/screenshots/tooltip.png) · [GN/GS toggle](docs/screenshots/diversity-gs-toggle.png) ·
 [empty state](docs/screenshots/empty-state.png) · [mobile layout](docs/screenshots/mobile-contracts.png) ·
-[map country selected](docs/screenshots/explorer-selected.png).
+[map country selected](docs/screenshots/explorer-selected.png) · [globe country selected](docs/screenshots/globe-selected.png).
 
 ## Global Workforce Explorer
 
-A geographic view on the Workforce Overview: where the workforce is, and how each country's headcount has changed.
-A map makes concentration and regional shifts visible at a glance (in the year to October 2026: growth in Sudan,
-Chad and DR Congo, reductions in Ukraine and Mali), which a ranked bar chart shows less directly.
+A geographic view on the Workforce Overview: where the workforce is, and how each country's headcount has changed
+(in the year to October 2026: growth in Sudan, Chad and DR Congo, reductions in Ukraine and Mali). It offers two
+views of the same figures, switchable at any time without losing the selected month, country or mode: an
+interactive **3D globe** and the **2D map**.
 
-![Global Workforce Explorer](docs/screenshots/explorer.png)
+![Global Workforce Explorer, 3D globe](docs/screenshots/globe.png)
 
-- **Active staff mode**: bubble area is proportional to active headcount by country of assignment at the selected
-  month-end; colour shows the direction of the year-over-year change (teal growth, burgundy reduction, grey unchanged,
-  dashed outline when no prior-year baseline exists), with ▲ ▼ glyphs so colour is never the only cue.
-- **YoY change mode**: bubble area is the absolute change against the same month-end one year earlier; the detail
-  panel adds the percentage when the earlier headcount is above zero and labels new countries separately.
-- **Monthly timeline**: a slider (and optional play / pause / restart) moves the map through any month in the global
-  period. It is local to the map, so the dashboard's reporting date does not change; bubble scales stay fixed across
-  the period so months are comparable. Playback is off when the system requests reduced motion.
-- **Country details**: hover for a tooltip; click a bubble, a country or a row in the ranked list to pin a panel with
-  headcount, the prior-year value, YoY change and the four staff categories (which sum to the total). Applying a
-  country to the whole dashboard is a separate, labelled button.
-- **Filters**: the global period, country and staff-category filters apply; a country filter highlights that country.
-- **Linked to the model**: the map is computed from the same contract records as every KPI. One pass builds a
-  month × country × category headcount cube, and tests check every cell against the canonical active-contract logic,
-  so the map total always equals *Total Active Staff*. Countries join the boundaries by ISO3 code.
-- **Lightweight**: ECharts' geo component (already a dependency) with a simplified Natural Earth 1:110m map
-  (public domain, 42 KB gzipped). The map code (25 KB gzipped) and boundaries load only when the section approaches
-  the viewport and the browser is idle; other pages never load them. No map tiles, API keys or external services.
+### 3D globe
 
-<img src="docs/screenshots/explorer-mobile.png" alt="Global Workforce Explorer on a phone" width="300" />
+- **A real WebGL globe** (Three.js): the simplified Natural Earth boundaries are drawn once into the sphere's texture,
+  with line meshes for borders. Countries in the workforce model are tinted, others stay neutral, and a light
+  atmosphere marks the horizon. No satellite imagery, tiles, API keys or external services.
+- **Columns** stand at each country's Natural Earth label point. They show a country total, not an office or staff
+  location. Height is linear in the value, on a scale fixed across the selected period: active headcount ÷ the
+  largest country headcount (*Active staff*), or |YoY change| ÷ the largest |change| (*YoY change*). Colour is
+  the YoY direction (teal growth, burgundy reduction, grey unchanged), with ▲ ▼ = in every label and list. A ring
+  marks countries with no prior-year baseline. Columns are thin (about 0.7°), so neighbours such as Lebanon, Syria
+  and Jordan stay separate. Markers on the far side of the planet are hidden and cannot be selected.
+- **Interaction**: drag to rotate, pinch or scroll to zoom, the + / − / reset buttons, region shortcuts derived from
+  the model's regions, and arrow keys, + / − and 0 when the globe has keyboard focus. The scroll wheel zooms only
+  after the globe has been clicked; until then it scrolls the page. On phones, a sideways drag rotates and a vertical
+  drag scrolls the page as usual. Click or tap a column or country to pin its details. Selecting a country anywhere
+  (globe, list, dashboard filter or guided exploration) turns it into view. The camera never moves on its own while
+  you read the panel.
+- **Explore workforce changes**: an optional guided sequence of the three largest increases and the three largest
+  reductions for the selected month and filters, ranked from the model; ties are labelled *joint*. Each stop turns
+  the globe to the country and shows its verified figures. You can pause, skip or exit at any time. It reports
+  headcount changes only: no causes are implied and no movement arcs are drawn, because the data has no transfer
+  records.
+
+<img src="docs/screenshots/globe-mobile.png" alt="3D globe on a phone" width="300" />
+
+### 2D map
+
+![Global Workforce Explorer, 2D map](docs/screenshots/explorer.png)
+
+- Bubble area is proportional to the value; colour and glyphs follow the same YoY rules, with a dashed outline when
+  there is no baseline. Focus and World extents. The 2D map remains the accessible, low-power alternative, and the
+  default where WebGL is missing or software-only, or on low-end devices.
+
+### Both views
+
+- **Monthly timeline**: a slider (and optional play / pause / restart) moves through any month in the global period.
+  It is local to the explorer, so the dashboard's reporting date does not change. Playback is off when the system
+  requests reduced motion.
+- **Country details**: hover for a tooltip. Pin a country to see headcount, the prior-year value, the YoY change
+  (and % when the earlier headcount is above zero) and the four staff categories, which sum to the total. Applying
+  a country to the whole dashboard is a separate, labelled button. The ranked list offers the same selection by
+  keyboard or touch.
+- **Filters**: the global period, country and staff-category filters apply; a country filter selects that country.
+- **Linked to the model**: both views read one month × country × category headcount cube, built in a single pass over
+  the same contract records as every KPI. Tests check every cell against the canonical active-contract logic, so the
+  explorer total always equals *Total Active Staff*. Countries join the boundaries by ISO3 code.
+
+### Performance and fallbacks
+
+| | Before the globe | With the globe |
+|---|---|---|
+| Main JavaScript (gzipped) | 320.9 KB | 321.7 KB (+0.8 KB: view choice, WebGL check and Methodology text) |
+| Explorer code / boundaries, loaded near the section | 25 KB / 42 KB | 28 KB / 42 KB |
+| 3D globe code (Three.js + scene), loaded only for the 3D view | — | 142 KB |
+| First dashboard content, laptop (median, 10 interleaved runs) | 775 ms | 749 ms |
+| First dashboard content, phone profile, 4× CPU throttle (median, 9 interleaved runs) | 2.87 s | 3.12 s (ranges overlap: 2.4–4.5 s vs 2.7–3.8 s) |
+| 3D globe ready after scrolling to it (laptop / phone profile) | — | 1.1 s / 1.6 s |
+| Camera flight (laptop / phone profile) | — | 61 frames/s, 0.5 ms / 2.9 ms CPU per frame |
+| Timeline step in 3D (laptop / phone profile) | 2D map: 31 ms / 125–180 ms | 31 ms / 51 ms |
+| Frames drawn while idle · draw calls · textures | — | 0 · 8 · 1 |
+
+The phone profile emulates a slower CPU on a desktop GPU, so it does not measure a phone's GPU.
+
+- **Lazy loading**: Three.js is never in the main bundle. It loads only when the 3D view is shown, after the section
+  approaches the viewport; other pages never load it.
+- **On-demand rendering**: frames are drawn only while the camera, a flight or a height transition moves, and
+  rendering pauses when the section is off-screen or the tab is hidden. Device pixel ratio is capped (1.75; 1.5 on
+  touch devices), and the texture is 2048 × 1024 px (1024 × 512 on touch devices).
+- **Fixed scene**: markers are instanced meshes with one slot per model country, so timeline, mode and filter
+  changes rewrite 27 instances and never recreate meshes, textures or boundaries.
+- **Cleanup and recovery**: all GPU resources are disposed when the page is left. If the browser drops the graphics
+  context, a message offers the 2D map, and the globe rebuilds when the context returns.
+- **Reduced motion**: no playback, no camera animation (views jump), and guided exploration advances only on request.
 
 ## Key features
 
@@ -101,7 +155,7 @@ Chad and DR Congo, reductions in Ukraine and Mali), which a ranked bar chart sho
 
 | Layer | Stack |
 |---|---|
-| Front end | React 19 · TypeScript · Vite · Tailwind CSS 4 · Apache ECharts 6 (SVG renderer, geo component) · Lucide icons · React Router (hash routing) |
+| Front end | React 19 · TypeScript · Vite · Tailwind CSS 4 · Apache ECharts 6 (SVG renderer, geo component) · Three.js (3D globe, lazily loaded) · Lucide icons · React Router (hash routing) |
 | Data | Python 3 · pandas · NumPy · openpyxl, with synthetic CSV / XLSX sources and a compact JSON model; Natural Earth 1:110m country boundaries |
 | Quality | pytest (data integrity & KPI logic) · Vitest (TypeScript vs pandas KPI parity) · Playwright (end-to-end interaction checks & screenshots) |
 | Delivery | GitHub Actions (tests → build → deploy) · GitHub Pages (static, no backend, no external APIs at runtime) |
@@ -182,11 +236,11 @@ Discrepancies are reported, not hidden: the *Contracts & Data Quality* page list
 | Check | What it proves |
 |---|---|
 | `pytest` (36 tests) | Unique keys, valid reference values, no overlapping contracts, referential integrity (contracts, hires, surges, appraisals), date ordering, a monotonic funnel, and **exact reproduction of the simulated monthly headcount by category** after merging the sources; KPI formulas checked on a hand-calculated toy dataset; the world map is reproducible from its source, within its size budget and covers every model country |
-| `vitest` (21 tests) | The TypeScript KPI engine matches the pandas reference across 6 filter scenarios (29 KPIs each), with one contract per employee at every month-end; the map's headcount cube equals the active-contract logic for every month × country × category, its totals and YoY values match the KPIs, and every model country maps to a boundary containing its bubble anchor |
-| `scripts/e2e.mjs` (41 checks) | Real-browser navigation of all pages, filters changing KPIs, persistence, clear filters, empty states, GN/GS toggle partition, table search / sort / status filter, chart tooltips, no mobile overflow, no runtime errors; for the map: lazy loading, totals vs KPIs, timeline steps and latency, modes, selection and reset, global filters, playback and cleanup, reduced motion, and layout at 1920, 1366, 768 and 390 px |
+| `vitest` (33 tests) | The TypeScript KPI engine matches the pandas reference across 6 filter scenarios (29 KPIs each), with one contract per employee at every month-end; the map's headcount cube equals the active-contract logic for every month × country × category, its totals and YoY values match the KPIs, and every model country maps to a boundary containing its bubble anchor; the 3D globe's coordinates, horizon and picking geometry, column heights and values (reconciled with the KPIs under filters), the no-baseline state, the guided-exploration ranking (including ties) and the default-view rule |
+| `scripts/e2e.mjs` (68 checks) | Real-browser navigation of all pages, filters changing KPIs, persistence, clear filters, empty states, GN/GS toggle partition, table search / sort / status filter, chart tooltips, no mobile overflow, no runtime errors; for the map: lazy loading, totals vs KPIs, timeline steps and latency, modes, selection and reset, global filters, playback and cleanup, reduced motion, and layout at 1920, 1366, 768 and 390 px; for the 3D globe: Three.js loaded only for the 3D view, default view by WebGL capability, totals and labels vs the list, camera focus on selection, hover, click and empty-space picking, drag, wheel-vs-page-scroll, zoom / reset / regions, state kept across 3D ↔ 2D, filters, timeline latency with no scene rebuild and no idle rendering, guided exploration, context loss and recovery, disposal after navigation, touch rotate vs page scroll and tap, reduced motion, no-WebGL fallback, and the four layouts |
 
 All three suites run automatically in GitHub Actions on every push to `main`, and the site is deployed only if they pass.
-`scripts/perf.mjs` measures load timings, long tasks, map loading and timeline latency on laptop and throttled mobile profiles.
+`scripts/perf.mjs` measures load timings, long tasks, explorer loading and timeline latency on laptop and throttled mobile profiles, and with `--view=3d` the globe's frame rate, idle frames, heap, draw calls and cleanup.
 
 ## Run locally
 
@@ -247,6 +301,9 @@ guiding the requirements, reviewing results and refining the reporting logic.
 - **Global North / South** uses an illustrative list (high-income OECD-DAC countries) that should be replaced by the
   organisation's reference list.
 - **Staff categories and grades** (G1–G7) are a modelling choice for a multi-country workforce, not the classification of any real organisation.
+- **3D globe on real phones**: performance was measured with CPU throttling on a desktop GPU, not on phone hardware.
+  Low-end devices and software-only WebGL default to the 2D map, and both views are always available. On the globe,
+  the tightest clusters (Lebanon, Syria, Jordan) still need zooming in or the ranked list.
 
 Map data: [Natural Earth](https://www.naturalearthdata.com/) 1:110m Admin 0 – Countries (public domain). Country
 boundaries are shown for orientation only.

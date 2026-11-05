@@ -1,19 +1,26 @@
-// Global Workforce Explorer body (lazy chunk): local month timeline, view mode, selection,
-// detail panel and ranked country list. Global filters are read, never changed implicitly.
-import { Pause, Play, RotateCcw, X } from 'lucide-react';
-import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+// Global Workforce Explorer body (lazy chunk): view (3D globe / 2D map), local month timeline,
+// analysis mode, selection, guided exploration, detail panel and ranked country list.
+// Both views read the same cached cube and the same state; global filters are never changed implicitly.
+import { Compass, Pause, Play, RotateCcw, SkipForward, X } from 'lucide-react';
+import { lazy, memo, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { shortName } from '../../charts/options';
 import { CATEGORY_COLOR } from '../../charts/theme';
 import { CATEGORIES } from '../../data/types';
 import { fmtDay, fmtMonth, fmtMonthShort, monthEndDay } from '../../lib/dates';
 import { fmtInt, fmtSignedInt, fmtSignedPct } from '../../lib/format';
 import { buildCube, countryPoints, scaleMaxima, summarise, type CountryPoint } from '../../lib/geo';
+import { tourStops, type TourStop } from '../../lib/globe';
+import type { ExplorerView, WebGLSupport } from '../../lib/webgl';
 import { useApp } from '../../state/AppData';
 import { Segmented } from '../ui';
+import { GLOBE_STATUS, RING_COLOR } from './globeTheme';
 import WorldMapImpl, { STATUS_STYLE, sizeOf, type GeoFeatureProps, type MapMode } from './WorldMap';
 
 const WorldMap = memo(WorldMapImpl);
+// Three.js and the globe scene: a separate chunk, requested only when the 3D view is shown.
+const Globe3D = lazy(() => import('./Globe3D'));
 const PLAY_MS = 700;
+const TOUR_MS = 5200;
 
 type GeoData = { type: string; features: { properties: GeoFeatureProps; geometry: { coordinates: number[][][][] } }[] };
 type Bounds = [[number, number], [number, number]];
@@ -36,16 +43,15 @@ const loadGeo = (): Promise<GeoData> => (geoPromise ??= fetch(`${import.meta.env
   return r.json();
 }));
 
-function useReducedMotion() {
-  const q = '(prefers-reduced-motion: reduce)';
-  const [reduced, setReduced] = useState(() => typeof matchMedia !== 'undefined' && matchMedia(q).matches);
+function useMedia(q: string) {
+  const [match, setMatch] = useState(() => typeof matchMedia !== 'undefined' && matchMedia(q).matches);
   useEffect(() => {
     const mq = matchMedia(q);
-    const h = () => setReduced(mq.matches);
+    const h = () => setMatch(mq.matches);
     mq.addEventListener('change', h);
     return () => mq.removeEventListener('change', h);
-  }, []);
-  return reduced;
+  }, [q]);
+  return match;
 }
 
 function useWidth(ref: React.RefObject<HTMLElement | null>) {
@@ -71,7 +77,20 @@ const nice = (v: number) => {
   return [1, 2, 2.5, 5, 10].map((k) => k * p).filter((x) => x <= v).pop() ?? p;
 };
 
-export default function ExplorerBody({ visible }: { visible: boolean }) {
+const ORD = ['', '', 'second-', 'third-'];
+const stopTitle = (s: TourStop) => {
+  const t = `${s.tied ? 'joint ' : ''}${ORD[s.rank] ?? `${s.rank}th-`}largest ${s.kind}`;
+  return t[0].toUpperCase() + t.slice(1);
+};
+
+interface Tour {
+  stops: TourStop[];
+  i: number;
+  paused: boolean;
+  month: number;
+}
+
+export default function ExplorerBody({ visible, view, setView, support }: { visible: boolean; view: ExplorerView; setView: (v: ExplorerView, remember?: boolean) => void; support: WebGLSupport }) {
   const { model, filters, setFilters } = useApp();
   const cube = useMemo(() => buildCube(model), [model]);
   const hq = model.meta.hq_country;
@@ -95,9 +114,22 @@ export default function ExplorerBody({ visible }: { visible: boolean }) {
   const [month, setMonth] = useState(filters.to);
   const [pinned, setPinned] = useState<string | null>(filters.country ? isoByName.get(filters.country) ?? null : null);
   const [hovered, setHovered] = useState<string | null>(null);
+  const [focusSeq, setFocusSeq] = useState(0);
   const [playing, setPlaying] = useState(false);
   const [ready, setReady] = useState(false);
-  const reduced = useReducedMotion();
+  const [tour, setTour] = useState<Tour | null>(null);
+  const [globeKey, setGlobeKey] = useState(0);
+  const [globeLost, setGlobeLost] = useState(false);
+  const [notice, setNotice] = useState<string | null>(null);
+  const reduced = useMedia('(prefers-reduced-motion: reduce)');
+  const coarse = useMedia('(pointer: coarse)');
+  const is3d = view === '3d';
+
+  /** pin a country and bring it into view (explicit actions only) */
+  const pinTo = useCallback((iso: string | null) => {
+    setPinned(iso);
+    if (iso) setFocusSeq((s) => s + 1);
+  }, []);
 
   // Reconcile the local timeline with the global period: default to the reporting month.
   useEffect(() => {
@@ -106,8 +138,10 @@ export default function ExplorerBody({ visible }: { visible: boolean }) {
   }, [filters.from, filters.to]);
   // A global country filter selects that country on the map.
   useEffect(() => {
-    setPinned(filters.country ? isoByName.get(filters.country) ?? null : null);
-  }, [filters.country, isoByName]);
+    pinTo(filters.country ? isoByName.get(filters.country) ?? null : null);
+  }, [filters.country, isoByName, pinTo]);
+  // The guided exploration belongs to one month and filter selection.
+  useEffect(() => setTour(null), [filters.from, filters.to, filters.country, filters.category]);
 
   // Playback: one month per tick from cached aggregates; stops at the period end, when paused,
   // hidden, scrolled away, unmounted or when reduced motion is requested.
@@ -124,7 +158,11 @@ export default function ExplorerBody({ visible }: { visible: boolean }) {
     if (playing && month >= filters.to) setPlaying(false);
   }, [playing, month, filters.to]);
   useEffect(() => {
-    const h = () => document.hidden && setPlaying(false);
+    const h = () => {
+      if (!document.hidden) return;
+      setPlaying(false);
+      setTour((t) => (t && !t.paused ? { ...t, paused: true } : t));
+    };
     document.addEventListener('visibilitychange', h);
     return () => document.removeEventListener('visibilitychange', h);
   }, []);
@@ -135,15 +173,65 @@ export default function ExplorerBody({ visible }: { visible: boolean }) {
   const summary = useMemo(() => summarise(points, hq), [points, hq]);
   const byIso = useMemo(() => new Map(points.map((p) => [p.iso3, p])), [points]);
 
+  // Guided exploration: auto-advance unless paused, hidden, scrolled away or reduced motion.
+  useEffect(() => {
+    if (!tour || tour.paused || !visible || reduced) return;
+    const id = window.setTimeout(() => {
+      const next = tour.i + 1;
+      if (next >= tour.stops.length) setTour({ ...tour, paused: true });
+      else {
+        setTour({ ...tour, i: next });
+        pinTo(tour.stops[next].iso3);
+      }
+    }, TOUR_MS);
+    return () => window.clearTimeout(id);
+  }, [tour, visible, reduced, pinTo]);
+  const stops = useMemo(() => tourStops(points), [points]);
+  const startTour = () => {
+    if (!stops.length) return;
+    setPlaying(false);
+    setTour({ stops, i: 0, paused: reduced, month });
+    pinTo(stops[0].iso3);
+  };
+  const tourStep = (i: number) => {
+    if (!tour) return;
+    setTour({ ...tour, i });
+    pinTo(tour.stops[i].iso3);
+  };
+
   const box = useRef<HTMLDivElement>(null);
   const width = useWidth(box);
   const narrow = width > 0 && width < 640;
   const mapHeight = Math.round(Math.min(520, Math.max(230, width * 0.5)));
+  const globeHeight = Math.round(Math.min(560, Math.max(320, width * 0.56)));
   const maxD = Math.round(Math.min(40, Math.max(18, width * (extent === 'focus' ? 0.042 : 0.034))));
 
   const onHover = useCallback((iso: string | null) => setHovered(iso), []);
-  const onSelect = useCallback((iso: string) => setPinned((p) => (p === iso ? null : iso)), []);
+  const onSelect = useCallback((iso: string) => {
+    setTour(null);
+    setPinned((p) => (p === iso ? null : iso));
+    setFocusSeq((s) => s + 1);
+  }, []);
   const onReady = useCallback(() => setReady(true), []);
+  const onInteract = useCallback(() => setTour((t) => (t && !t.paused ? { ...t, paused: true } : t)), []);
+  const onGlobeFailure = useCallback(
+    (reason: 'unavailable' | 'lost') => {
+      if (reason === 'unavailable') {
+        setNotice('The 3D globe could not start on this device (WebGL unavailable), so the 2D map is shown. All figures are the same.');
+        setView('2d', false);
+      } else setGlobeLost(true);
+    },
+    [setView],
+  );
+  const onGlobeRestored = useCallback(() => {
+    setGlobeLost(false);
+    setGlobeKey((k) => k + 1);
+  }, []);
+  const switchView = (v: ExplorerView) => {
+    setNotice(null);
+    setGlobeLost(false);
+    setView(v);
+  };
 
   const focusIso = pinned ?? hovered;
   const focusName = focusIso ? model.countries.find((c) => c.iso3 === focusIso)?.name ?? null : null;
@@ -166,9 +254,18 @@ export default function ExplorerBody({ visible }: { visible: boolean }) {
   const monthLabel = fmtDay(monthEndDay(month));
   const canPlay = !reduced && filters.to > filters.from;
   const yoy = summary.prev == null ? null : summary.total - summary.prev;
+  const stop = tour ? tour.stops[tour.i] : null;
+  const globeFeatures = geo?.features as unknown as import('./GlobeScene').GlobeFeature[] | undefined;
+  const no3d = support === 'none';
 
   return (
-    <div onKeyDown={(e) => e.key === 'Escape' && setPinned(null)}>
+    <div
+      onKeyDown={(e) => {
+        if (e.key !== 'Escape') return;
+        setTour(null);
+        setPinned(null);
+      }}
+    >
       <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
         <p className="text-xs text-muted" aria-live="polite">
           <b className="font-semibold text-ink">{monthLabel}</b> · {fmtInt(summary.total)} active staff ·{' '}
@@ -178,21 +275,89 @@ export default function ExplorerBody({ visible }: { visible: boolean }) {
           </b>
           {filters.category && <> · {filters.category} only</>}
         </p>
-        <Segmented
-          label="Map view"
-          value={mode}
-          onChange={setMode}
-          options={[
-            { value: 'active', label: 'Active staff' },
-            { value: 'yoy', label: 'YoY change' },
-          ]}
-        />
+        <div className="flex flex-wrap items-center gap-2">
+          <Segmented
+            label="Explorer view"
+            value={view}
+            onChange={switchView}
+            options={[
+              { value: '3d', label: '3D Globe', disabled: no3d, title: no3d ? 'The 3D globe needs WebGL, which is not available in this browser' : undefined },
+              { value: '2d', label: '2D Map' },
+            ]}
+          />
+          <Segmented
+            label="Map view"
+            value={mode}
+            onChange={setMode}
+            options={[
+              { value: 'active', label: 'Active staff' },
+              { value: 'yoy', label: 'YoY change' },
+            ]}
+          />
+          <button
+            type="button"
+            onClick={() => (tour ? setTour(null) : startTour())}
+            disabled={!tour && !stops.length}
+            aria-pressed={!!tour}
+            title={!stops.length ? 'Needs a prior-year baseline: choose a month at least 12 months after the data starts' : 'Visit the largest increases and reductions'}
+            className={`inline-flex h-[30px] items-center gap-1.5 rounded-lg border px-2.5 text-xs font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${
+              tour ? 'border-teal/50 bg-teal-50 text-teal' : 'border-line bg-white text-ink-2 hover:bg-page'
+            }`}
+          >
+            <Compass size={14} aria-hidden />
+            Explore workforce changes
+          </button>
+        </div>
       </div>
+      {notice && (
+        <p role="status" className="mb-3 rounded-md border border-line bg-page px-3 py-2 text-xs text-ink-2">
+          {notice}
+        </p>
+      )}
 
       <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_300px]">
         <div className="min-w-0">
-          <div ref={box} className="relative overflow-hidden rounded-lg border border-line-2 bg-[#FAFBFC]">
-            {geo ? (
+          <div
+            ref={box}
+            data-stage={view}
+            className={`relative overflow-hidden rounded-lg border ${
+              is3d ? 'border-[#22364F] bg-[radial-gradient(120%_95%_at_50%_42%,#173158_0%,#0B1A30_52%,#060E1B_100%)]' : 'border-line-2 bg-[#FAFBFC]'
+            }`}
+          >
+            {is3d ? (
+              geo && globeFeatures ? (
+                <Suspense fallback={<div style={{ height: globeHeight }} className="grid place-items-center text-xs text-[#9FB0C4]">Loading 3D globe…</div>}>
+                  <Globe3D
+                    key={globeKey}
+                    features={globeFeatures}
+                    countries={model.countries}
+                    covered={covered}
+                    points={points}
+                    mode={mode}
+                    maxTotal={maxima.total}
+                    maxChange={maxima.change}
+                    pinned={pinned}
+                    hovered={hovered}
+                    focusSeq={focusSeq}
+                    reducedMotion={reduced}
+                    visible={visible && !globeLost}
+                    monthLabel={monthLabel}
+                    height={globeHeight}
+                    coarse={coarse}
+                    onHover={onHover}
+                    onSelect={onSelect}
+                    onInteract={onInteract}
+                    onReady={onReady}
+                    onFailure={onGlobeFailure}
+                    onRestored={onGlobeRestored}
+                  />
+                </Suspense>
+              ) : (
+                <div style={{ height: globeHeight }} className="grid place-items-center text-xs text-[#9FB0C4]">
+                  {geoError ? `The globe could not be loaded (${geoError}). The country list remains available.` : 'Loading 3D globe…'}
+                </div>
+              )
+            ) : geo ? (
               <WorldMap
                 geoJson={geo}
                 features={features}
@@ -217,28 +382,109 @@ export default function ExplorerBody({ visible }: { visible: boolean }) {
                 {geoError ? `The map could not be loaded (${geoError}). The country list remains available.` : 'Loading map…'}
               </div>
             )}
-            <div className="absolute right-2 top-2">
-              <Segmented
-                label="Map extent"
-                value={extent}
-                onChange={setExtent}
-                options={[
-                  { value: 'focus', label: 'Focus' },
-                  { value: 'world', label: 'World' },
-                ]}
-              />
-            </div>
+            {!is3d && (
+              <div className="absolute right-2 top-2">
+                <Segmented
+                  label="Map extent"
+                  value={extent}
+                  onChange={setExtent}
+                  options={[
+                    { value: 'focus', label: 'Focus' },
+                    { value: 'world', label: 'World' },
+                  ]}
+                />
+              </div>
+            )}
+            {is3d && globeLost && (
+              <div role="alert" className="absolute inset-0 z-10 grid place-items-center bg-[#060E1B]/85 p-4 text-center text-xs text-[#DCE6F1]">
+                <div>
+                  <p className="font-semibold">The 3D view was interrupted because the browser released its graphics context.</p>
+                  <p className="mt-1 text-[#9FB0C4]">No data was lost; the country list and details are still current.</p>
+                  <div className="mt-3 flex justify-center gap-2">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setGlobeLost(false);
+                        setGlobeKey((k) => k + 1);
+                      }}
+                      className="rounded-md border border-white/20 bg-white/10 px-3 py-1.5 font-medium hover:bg-white/20"
+                    >
+                      Restart 3D view
+                    </button>
+                    <button type="button" onClick={() => switchView('2d')} className="rounded-md border border-white/20 bg-white/10 px-3 py-1.5 font-medium hover:bg-white/20">
+                      Switch to 2D map
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
             {!points.length && ready && (
-              <div className="absolute inset-0 grid place-items-center bg-white/60 text-sm text-muted">No active staff for this selection.</div>
+              <div className={`pointer-events-none absolute inset-0 grid place-items-center text-sm ${is3d ? 'text-[#C9D5E2]' : 'bg-white/60 text-muted'}`}>
+                No active staff for this selection.
+              </div>
             )}
           </div>
+
+          {tour && stop && (
+            <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 rounded-lg border border-teal/30 bg-teal-50/50 px-3 py-2 text-xs" role="region" aria-label="Explore workforce changes">
+              <span className="tabular font-semibold text-muted">
+                {tour.i + 1} / {tour.stops.length}
+              </span>
+              <p className="min-w-0 flex-1" aria-live="polite" data-tour-stop={stop.iso3}>
+                <span className="text-muted">{stopTitle(stop)} · </span>
+                <b className="text-ink">{stop.name}</b>{' '}
+                <b className={stop.kind === 'increase' ? 'text-teal' : 'text-burgundy'}>
+                  {stop.kind === 'increase' ? '▲' : '▼'} {fmtSignedInt(stop.change)}
+                  {stop.pct != null ? ` (${fmtSignedPct(stop.pct)})` : ''}
+                </b>
+                <span className="text-muted">
+                  {' '}
+                  · {fmtMonth(tour.month - 12)} → {fmtMonth(tour.month)} · ranked from the workforce model for the current filters
+                </span>
+              </p>
+              <div className="flex items-center gap-1">
+                {!reduced && (
+                  <button
+                    type="button"
+                    onClick={() => setTour({ ...tour, paused: !tour.paused })}
+                    aria-label={tour.paused ? 'Resume guided exploration' : 'Pause guided exploration'}
+                    className="grid h-8 w-8 place-items-center rounded-lg border border-line bg-white text-ink-2 hover:bg-page"
+                  >
+                    {tour.paused ? <Play size={14} aria-hidden /> : <Pause size={14} aria-hidden />}
+                  </button>
+                )}
+                <button
+                  type="button"
+                  onClick={() => tourStep((tour.i + 1) % tour.stops.length)}
+                  aria-label="Next country in guided exploration"
+                  className="grid h-8 w-8 place-items-center rounded-lg border border-line bg-white text-ink-2 hover:bg-page"
+                >
+                  <SkipForward size={14} aria-hidden />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setTour(null)}
+                  aria-label="Exit guided exploration"
+                  className="grid h-8 w-8 place-items-center rounded-lg border border-line bg-white text-ink-2 hover:bg-page"
+                >
+                  <X size={14} aria-hidden />
+                </button>
+              </div>
+            </div>
+          )}
 
           {/* timeline */}
           <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2">
             <div className="flex items-center gap-1">
               <button
                 type="button"
-                onClick={() => (month >= filters.to ? (setMonth(filters.from), setPlaying(true)) : setPlaying((p) => !p))}
+                onClick={() => {
+                  setTour(null);
+                  if (month >= filters.to) {
+                    setMonth(filters.from);
+                    setPlaying(true);
+                  } else setPlaying((p) => !p);
+                }}
                 disabled={!canPlay}
                 aria-label={playing ? 'Pause playback' : 'Play timeline'}
                 title={reduced ? 'Playback is off because reduced motion is enabled' : undefined}
@@ -249,6 +495,7 @@ export default function ExplorerBody({ visible }: { visible: boolean }) {
               <button
                 type="button"
                 onClick={() => {
+                  setTour(null);
                   setMonth(filters.from);
                   setPlaying(true);
                 }}
@@ -271,6 +518,7 @@ export default function ExplorerBody({ visible }: { visible: boolean }) {
                 disabled={filters.to === filters.from}
                 onChange={(e) => {
                   setPlaying(false);
+                  setTour(null);
                   setMonth(Number(e.target.value));
                 }}
                 aria-label="Map reporting month"
@@ -283,47 +531,55 @@ export default function ExplorerBody({ visible }: { visible: boolean }) {
               {fmtMonth(month)}
             </span>
           </div>
-          {reduced && <p className="mt-1 text-[11px] text-muted">Playback is off because your system requests reduced motion; use the slider to move between months.</p>}
+          {reduced && (
+            <p className="mt-1 text-[11px] text-muted">
+              Playback and camera animation are off because your system requests reduced motion; use the slider to move between months.
+            </p>
+          )}
 
           {/* legends */}
-          <div className="mt-3 flex flex-wrap items-end gap-x-8 gap-y-3 text-[11px] text-muted">
-            <div>
-              <p className="mb-1 font-medium text-ink-2">{mode === 'active' ? 'Bubble area = active staff' : 'Bubble area = YoY change (employees)'}</p>
-              <div className="flex items-end gap-3">
-                {sizeTicks.map((v) => {
-                  const d = Math.max(4, sizeOf({ total: v, change: v } as CountryPoint, mode, maxima.total, maxima.change, maxD));
-                  return (
-                    <span key={v} className="flex flex-col items-center gap-1">
-                      <span className="rounded-full border border-[#94A3B8] bg-[#94A3B8]/15" style={{ width: d, height: d }} aria-hidden />
-                      <span className="tabular">{mode === 'active' ? fmtInt(v) : `±${fmtInt(v)}`}</span>
-                    </span>
-                  );
-                })}
+          {is3d ? (
+            <GlobeLegend mode={mode} ticks={sizeTicks} max={mode === 'active' ? maxima.total : maxima.change} />
+          ) : (
+            <div className="mt-3 flex flex-wrap items-end gap-x-8 gap-y-3 text-[11px] text-muted">
+              <div>
+                <p className="mb-1 font-medium text-ink-2">{mode === 'active' ? 'Bubble area = active staff' : 'Bubble area = YoY change (employees)'}</p>
+                <div className="flex items-end gap-3">
+                  {sizeTicks.map((v) => {
+                    const d = Math.max(4, sizeOf({ total: v, change: v } as CountryPoint, mode, maxima.total, maxima.change, maxD));
+                    return (
+                      <span key={v} className="flex flex-col items-center gap-1">
+                        <span className="rounded-full border border-[#94A3B8] bg-[#94A3B8]/15" style={{ width: d, height: d }} aria-hidden />
+                        <span className="tabular">{mode === 'active' ? fmtInt(v) : `±${fmtInt(v)}`}</span>
+                      </span>
+                    );
+                  })}
+                </div>
+              </div>
+              <div>
+                <p className="mb-1 font-medium text-ink-2">Colour = year-over-year direction</p>
+                <ul className="flex flex-wrap gap-x-3 gap-y-1">
+                  {(['growth', 'reduction', 'unchanged', 'no-baseline'] as const).map((s) => (
+                    <li key={s} className="flex items-center gap-1.5">
+                      <span
+                        className="inline-block h-2.5 w-2.5 rounded-full"
+                        style={{ background: STATUS_STYLE[s].fill, border: `1px ${STATUS_STYLE[s].dashed ? 'dashed' : 'solid'} ${STATUS_STYLE[s].dashed ? STATUS_STYLE[s].stroke : STATUS_STYLE[s].fill}` }}
+                        aria-hidden
+                      />
+                      {STATUS_STYLE[s].glyph} {STATUS_STYLE[s].label}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p className="mb-1 font-medium text-ink-2">Countries</p>
+                <ul className="flex flex-wrap gap-x-3 gap-y-1">
+                  <li className="flex items-center gap-1.5"><span className="inline-block h-2.5 w-3.5 rounded-[2px] bg-[#D6E7E4]" aria-hidden />In the workforce model</li>
+                  <li className="flex items-center gap-1.5"><span className="inline-block h-2.5 w-3.5 rounded-[2px] bg-[#E8ECF1]" aria-hidden />Not covered</li>
+                </ul>
               </div>
             </div>
-            <div>
-              <p className="mb-1 font-medium text-ink-2">Colour = year-over-year direction</p>
-              <ul className="flex flex-wrap gap-x-3 gap-y-1">
-                {(['growth', 'reduction', 'unchanged', 'no-baseline'] as const).map((s) => (
-                  <li key={s} className="flex items-center gap-1.5">
-                    <span
-                      className="inline-block h-2.5 w-2.5 rounded-full"
-                      style={{ background: STATUS_STYLE[s].fill, border: `1px ${STATUS_STYLE[s].dashed ? 'dashed' : 'solid'} ${STATUS_STYLE[s].dashed ? STATUS_STYLE[s].stroke : STATUS_STYLE[s].fill}` }}
-                      aria-hidden
-                    />
-                    {STATUS_STYLE[s].glyph} {STATUS_STYLE[s].label}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <p className="mb-1 font-medium text-ink-2">Countries</p>
-              <ul className="flex flex-wrap gap-x-3 gap-y-1">
-                <li className="flex items-center gap-1.5"><span className="inline-block h-2.5 w-3.5 rounded-[2px] bg-[#D6E7E4]" aria-hidden />In the workforce model</li>
-                <li className="flex items-center gap-1.5"><span className="inline-block h-2.5 w-3.5 rounded-[2px] bg-[#E8ECF1]" aria-hidden />Not covered</li>
-              </ul>
-            </div>
-          </div>
+          )}
         </div>
 
         <aside className="flex min-w-0 flex-col gap-3" aria-label="Country details">
@@ -336,7 +592,10 @@ export default function ExplorerBody({ visible }: { visible: boolean }) {
             yoy={yoy}
             ranked={ranked}
             globalCountry={filters.country}
-            onClear={() => setPinned(null)}
+            onClear={() => {
+              setTour(null);
+              setPinned(null);
+            }}
             onApply={(name) => setFilters({ country: name })}
             onClearFilter={() => setFilters({ country: null })}
           />
@@ -355,7 +614,7 @@ export default function ExplorerBody({ visible }: { visible: boolean }) {
                     onMouseLeave={() => setHovered(null)}
                     className={`flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-left text-xs transition-colors ${
                       pinned === p.iso3 ? 'bg-teal-50 text-ink' : 'text-ink-2 hover:bg-page'
-                    }`}
+                    } ${coarse ? 'min-h-[40px]' : ''}`}
                   >
                     <span className="flex-1 truncate">{shortName(p.name)}</span>
                     <span className="tabular font-semibold text-ink">{fmtInt(p.total)}</span>
@@ -371,6 +630,49 @@ export default function ExplorerBody({ visible }: { visible: boolean }) {
             </ul>
           </div>
         </aside>
+      </div>
+    </div>
+  );
+}
+
+/** 3D legend: column height scale (linear), direction colours with glyphs, coverage. */
+function GlobeLegend({ mode, ticks, max }: { mode: MapMode; ticks: number[]; max: number }) {
+  const H = 40;
+  return (
+    <div className="mt-3 flex flex-wrap items-end gap-x-8 gap-y-3 text-[11px] text-muted">
+      <div>
+        <p className="mb-1 font-medium text-ink-2">{mode === 'active' ? 'Column height = active staff (linear scale)' : 'Column height = size of the YoY change (linear)'}</p>
+        <div className="flex items-end gap-4">
+          {ticks.map((v) => (
+            <span key={v} className="flex items-end gap-1.5">
+              <span className="w-[6px] rounded-t-[2px] bg-[#8FA0B5]" style={{ height: Math.max(2, (H * v) / (max || 1)) }} aria-hidden />
+              <span className="tabular">{mode === 'active' ? fmtInt(v) : `±${fmtInt(v)}`}</span>
+            </span>
+          ))}
+        </div>
+      </div>
+      <div>
+        <p className="mb-1 font-medium text-ink-2">Colour = year-over-year direction</p>
+        <ul className="flex flex-wrap gap-x-3 gap-y-1">
+          {(['growth', 'reduction', 'unchanged', 'no-baseline'] as const).map((s) => (
+            <li key={s} className="flex items-center gap-1.5">
+              {GLOBE_STATUS[s].ring ? (
+                <span className="inline-block h-2.5 w-2.5 rounded-full border-2" style={{ borderColor: RING_COLOR }} aria-hidden />
+              ) : (
+                <span className="inline-block h-2.5 w-2.5 rounded-[2px]" style={{ background: GLOBE_STATUS[s].color }} aria-hidden />
+              )}
+              {GLOBE_STATUS[s].glyph} {GLOBE_STATUS[s].label}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <p className="mb-1 font-medium text-ink-2">Countries</p>
+        <ul className="flex flex-wrap gap-x-3 gap-y-1">
+          <li className="flex items-center gap-1.5"><span className="inline-block h-2.5 w-3.5 rounded-[2px] border border-[#56B7AA] bg-[#1D4652]" aria-hidden />In the workforce model</li>
+          <li className="flex items-center gap-1.5"><span className="inline-block h-2.5 w-3.5 rounded-[2px] border border-[#4C6A8C] bg-[#1A2D47]" aria-hidden />Not covered</li>
+        </ul>
+        <p className="mt-1 text-faint">Markers show country totals at the country's label point, not office or staff locations.</p>
       </div>
     </div>
   );

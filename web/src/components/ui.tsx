@@ -172,7 +172,7 @@ export function Segmented<T extends string>({
   onChange,
   label,
 }: {
-  options: { value: T; label: string }[];
+  options: { value: T; label: string; disabled?: boolean; title?: string }[];
   value: T;
   onChange: (v: T) => void;
   label: string;
@@ -187,8 +187,10 @@ export function Segmented<T extends string>({
             type="button"
             role="radio"
             aria-checked={active}
+            disabled={o.disabled}
+            title={o.title}
             onClick={() => onChange(o.value)}
-            className={`rounded-md px-2.5 py-1 text-xs font-medium transition-colors ${
+            className={`rounded-md px-2.5 py-1 text-xs font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${
               active ? 'bg-white text-ink shadow-sm ring-1 ring-line' : 'text-muted hover:text-ink'
             }`}
           >

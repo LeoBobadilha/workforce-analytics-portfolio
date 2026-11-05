@@ -71,6 +71,10 @@ The explorer aggregates headcount in the browser: one pass over contracts builds
 cube (46 months × 27 countries × 4 categories, about 5,000 cells), so timeline and filter changes are array lookups.
 Vitest checks every cell against the canonical `activeAt` logic.
 
+The 3D globe uses the same file, loaded once: the boundaries are drawn once into a 2048 × 1024 equirectangular
+texture, borders become line meshes, and the label points anchor the instanced country columns. Clicking the
+globe resolves the position to a country with a point-in-polygon test on the same polygons.
+
 ## Web model encoding
 
 `hr_model.json` is column-oriented: each table has `columns`, `dicts` (dictionary encoding for categorical fields)
