@@ -1,0 +1,65 @@
+name: Test, build & deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+      - name: Data quality & KPI tests (pytest)
+        run: python -m pytest -q
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - name: Install web dependencies
+        working-directory: web
+        run: npm ci
+      - name: KPI parity tests (Vitest)
+        working-directory: web
+        run: npx vitest run
+      - name: Build
+        working-directory: web
+        run: npm run build
+      - name: End-to-end browser checks (Playwright + Chrome)
+        working-directory: web
+        run: |
+          npx vite preview --host 127.0.0.1 --port 4317 --strictPort &
+          for i in $(seq 1 30); do curl -sf http://127.0.0.1:4317/ > /dev/null && break; sleep 1; done
+          node scripts/e2e.mjs http://127.0.0.1:4317/
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: web/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

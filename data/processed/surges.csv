@@ -1,0 +1,353 @@
+surge_id,source,country,request_date,status,role,deployed_employee_id,deployed_category,home_country,start_date,end_date
+SRG-2023-0001,Excel tracker,South Sudan,2023-01-15,Filled,Assessment Specialist,E12084,International Staff,Yemen,2023-02-12,2023-04-20
+SRG-2023-0002,Excel tracker,Yemen,2023-01-15,Filled,Field Coordinator,E11118,International Staff,Mozambique,2023-02-09,2023-04-19
+SRG-2023-0003,Excel tracker,Syria,2023-01-22,Cancelled,Field Coordinator,,,,,
+SRG-2023-0004,Excel tracker,Mozambique,2023-02-04,Cancelled,Field Coordinator,,,,,
+SRG-2023-0010,Excel tracker,Ukraine,2023-02-05,Filled,Field Coordinator,E10057,National Staff,Afghanistan,2023-02-27,2023-05-03
+SRG-2023-0005,Excel tracker,Somalia,2023-02-08,Filled,Assessment Specialist,E10289,International Staff,Burkina Faso,2023-02-17,2023-05-13
+SRG-2023-0006,Excel tracker,Afghanistan,2023-02-09,Filled,Field Coordinator,E10753,National Staff,Iraq,2023-03-01,2023-04-04
+SRG-2023-0007,Excel tracker,Sudan,2023-02-09,Filled,Field Coordinator,E10593,International Staff,Democratic Republic of the Congo,2023-03-03,2023-04-13
+SRG-2023-0008,Excel tracker,Ukraine,2023-02-14,Filled,Assessment Specialist,E11069,International Staff,Mali,2023-02-25,2023-04-01
+SRG-2023-0009,Excel tracker,Ukraine,2023-02-14,Filled,Assessment Specialist,E10186,National Staff,Bangladesh,2023-03-07,2023-05-10
+SRG-2023-0012,Excel tracker,Ukraine,2023-02-20,Filled,Assessment Specialist,E11382,National Staff,Senegal,2023-03-10,2023-05-21
+SRG-2023-0011,Excel tracker,Ukraine,2023-02-26,Filled,Assessment Specialist,E10672,International Staff,Ethiopia,2023-03-14,2023-06-12
+SRG-2023-0017,Excel tracker,Democratic Republic of the Congo,2023-03-03,Filled,Research Manager,E10211,International Staff,Bangladesh,2023-03-15,2023-05-02
+SRG-2023-0013,Excel tracker,Somalia,2023-03-05,Filled,Research Manager,E11070,International Staff,Mali,2023-03-22,2023-04-21
+SRG-2023-0019,Excel tracker,Ukraine,2023-03-10,Filled,Data Manager,E10974,International Staff,Lebanon,2023-04-03,2023-06-08
+SRG-2023-0015,Excel tracker,Haiti,2023-03-17,Cancelled,GIS Specialist,,,,,
+SRG-2023-0016,Excel tracker,Bangladesh,2023-03-25,Filled,GIS Specialist,E11557,National Staff,South Sudan,2023-04-23,2023-07-21
+SRG-2023-0018,Excel tracker,Ukraine,2023-03-30,Filled,Data Manager,E12091,Global non-HQ Staff,Kenya,2023-04-06,2023-05-17
+SRG-2023-0014,Excel tracker,Sudan,2023-03-31,Filled,Assessment Specialist,E12116,Global non-HQ Staff,Senegal,2023-04-19,2023-06-17
+SRG-2023-0021,Excel tracker,Kenya,2023-04-03,Filled,Assessment Specialist,E11828,National Staff,Ukraine,2023-04-12,2023-05-24
+SRG-2023-0020,Excel tracker,Colombia,2023-04-06,Filled,Assessment Specialist,E11365,International Staff,Nigeria,2023-04-27,2023-06-27
+SRG-2023-0024,Excel tracker,Central African Republic,2023-04-07,Filled,Data Manager,E10985,National Staff,Libya,2023-05-02,2023-06-25
+SRG-2023-0023,Excel tracker,Myanmar,2023-04-09,Filled,Data Manager,E11613,International Staff,South Sudan,2023-05-07,2023-06-14
+SRG-2023-0027,Excel tracker,Afghanistan,2023-04-15,Filled,Data Manager,E11240,International Staff,Niger,2023-04-27,2023-07-24
+SRG-2023-0022,Excel tracker,Chad,2023-04-19,Filled,Assessment Specialist,E10961,National Staff,Lebanon,2023-04-30,2023-06-07
+SRG-2023-0025,Excel tracker,Yemen,2023-04-20,Filled,GIS Specialist,E11805,International Staff,Syria,2023-05-03,2023-06-30
+SRG-2023-0028,Excel tracker,Ethiopia,2023-04-21,Cancelled,Assessment Specialist,,,,,
+SRG-2023-0026,Excel tracker,Mozambique,2023-04-23,Cancelled,Field Coordinator,,,,,
+SRG-2023-0029,Excel tracker,Haiti,2023-04-26,Filled,Data Manager,E11108,National Staff,Mozambique,2023-05-04,2023-07-11
+SRG-2023-0037,Excel tracker,Central African Republic,2023-05-02,Filled,Data Manager,E12092,Global non-HQ Staff,Kenya,2023-05-11,2023-06-11
+SRG-2023-0032,Excel tracker,Mozambique,2023-05-05,Filled,Field Coordinator,E10821,International Staff,Iraq,2023-05-25,2023-07-28
+SRG-2023-0039,Excel tracker,Nigeria,2023-05-07,Filled,Assessment Specialist,E12103,Global non-HQ Staff,Jordan,2023-06-01,2023-08-10
+SRG-2023-0031,Excel tracker,Ethiopia,2023-05-10,Filled,Data Manager,E10975,International Staff,Lebanon,2023-05-20,2023-07-04
+SRG-2023-0038,Excel tracker,Democratic Republic of the Congo,2023-05-13,Filled,GIS Specialist,E11962,International Staff,Ukraine,2023-06-06,2023-09-03
+SRG-2023-0033,Excel tracker,Kenya,2023-05-14,Filled,Assessment Specialist,E10213,International Staff,Bangladesh,2023-05-21,2023-07-21
+SRG-2023-0036,Excel tracker,Niger,2023-05-18,Filled,Data Manager,E10091,National Staff,Afghanistan,2023-05-28,2023-06-27
+SRG-2023-0035,Excel tracker,South Sudan,2023-05-23,Filled,Field Coordinator,E10779,National Staff,Iraq,2023-05-30,2023-08-23
+SRG-2023-0034,Excel tracker,Haiti,2023-05-24,Filled,Assessment Specialist,E11610,International Staff,South Sudan,2023-06-15,2023-08-20
+SRG-2023-0030,Excel tracker,Democratic Republic of the Congo,2023-05-31,Filled,Research Manager,E12245,National Staff,Yemen,2023-06-18,2023-07-23
+SRG-2023-0041,Excel tracker,Bangladesh,2023-06-09,Filled,GIS Specialist,E10822,International Staff,Iraq,2023-06-22,2023-08-31
+SRG-2023-0042,Excel tracker,Ethiopia,2023-06-09,Cancelled,Assessment Specialist,,,,,
+SRG-2023-0040,Excel tracker,Ukraine,2023-06-24,Filled,Assessment Specialist,E12087,Global non-HQ Staff,Kenya,2023-07-07,2023-09-22
+SRG-2023-0044,Excel tracker,South Sudan,2023-07-07,Filled,Field Coordinator,E11395,International Staff,Senegal,2023-07-18,2023-08-29
+SRG-2023-0043,Excel tracker,Chad,2023-07-31,Filled,Field Coordinator,E10673,International Staff,Ethiopia,2023-08-28,2023-09-28
+SRG-2023-0046,Excel tracker,Afghanistan,2023-08-09,Filled,GIS Specialist,E10977,International Staff,Lebanon,2023-08-29,2023-09-30
+SRG-2023-0045,Excel tracker,Ukraine,2023-08-13,Filled,Data Manager,E12115,Global non-HQ Staff,Senegal,2023-08-22,2023-10-06
+SRG-2023-0047,Excel tracker,Syria,2023-08-21,Filled,Research Manager,E11071,International Staff,Mali,2023-09-16,2023-11-27
+SRG-2023-0050,Excel tracker,Burkina Faso,2023-09-09,Filled,Assessment Specialist,E11494,International Staff,Somalia,2023-10-06,2023-12-04
+SRG-2023-0051,Excel tracker,Burkina Faso,2023-09-12,Filled,Research Manager,E11398,International Staff,Senegal,2023-09-21,2023-10-25
+SRG-2023-0049,Excel tracker,Somalia,2023-09-15,Filled,Data Manager,E11341,National Staff,Nigeria,2023-09-23,2023-10-27
+SRG-2023-0052,Excel tracker,Kenya,2023-09-20,Filled,Assessment Specialist,E10299,National Staff,Central African Republic,2023-10-03,2023-11-26
+SRG-2023-0048,Excel tracker,Ukraine,2023-09-22,Filled,GIS Specialist,E10157,National Staff,Bangladesh,2023-10-18,2023-12-01
+SRG-2023-0054,Excel tracker,Mali,2023-10-10,Filled,Research Manager,E10977,International Staff,Lebanon,2023-11-05,2024-01-07
+SRG-2023-0055,Excel tracker,Iraq,2023-10-18,Cancelled,Data Manager,,,,,
+SRG-2023-0053,Excel tracker,South Sudan,2023-10-31,Filled,Research Manager,E10410,International Staff,Chad,2023-11-11,2024-01-05
+SRG-2023-0056,Excel tracker,Mali,2023-11-04,Filled,Assessment Specialist,E12076,National Staff,Yemen,2023-11-11,2024-01-25
+SRG-2023-0061,Excel tracker,Iraq,2023-11-11,Filled,GIS Specialist,E11962,International Staff,Ukraine,2023-11-18,2024-01-23
+SRG-2023-0058,Excel tracker,Yemen,2023-11-16,Filled,GIS Specialist,E12096,Global non-HQ Staff,Kenya,2023-11-30,2024-01-31
+SRG-2023-0057,Excel tracker,Bangladesh,2023-11-27,Filled,Assessment Specialist,E12457,International Staff,Sudan,2023-12-11,2024-01-14
+SRG-2023-0059,Excel tracker,Democratic Republic of the Congo,2023-11-27,Filled,GIS Specialist,E11590,National Staff,South Sudan,2023-12-08,2024-01-22
+SRG-2023-0060,Excel tracker,Democratic Republic of the Congo,2023-11-27,Cancelled,Assessment Specialist,,,,,
+SRG-2023-0063,Excel tracker,Iraq,2023-12-03,Filled,Data Manager,E11900,National Staff,Ukraine,2024-01-01,2024-02-26
+SRG-2023-0065,Excel tracker,Nigeria,2023-12-06,Cancelled,GIS Specialist,,,,,
+SRG-2023-0069,Excel tracker,Ukraine,2023-12-06,Filled,Assessment Specialist,E11015,International Staff,Libya,2024-01-01,2024-02-28
+SRG-2023-0064,Excel tracker,Burkina Faso,2023-12-08,Filled,Assessment Specialist,E11399,International Staff,Senegal,2023-12-29,2024-02-03
+SRG-2023-0068,Excel tracker,Sudan,2023-12-15,Cancelled,Data Manager,,,,,
+SRG-2023-0066,Excel tracker,Myanmar,2023-12-17,Filled,Data Manager,E12339,International Staff,Nigeria,2023-12-28,2024-03-26
+SRG-2023-0067,Excel tracker,Ethiopia,2023-12-18,Filled,Data Manager,E12391,International Staff,Syria,2024-01-03,2024-04-01
+SRG-2023-0070,Excel tracker,Afghanistan,2023-12-22,Filled,Assessment Specialist,E10669,International Staff,Ethiopia,2024-01-17,2024-04-04
+SRG-2023-0062,Excel tracker,Ethiopia,2023-12-25,Filled,Field Coordinator,E10734,National Staff,Iraq,2024-01-03,2024-02-06
+SRG-2024-0073,Excel tracker,Ukraine,2024-01-03,Filled,Field Coordinator,E10715,International Staff,Haiti,2024-01-29,2024-04-25
+SRG-2024-0071,Excel tracker,Ukraine,2024-01-09,Filled,Assessment Specialist,E10978,International Staff,Lebanon,2024-02-06,2024-04-24
+SRG-2024-0074,Excel tracker,Ukraine,2024-01-26,Filled,GIS Specialist,E11026,National Staff,Mali,2024-02-14,2024-04-05
+SRG-2024-0072,Excel tracker,Syria,2024-01-31,Cancelled,Assessment Specialist,,,,,
+SRG-2024-0076,Excel tracker,Ukraine,2024-02-03,Filled,GIS Specialist,E10977,International Staff,Lebanon,2024-02-22,2024-04-01
+SRG-2024-0081,Excel tracker,Bangladesh,2024-02-03,Filled,GIS Specialist,E10788,National Staff,Iraq,2024-02-26,2024-04-05
+SRG-2024-0077,Excel tracker,Yemen,2024-02-06,Filled,Field Coordinator,E10138,National Staff,Bangladesh,2024-02-17,2024-04-14
+SRG-2024-0075,Excel tracker,Burkina Faso,2024-02-09,Filled,Assessment Specialist,E11146,National Staff,Myanmar,2024-02-21,2024-04-29
+SRG-2024-0080,Excel tracker,Bangladesh,2024-02-11,Filled,Field Coordinator,E12092,Global non-HQ Staff,Kenya,2024-03-10,2024-05-17
+SRG-2024-0082,Excel tracker,Afghanistan,2024-02-13,Filled,Field Coordinator,E10673,International Staff,Ethiopia,2024-03-13,2024-04-21
+SRG-2024-0084,Excel tracker,Mali,2024-02-14,Filled,Data Manager,E10669,International Staff,Ethiopia,2024-03-01,2024-05-19
+SRG-2024-0079,Excel tracker,South Sudan,2024-02-15,Filled,GIS Specialist,E12081,International Staff,Yemen,2024-02-28,2024-05-16
+SRG-2024-0083,Excel tracker,Iraq,2024-02-15,Filled,Assessment Specialist,E12532,International Staff,Afghanistan,2024-02-26,2024-05-20
+SRG-2024-0078,Excel tracker,Ukraine,2024-02-21,Filled,GIS Specialist,E12667,National Staff,Sudan,2024-03-14,2024-04-16
+SRG-2024-0087,Excel tracker,Nigeria,2024-03-02,Filled,Field Coordinator,E10353,International Staff,Central African Republic,2024-03-24,2024-05-28
+SRG-2024-0088,Excel tracker,Ukraine,2024-03-04,Filled,Assessment Specialist,E12323,National Staff,Mozambique,2024-03-17,2024-04-28
+SRG-2024-0089,Excel tracker,Jordan,2024-03-05,Filled,Data Manager,E11392,National Staff,Senegal,2024-03-28,2024-05-09
+SRG-2024-0090,Excel tracker,Haiti,2024-03-15,Filled,Assessment Specialist,E12469,Global non-HQ Staff,Senegal,2024-04-12,2024-07-04
+SRG-2024-0085,Excel tracker,Colombia,2024-03-24,Filled,Data Manager,E10213,International Staff,Bangladesh,2024-04-05,2024-06-13
+SRG-2024-0091,Excel tracker,Haiti,2024-03-25,Filled,Field Coordinator,E12339,International Staff,Nigeria,2024-04-07,2024-05-11
+SRG-2024-0086,Excel tracker,Haiti,2024-03-27,Filled,Data Manager,E12501,National Staff,Myanmar,2024-04-03,2024-05-17
+SRG-2024-0092,Excel tracker,Haiti,2024-03-27,Filled,GIS Specialist,E10670,International Staff,Ethiopia,2024-04-19,2024-07-16
+SRG-2024-0099,Excel tracker,Haiti,2024-04-02,Filled,Data Manager,E11396,International Staff,Senegal,2024-04-15,2024-06-10
+SRG-2024-0096,Excel tracker,Haiti,2024-04-08,Filled,Assessment Specialist,E10585,International Staff,Democratic Republic of the Congo,2024-05-03,2024-06-10
+SRG-2024-0093,Excel tracker,Burkina Faso,2024-04-09,Filled,Field Coordinator,E10103,National Staff,Afghanistan,2024-05-03,2024-06-14
+SRG-2024-0100,Excel tracker,Haiti,2024-04-17,Filled,Field Coordinator,E12410,International Staff,Bangladesh,2024-04-28,2024-07-02
+SRG-2024-0094,Excel tracker,Myanmar,2024-04-24,Filled,Assessment Specialist,E12399,International Staff,Burkina Faso,2024-05-09,2024-06-08
+SRG-2024-0097,Excel tracker,Haiti,2024-04-24,Filled,Assessment Specialist,E12637,International Staff,Senegal,2024-05-10,2024-06-23
+SRG-2024-0095,Excel tracker,Burkina Faso,2024-04-26,Filled,Assessment Specialist,E12390,Global non-HQ Staff,Jordan,2024-05-24,2024-07-05
+SRG-2024-0098,Excel tracker,Haiti,2024-04-28,Filled,GIS Specialist,E11810,International Staff,Syria,2024-05-17,2024-06-24
+SRG-2024-0120,Excel tracker,Sudan,2024-05-01,Filled,Assessment Specialist,E10313,National Staff,Central African Republic,2024-05-15,2024-08-02
+SRG-2024-0101,Excel tracker,Central African Republic,2024-05-02,Filled,Field Coordinator,E12716,International Staff,Haiti,2024-05-28,2024-06-28
+SRG-2024-0110,Excel tracker,Ukraine,2024-05-06,Filled,Assessment Specialist,E11813,International Staff,Syria,2024-05-13,2024-06-16
+SRG-2024-0121,Excel tracker,Sudan,2024-05-06,Filled,Assessment Specialist,E10115,International Staff,Afghanistan,2024-06-02,2024-07-12
+SRG-2024-0115,Excel tracker,Haiti,2024-05-07,Cancelled,Data Manager,,,,,
+SRG-2024-0102,Excel tracker,Syria,2024-05-08,Filled,Data Manager,E12424,International Staff,Nigeria,2024-05-30,2024-07-26
+SRG-2024-0106,Excel tracker,Syria,2024-05-08,Filled,Assessment Specialist,E10011,National Staff,Afghanistan,2024-06-03,2024-08-06
+SRG-2024-0111,Excel tracker,Syria,2024-05-08,Filled,Data Manager,E12577,International Staff,Bangladesh,2024-05-20,2024-07-15
+SRG-2024-0117,Excel tracker,Sudan,2024-05-10,Filled,GIS Specialist,E11226,National Staff,Niger,2024-05-30,2024-08-20
+SRG-2024-0103,Excel tracker,Iraq,2024-05-12,Filled,Assessment Specialist,E12555,International Staff,Haiti,2024-06-10,2024-07-25
+SRG-2024-0107,Excel tracker,Somalia,2024-05-16,Filled,Field Coordinator,E12560,International Staff,Senegal,2024-06-06,2024-08-24
+SRG-2024-0122,Excel tracker,Sudan,2024-05-17,Filled,GIS Specialist,E11071,International Staff,Mali,2024-06-02,2024-07-24
+SRG-2024-0116,Excel tracker,Sudan,2024-05-20,Filled,Field Coordinator,E12461,International Staff,Syria,2024-06-12,2024-07-26
+SRG-2024-0119,Excel tracker,Sudan,2024-05-20,Filled,Field Coordinator,E11617,International Staff,South Sudan,2024-05-29,2024-07-13
+SRG-2024-0114,Excel tracker,Haiti,2024-05-24,Filled,Field Coordinator,E12457,International Staff,Sudan,2024-06-11,2024-08-18
+SRG-2024-0105,Excel tracker,South Sudan,2024-05-25,Filled,Assessment Specialist,E10294,National Staff,Central African Republic,2024-06-23,2024-08-01
+SRG-2024-0109,Excel tracker,Sudan,2024-05-25,Filled,GIS Specialist,E12586,National Staff,Burkina Faso,2024-06-04,2024-07-19
+SRG-2024-0108,Excel tracker,Burkina Faso,2024-05-26,Filled,Assessment Specialist,E11069,International Staff,Mali,2024-06-24,2024-07-30
+SRG-2024-0113,Excel tracker,Haiti,2024-05-26,Filled,Research Manager,E12451,International Staff,Somalia,2024-06-23,2024-08-01
+SRG-2024-0104,Excel tracker,Kenya,2024-05-27,Filled,Field Coordinator,E10865,International Staff,Colombia,2024-06-14,2024-07-15
+SRG-2024-0118,Excel tracker,Sudan,2024-05-28,Filled,Data Manager,E11974,International Staff,Syria,2024-06-07,2024-07-31
+SRG-2024-0112,Excel tracker,Haiti,2024-05-30,Filled,Assessment Specialist,E11118,International Staff,Mozambique,2024-06-13,2024-08-10
+SRG-2024-0130,Excel tracker,Sudan,2024-06-01,Cancelled,Assessment Specialist,,,,,
+SRG-2024-0125,Excel tracker,Democratic Republic of the Congo,2024-06-03,Filled,Data Manager,E12082,International Staff,Yemen,2024-07-01,2024-09-09
+SRG-2024-0134,Excel tracker,Chad,2024-06-09,Filled,GIS Specialist,E11360,International Staff,Nigeria,2024-06-26,2024-08-02
+SRG-2024-0129,Excel tracker,Sudan,2024-06-14,Filled,GIS Specialist,E12752,National Staff,Syria,2024-07-02,2024-08-07
+SRG-2024-0123,Excel tracker,Nigeria,2024-06-17,Filled,Assessment Specialist,E10487,National Staff,Democratic Republic of the Congo,2024-07-07,2024-10-04
+SRG-2024-0126,Excel tracker,Niger,2024-06-17,Cancelled,GIS Specialist,,,,,
+SRG-2024-0127,Excel tracker,Sudan,2024-06-18,Filled,Assessment Specialist,E12478,National Staff,South Sudan,2024-07-06,2024-08-24
+SRG-2024-0128,Excel tracker,Sudan,2024-06-18,Filled,Assessment Specialist,E11861,National Staff,Ukraine,2024-07-11,2024-09-09
+SRG-2024-0132,Excel tracker,Chad,2024-06-18,Filled,Field Coordinator,E10268,National Staff,Burkina Faso,2024-07-11,2024-08-11
+SRG-2024-0133,Excel tracker,Chad,2024-06-24,Filled,Data Manager,E12091,Global non-HQ Staff,Kenya,2024-07-22,2024-09-07
+SRG-2024-0131,Excel tracker,Chad,2024-06-27,Filled,Field Coordinator,E10865,International Staff,Colombia,2024-07-05,2024-09-01
+SRG-2024-0124,Excel tracker,Bangladesh,2024-06-30,Filled,Assessment Specialist,E10822,International Staff,Iraq,2024-07-09,2024-09-01
+SRG-2024-0135,Excel tracker,Bangladesh,2024-07-03,Filled,Field Coordinator,E12099,Global non-HQ Staff,Jordan,2024-07-22,2024-10-10
+SRG-2024-0142,Excel tracker,Sudan,2024-07-08,Filled,Field Coordinator,E10304,National Staff,Central African Republic,2024-07-20,2024-09-07
+SRG-2024-0137,Excel tracker,Libya,2024-07-11,Filled,Assessment Specialist,E10116,International Staff,Afghanistan,2024-07-30,2024-08-30
+SRG-2024-0140,Excel tracker,Sudan,2024-07-13,Filled,GIS Specialist,E12757,International Staff,Chad,2024-07-31,2024-10-29
+SRG-2024-0144,Excel tracker,Chad,2024-07-18,Filled,Research Manager,E11394,National Staff,Senegal,2024-08-02,2024-09-08
+SRG-2024-0138,Excel tracker,Yemen,2024-07-19,Filled,Research Manager,E12611,International Staff,Nigeria,2024-08-09,2024-10-04
+SRG-2024-0139,Excel tracker,Syria,2024-07-26,Filled,GIS Specialist,E12599,International Staff,Mozambique,2024-08-03,2024-10-02
+SRG-2024-0143,Excel tracker,Chad,2024-07-29,Filled,Field Coordinator,E12104,Global non-HQ Staff,Jordan,2024-08-10,2024-10-01
+SRG-2024-0136,Excel tracker,Nigeria,2024-07-30,Filled,Data Manager,E10113,International Staff,Afghanistan,2024-08-08,2024-10-30
+SRG-2024-0141,Excel tracker,Sudan,2024-07-31,Filled,Field Coordinator,E10197,National Staff,Bangladesh,2024-08-15,2024-10-12
+SRG-2024-0155,Excel tracker,Sudan,2024-08-04,Filled,Assessment Specialist,E11497,International Staff,South Sudan,2024-08-27,2024-10-19
+SRG-2024-0154,Excel tracker,Sudan,2024-08-05,Filled,Field Coordinator,E10304,National Staff,Central African Republic,2024-08-24,2024-10-22
+SRG-2024-0151,Excel tracker,Sudan,2024-08-06,Cancelled,Field Coordinator,,,,,
+SRG-2024-0153,Excel tracker,Sudan,2024-08-09,Cancelled,Research Manager,,,,,
+SRG-2024-0145,Excel tracker,Lebanon,2024-08-10,Filled,Assessment Specialist,E12099,Global non-HQ Staff,Jordan,2024-08-29,2024-10-20
+SRG-2024-0146,Excel tracker,Myanmar,2024-08-12,Cancelled,Assessment Specialist,,,,,
+SRG-2024-0157,Excel tracker,Sudan,2024-08-12,Filled,Data Manager,E12281,National Staff,Myanmar,2024-09-06,2024-12-05
+SRG-2024-0147,Excel tracker,Somalia,2024-08-16,Filled,Field Coordinator,E11962,International Staff,Ukraine,2024-09-04,2024-10-27
+SRG-2024-0152,Excel tracker,Sudan,2024-08-17,Filled,Assessment Specialist,E12697,National Staff,Ukraine,2024-09-13,2024-11-30
+SRG-2024-0156,Excel tracker,Sudan,2024-08-18,Filled,Assessment Specialist,E12273,International Staff,Democratic Republic of the Congo,2024-09-01,2024-10-11
+SRG-2024-0148,Excel tracker,Ukraine,2024-08-22,Filled,Assessment Specialist,E12690,International Staff,Iraq,2024-09-07,2024-10-23
+SRG-2024-0150,Excel tracker,Sudan,2024-08-22,Filled,Data Manager,E11616,International Staff,South Sudan,2024-09-16,2024-12-12
+SRG-2024-0158,Excel tracker,Chad,2024-08-22,Filled,Assessment Specialist,E12609,International Staff,Mali,2024-09-04,2024-10-20
+SRG-2024-0149,Excel tracker,Nigeria,2024-08-26,Filled,GIS Specialist,E12430,National Staff,Colombia,2024-09-07,2024-11-02
+SRG-2024-0159,Excel tracker,Chad,2024-08-31,Filled,Assessment Specialist,E10977,International Staff,Jordan,2024-09-26,2024-10-30
+SRG-2024-0165,Excel tracker,Sudan,2024-09-04,Filled,GIS Specialist,E10463,International Staff,Colombia,2024-10-01,2024-11-13
+SRG-2024-0167,Excel tracker,Chad,2024-09-07,Filled,Assessment Specialist,E10210,International Staff,Bangladesh,2024-10-02,2024-12-12
+SRG-2024-0161,Excel tracker,Iraq,2024-09-12,Filled,Field Coordinator,E10481,National Staff,Democratic Republic of the Congo,2024-10-09,2024-11-30
+SRG-2024-0160,Excel tracker,Central African Republic,2024-09-13,Filled,Assessment Specialist,E12583,International Staff,Somalia,2024-09-29,2024-12-22
+SRG-2024-0164,Excel tracker,Sudan,2024-09-16,Cancelled,Assessment Specialist,,,,,
+SRG-2024-0163,Excel tracker,Sudan,2024-09-22,Filled,Field Coordinator,E10922,International Staff,Kenya,2024-10-10,2024-11-10
+SRG-2024-0166,Excel tracker,Sudan,2024-09-24,Filled,Field Coordinator,E10977,International Staff,Jordan,2024-10-23,2024-12-16
+SRG-2024-0162,Excel tracker,Sudan,2024-09-28,Filled,Assessment Specialist,E11809,International Staff,Syria,2024-10-09,2024-12-14
+SRG-2024-0172,Excel tracker,South Sudan,2024-10-01,Filled,Data Manager,E12390,Global non-HQ Staff,Jordan,2024-10-20,2024-11-24
+SRG-2024-0169,Excel tracker,Syria,2024-10-02,Filled,GIS Specialist,E10916,International Staff,Kenya,2024-10-15,2024-12-05
+SRG-2024-0176,Excel tracker,Lebanon,2024-10-03,Filled,GIS Specialist,E12904,International Staff,Ukraine,2024-10-24,2025-01-19
+SRG-2024-0173,Excel tracker,Nigeria,2024-10-05,Filled,GIS Specialist,E10839,National Staff,Jordan,2024-10-27,2024-12-04
+SRG-2024-0170,Excel tracker,South Sudan,2024-10-09,Filled,Field Coordinator,E10670,International Staff,Ethiopia,2024-11-03,2025-01-24
+SRG-2024-0171,Excel tracker,Mozambique,2024-10-11,Filled,Field Coordinator,E12915,National Staff,Burkina Faso,2024-11-05,2025-01-13
+SRG-2024-0174,Excel tracker,Sudan,2024-10-19,Filled,Data Manager,E12372,National Staff,Syria,2024-10-30,2024-12-05
+SRG-2024-0175,Excel tracker,Lebanon,2024-10-21,Filled,Data Manager,E11243,International Staff,Niger,2024-11-08,2024-12-13
+SRG-2024-0168,Excel tracker,South Sudan,2024-10-22,Filled,Field Coordinator,E10535,National Staff,Democratic Republic of the Congo,2024-11-03,2024-12-06
+SRG-2024-0177,Excel tracker,Lebanon,2024-10-26,Filled,Assessment Specialist,E11856,International Staff,Myanmar,2024-11-21,2025-01-24
+SRG-2024-0181,Excel tracker,Lebanon,2024-11-04,Filled,Data Manager,E11612,International Staff,South Sudan,2024-11-26,2025-01-05
+SRG-2024-0184,Excel tracker,Lebanon,2024-11-17,Filled,Field Coordinator,E11793,National Staff,Syria,2024-12-16,2025-02-03
+SRG-2024-0182,Excel tracker,Lebanon,2024-11-21,Filled,Research Manager,E11939,National Staff,Ukraine,2024-12-08,2025-02-25
+SRG-2024-0180,Excel tracker,Niger,2024-11-22,Filled,Assessment Specialist,E11084,International Staff,Iraq,2024-12-17,2025-03-02
+SRG-2024-0185,Excel tracker,Lebanon,2024-11-23,Filled,Data Manager,E11182,International Staff,Myanmar,2024-12-08,2025-02-06
+SRG-2024-0178,Excel tracker,Nigeria,2024-11-24,Filled,Field Coordinator,E10139,National Staff,Bangladesh,2024-12-03,2025-02-27
+SRG-2024-0179,Excel tracker,Yemen,2024-11-24,Filled,Assessment Specialist,E12482,Global non-HQ Staff,Kenya,2024-12-06,2025-01-21
+SRG-2024-0183,Excel tracker,Lebanon,2024-11-25,Filled,Assessment Specialist,E11073,International Staff,Mali,2024-12-19,2025-03-13
+SRG-2024-0192,Excel tracker,Lebanon,2024-12-02,Filled,Field Coordinator,E11470,National Staff,Somalia,2024-12-30,2025-03-07
+SRG-2024-0188,Excel tracker,Yemen,2024-12-07,Filled,Data Manager,E11235,National Staff,Niger,2024-12-22,2025-03-16
+SRG-2024-0187,Excel tracker,Syria,2024-12-12,Filled,GIS Specialist,E12109,Global non-HQ Staff,Senegal,2024-12-21,2025-03-04
+SRG-2024-0189,Excel tracker,Senegal,2024-12-12,Cancelled,Field Coordinator,,,,,
+SRG-2024-0190,Excel tracker,Lebanon,2024-12-17,Filled,Research Manager,E10139,National Staff,Bangladesh,2025-01-05,2025-03-16
+SRG-2024-0193,Excel tracker,Lebanon,2024-12-25,Filled,Data Manager,E11613,International Staff,South Sudan,2025-01-18,2025-03-12
+SRG-2024-0186,Excel tracker,Ukraine,2024-12-26,Filled,Assessment Specialist,E12855,International Staff,Jordan,2025-01-24,2025-03-28
+SRG-2024-0191,Excel tracker,Lebanon,2024-12-27,Filled,Research Manager,E12559,International Staff,Jordan,2025-01-15,2025-03-08
+SRG-2025-0198,Excel tracker,Yemen,2025-01-01,Filled,Research Manager,E12758,International Staff,Central African Republic,2025-01-19,2025-02-26
+SRG-2025-0197,Excel tracker,Nigeria,2025-01-03,Cancelled,Assessment Specialist,,,,,
+SRG-2025-0194,Excel tracker,Myanmar,2025-01-21,Filled,Data Manager,E12080,International Staff,Yemen,2025-02-01,2025-03-22
+SRG-2025-0196,Excel tracker,Bangladesh,2025-01-21,Filled,GIS Specialist,E11933,International Staff,Jordan,2025-02-12,2025-04-08
+SRG-2025-0195,Excel tracker,Lebanon,2025-01-26,Filled,Data Manager,E12611,International Staff,Nigeria,2025-02-18,2025-03-23
+SRG-2025-0199,Excel tracker,Yemen,2025-02-02,Filled,Assessment Specialist,E12573,International Staff,Ukraine,2025-03-01,2025-05-26
+SRG-2025-0201,Excel tracker,Niger,2025-02-25,Cancelled,Data Manager,,,,,
+SRG-2025-0200,Excel tracker,Central African Republic,2025-02-27,Filled,Assessment Specialist,E10434,National Staff,Colombia,2025-03-26,2025-05-03
+SRG-2025-0203,Excel tracker,Afghanistan,2025-03-02,Filled,Data Manager,E11700,National Staff,Syria,2025-03-30,2025-06-20
+SRG-2025-0202,Excel tracker,Afghanistan,2025-03-16,Filled,Field Coordinator,E12400,International Staff,Chad,2025-03-27,2025-05-10
+SRG-2025-0204,Excel tracker,Central African Republic,2025-03-22,Filled,Assessment Specialist,E12859,National Staff,Afghanistan,2025-04-08,2025-05-09
+SRG-2025-0205,Excel tracker,Democratic Republic of the Congo,2025-03-30,Filled,Field Coordinator,E12451,International Staff,Somalia,2025-04-26,2025-07-06
+SRG-2025-0210,Excel tracker,Democratic Republic of the Congo,2025-04-02,Filled,Research Manager,E10325,National Staff,Central African Republic,2025-04-13,2025-06-16
+SRG-2025-0213,Excel tracker,Democratic Republic of the Congo,2025-04-14,Filled,Field Coordinator,E10715,International Staff,Haiti,2025-04-30,2025-06-28
+SRG-2025-0212,Excel tracker,Democratic Republic of the Congo,2025-04-15,Filled,Assessment Specialist,E12841,International Staff,Sudan,2025-05-05,2025-06-05
+SRG-2025-0209,Excel tracker,Kenya,2025-04-16,Cancelled,Assessment Specialist,,,,,
+SRG-2025-0207,Excel tracker,Ethiopia,2025-04-18,Filled,GIS Specialist,E10877,National Staff,Kenya,2025-05-12,2025-06-14
+SRG-2025-0211,Excel tracker,Democratic Republic of the Congo,2025-04-22,Filled,Assessment Specialist,E13114,International Staff,South Sudan,2025-05-02,2025-07-26
+SRG-2025-0206,Excel tracker,Haiti,2025-04-23,Filled,GIS Specialist,E11324,International Staff,Myanmar,2025-05-03,2025-07-02
+SRG-2025-0208,Excel tracker,Myanmar,2025-04-27,Filled,Field Coordinator,E12798,International Staff,Nigeria,2025-05-21,2025-07-26
+SRG-2025-0223,Excel tracker,Myanmar,2025-05-03,Filled,Field Coordinator,E11481,National Staff,Somalia,2025-05-11,2025-06-21
+SRG-2025-0224,Excel tracker,Myanmar,2025-05-07,Filled,Field Coordinator,E10228,National Staff,Burkina Faso,2025-05-14,2025-08-11
+SRG-2025-0217,Excel tracker,Yemen,2025-05-08,Filled,Assessment Specialist,E10863,International Staff,Jordan,2025-05-20,2025-07-04
+SRG-2025-0214,Excel tracker,South Sudan,2025-05-09,Filled,Assessment Specialist,E10299,National Staff,Central African Republic,2025-05-20,2025-07-22
+SRG-2025-0216,Excel tracker,Nigeria,2025-05-09,Filled,GIS Specialist,E10674,International Staff,Ethiopia,2025-05-24,2025-08-15
+SRG-2025-0225,Excel tracker,Myanmar,2025-05-13,Filled,GIS Specialist,E10442,National Staff,Colombia,2025-06-01,2025-08-01
+SRG-2025-0218,Excel tracker,Haiti,2025-05-14,Filled,Assessment Specialist,E10562,National Staff,Democratic Republic of the Congo,2025-05-28,2025-07-08
+SRG-2025-0219,Excel tracker,Niger,2025-05-14,Filled,GIS Specialist,E12699,International Staff,Syria,2025-06-03,2025-08-16
+SRG-2025-0226,Excel tracker,Myanmar,2025-05-16,Filled,Data Manager,E12442,International Staff,Iraq,2025-06-03,2025-08-05
+SRG-2025-0215,Excel tracker,Lebanon,2025-05-17,Filled,Data Manager,E12508,International Staff,Niger,2025-06-06,2025-08-09
+SRG-2025-0221,Excel tracker,Myanmar,2025-05-18,Filled,Assessment Specialist,E12431,International Staff,Democratic Republic of the Congo,2025-06-15,2025-08-11
+SRG-2025-0222,Excel tracker,Myanmar,2025-05-18,Filled,GIS Specialist,E13050,National Staff,Kenya,2025-06-07,2025-07-29
+SRG-2025-0220,Excel tracker,Iraq,2025-05-25,Filled,Research Manager,E13149,National Staff,Democratic Republic of the Congo,2025-06-20,2025-08-01
+SRG-2025-0227,Excel tracker,Myanmar,2025-05-25,Filled,Assessment Specialist,E11304,National Staff,Nigeria,2025-06-19,2025-08-18
+SRG-2025-0229,Excel tracker,Chad,2025-06-12,Filled,Assessment Specialist,E10412,International Staff,Kenya,2025-06-26,2025-08-31
+SRG-2025-0228,Excel tracker,Afghanistan,2025-06-16,Filled,GIS Specialist,E10664,National Staff,Ethiopia,2025-06-29,2025-09-19
+SRG-2025-0230,Excel tracker,Lebanon,2025-06-27,Filled,Assessment Specialist,E10464,International Staff,Kenya,2025-07-17,2025-10-07
+SRG-2025-0236,Excel tracker,Niger,2025-07-14,Filled,Assessment Specialist,E12560,International Staff,Senegal,2025-07-26,2025-09-08
+SRG-2025-0232,Excel tracker,Ukraine,2025-07-16,Filled,Assessment Specialist,E12798,International Staff,Nigeria,2025-08-07,2025-10-12
+SRG-2025-0235,Excel tracker,Central African Republic,2025-07-20,Filled,GIS Specialist,E10412,International Staff,Kenya,2025-08-01,2025-09-19
+SRG-2025-0233,Excel tracker,Central African Republic,2025-07-21,Filled,GIS Specialist,E12098,Global non-HQ Staff,Kenya,2025-07-30,2025-10-04
+SRG-2025-0237,Excel tracker,Mozambique,2025-07-23,Filled,Assessment Specialist,E11068,National Staff,Mali,2025-07-31,2025-09-06
+SRG-2025-0231,Excel tracker,Jordan,2025-07-25,Filled,Data Manager,E12096,Global non-HQ Staff,Kenya,2025-08-03,2025-09-18
+SRG-2025-0238,Excel tracker,Yemen,2025-07-26,Filled,Assessment Specialist,E10585,International Staff,Democratic Republic of the Congo,2025-08-05,2025-09-28
+SRG-2025-0239,Excel tracker,Ukraine,2025-07-26,Filled,Assessment Specialist,E10123,National Staff,Bangladesh,2025-08-15,2025-11-06
+SRG-2025-0234,Excel tracker,Libya,2025-07-29,Cancelled,Assessment Specialist,,,,,
+SRG-2025-0242,Excel tracker,Bangladesh,2025-08-01,Filled,Assessment Specialist,E10277,National Staff,Burkina Faso,2025-08-30,2025-11-07
+SRG-2025-0243,Excel tracker,South Sudan,2025-08-13,Cancelled,GIS Specialist,,,,,
+SRG-2025-0241,Excel tracker,Iraq,2025-08-19,Filled,GIS Specialist,E12244,National Staff,Ethiopia,2025-08-28,2025-10-12
+SRG-2025-0244,Excel tracker,Afghanistan,2025-08-27,Filled,Assessment Specialist,E13177,National Staff,Democratic Republic of the Congo,2025-09-24,2025-12-01
+SRG-2025-0240,Excel tracker,Ukraine,2025-08-30,Filled,Research Manager,E12508,International Staff,Niger,2025-09-09,2025-11-23
+SRG-2025-0248,Excel tracker,Syria,2025-09-01,Filled,Assessment Specialist,E12274,International Staff,Kenya,2025-09-27,2025-11-20
+SRG-2025-0251,Excel tracker,Afghanistan,2025-09-12,Filled,Field Coordinator,E10464,International Staff,Kenya,2025-09-30,2025-11-11
+SRG-2025-0247,Excel tracker,Syria,2025-09-13,Filled,Research Manager,E13231,International Staff,Libya,2025-10-02,2025-11-08
+SRG-2025-0246,Excel tracker,Iraq,2025-09-16,Filled,Research Manager,E12922,National Staff,Bangladesh,2025-09-26,2025-12-14
+SRG-2025-0249,Excel tracker,Ethiopia,2025-09-16,Filled,Data Manager,E11611,International Staff,South Sudan,2025-10-05,2025-12-26
+SRG-2025-0250,Excel tracker,Nigeria,2025-09-16,Filled,Assessment Specialist,E12621,National Staff,Jordan,2025-10-14,2025-11-26
+SRG-2025-0245,Excel tracker,Iraq,2025-09-30,Filled,GIS Specialist,E12609,International Staff,Mali,2025-10-29,2026-01-14
+SRG-2025-0260,Excel tracker,Haiti,2025-10-01,Filled,Data Manager,E10978,International Staff,Lebanon,2025-10-21,2025-11-25
+SRG-2025-0259,Excel tracker,South Sudan,2025-10-02,Filled,Assessment Specialist,E12288,National Staff,Lebanon,2025-10-26,2026-01-07
+SRG-2025-0261,Excel tracker,Afghanistan,2025-10-03,Filled,Field Coordinator,E12273,International Staff,Democratic Republic of the Congo,2025-10-26,2025-12-07
+SRG-2025-0256,Excel tracker,Colombia,2025-10-04,Filled,Assessment Specialist,E11243,International Staff,Senegal,2025-10-19,2025-12-28
+SRG-2025-0255,Excel tracker,Niger,2025-10-05,Filled,Field Coordinator,E12431,International Staff,Democratic Republic of the Congo,2025-10-23,2026-01-15
+SRG-2025-0257,Excel tracker,South Sudan,2025-10-08,Filled,Assessment Specialist,E11125,National Staff,Myanmar,2025-10-25,2025-11-26
+SRG-2025-0258,Excel tracker,Ukraine,2025-10-08,Filled,Assessment Specialist,E13078,National Staff,Afghanistan,2025-10-25,2025-12-02
+SRG-2025-0262,Excel tracker,Afghanistan,2025-10-11,Filled,Data Manager,E12048,National Staff,Yemen,2025-11-05,2025-12-07
+SRG-2025-0252,Excel tracker,Afghanistan,2025-10-14,Filled,Field Coordinator,E13515,National Staff,Nigeria,2025-10-24,2025-12-13
+SRG-2025-0263,Excel tracker,Afghanistan,2025-10-15,Filled,GIS Specialist,E11182,International Staff,Myanmar,2025-10-27,2025-12-02
+SRG-2025-0253,Excel tracker,Jordan,2025-10-22,Filled,Data Manager,E10591,International Staff,Mali,2025-10-31,2025-12-12
+SRG-2025-0264,Excel tracker,Afghanistan,2025-10-23,Filled,Field Coordinator,E10357,International Staff,Central African Republic,2025-10-30,2025-12-01
+SRG-2025-0254,Excel tracker,Afghanistan,2025-10-30,Filled,GIS Specialist,E12104,Global non-HQ Staff,Jordan,2025-11-19,2026-01-27
+SRG-2025-0265,Excel tracker,Niger,2025-11-05,Filled,Data Manager,E11496,Global non-HQ Staff,Jordan,2025-11-14,2026-01-05
+SRG-2025-0266,Excel tracker,Ukraine,2025-11-07,Filled,Assessment Specialist,E10292,International Staff,Burkina Faso,2025-11-24,2026-01-14
+SRG-2025-0267,Excel tracker,Ethiopia,2025-11-13,Filled,Assessment Specialist,E10370,National Staff,Chad,2025-12-07,2026-02-21
+SRG-2025-0270,Excel tracker,Libya,2025-12-03,Filled,Assessment Specialist,E10898,National Staff,Kenya,2025-12-28,2026-02-25
+SRG-2025-0272,Excel tracker,South Sudan,2025-12-08,Filled,Assessment Specialist,E13463,National Staff,Lebanon,2026-01-01,2026-03-30
+SRG-2025-0269,Excel tracker,Democratic Republic of the Congo,2025-12-09,Filled,Data Manager,E11838,National Staff,Ukraine,2025-12-29,2026-03-24
+SRG-2025-0268,Excel tracker,Lebanon,2025-12-21,Filled,Field Coordinator,E12113,Global non-HQ Staff,Senegal,2026-01-12,2026-04-02
+SRG-2025-0271,Excel tracker,Ukraine,2025-12-26,Filled,Research Manager,E11591,National Staff,South Sudan,2026-01-07,2026-02-12
+SRG-2026-0278,JIRA,Ukraine,2026-01-04,Filled,GIS Specialist,E13321,Global non-HQ Staff,Kenya,2026-01-20,2026-03-12
+SRG-2026-0273,JIRA,Lebanon,2026-01-07,Filled,Assessment Specialist,E12290,National Staff,Burkina Faso,2026-01-20,2026-03-05
+SRG-2026-0277,JIRA,Afghanistan,2026-01-10,Filled,Assessment Specialist,E12599,International Staff,Mozambique,2026-02-08,2026-03-20
+SRG-2026-0275,JIRA,Mali,2026-01-12,Filled,Data Manager,E12101,Global non-HQ Staff,Jordan,2026-02-08,2026-04-27
+SRG-2026-0276,JIRA,Iraq,2026-01-14,Filled,Research Manager,E13579,National Staff,Syria,2026-02-11,2026-03-28
+SRG-2026-0279,JIRA,Senegal,2026-01-20,Filled,Data Manager,E10921,International Staff,Kenya,2026-02-04,2026-04-13
+SRG-2026-0274,JIRA,Senegal,2026-01-28,Filled,Assessment Specialist,E13544,National Staff,Sudan,2026-02-18,2026-05-10
+SRG-2026-0283,JIRA,South Sudan,2026-02-04,Filled,Field Coordinator,E12758,International Staff,Central African Republic,2026-02-13,2026-03-20
+SRG-2026-0289,JIRA,Sudan,2026-02-05,Filled,Assessment Specialist,E12800,Global non-HQ Staff,Kenya,2026-03-01,2026-04-13
+SRG-2026-0284,JIRA,Nigeria,2026-02-12,Filled,Data Manager,E13369,International Staff,Mali,2026-03-04,2026-05-15
+SRG-2026-0287,JIRA,Ethiopia,2026-02-12,Filled,Field Coordinator,E12369,National Staff,Syria,2026-03-04,2026-05-25
+SRG-2026-0285,JIRA,South Sudan,2026-02-15,Filled,Assessment Specialist,E10585,International Staff,Democratic Republic of the Congo,2026-03-03,2026-04-11
+SRG-2026-0282,JIRA,Lebanon,2026-02-16,Filled,Assessment Specialist,E13617,National Staff,Somalia,2026-03-06,2026-04-27
+SRG-2026-0290,JIRA,Sudan,2026-02-16,Filled,Field Coordinator,E13319,International Staff,Lebanon,2026-03-06,2026-04-07
+SRG-2026-0280,JIRA,Ukraine,2026-02-19,Filled,GIS Specialist,E12408,International Staff,Libya,2026-03-17,2026-04-28
+SRG-2026-0288,JIRA,Mozambique,2026-02-21,Filled,Assessment Specialist,E10412,International Staff,Kenya,2026-03-13,2026-04-23
+SRG-2026-0286,JIRA,Libya,2026-02-23,Filled,Data Manager,E11984,National Staff,Yemen,2026-03-21,2026-05-03
+SRG-2026-0281,JIRA,Senegal,2026-02-26,Filled,Research Manager,E13341,International Staff,Syria,2026-03-09,2026-05-11
+SRG-2026-0303,JIRA,Sudan,2026-03-06,Filled,Data Manager,E10672,International Staff,Ethiopia,2026-03-25,2026-05-01
+SRG-2026-0306,JIRA,Mozambique,2026-03-07,Filled,Field Coordinator,E10489,National Staff,Democratic Republic of the Congo,2026-03-24,2026-04-28
+SRG-2026-0299,JIRA,Syria,2026-03-11,Cancelled,Assessment Specialist,,,,,
+SRG-2026-0304,JIRA,Sudan,2026-03-11,Filled,GIS Specialist,E13592,International Staff,Democratic Republic of the Congo,2026-03-25,2026-06-13
+SRG-2026-0300,JIRA,Somalia,2026-03-12,Filled,Field Coordinator,E13603,Global non-HQ Staff,Kenya,2026-03-31,2026-05-06
+SRG-2026-0294,JIRA,South Sudan,2026-03-13,Filled,Data Manager,E12110,Global non-HQ Staff,Senegal,2026-04-06,2026-05-22
+SRG-2026-0302,JIRA,Sudan,2026-03-13,Filled,Assessment Specialist,E13039,Global non-HQ Staff,Jordan,2026-03-28,2026-06-09
+SRG-2026-0291,JIRA,South Sudan,2026-03-15,Filled,Assessment Specialist,E12289,International Staff,Syria,2026-03-29,2026-05-11
+SRG-2026-0298,JIRA,Iraq,2026-03-18,Filled,GIS Specialist,E12330,International Staff,Haiti,2026-04-10,2026-07-03
+SRG-2026-0292,JIRA,Senegal,2026-03-19,Filled,Field Coordinator,E13427,International Staff,Chad,2026-04-07,2026-06-18
+SRG-2026-0295,JIRA,Bangladesh,2026-03-20,Filled,Assessment Specialist,E13662,International Staff,Lebanon,2026-04-17,2026-06-08
+SRG-2026-0293,JIRA,South Sudan,2026-03-22,Filled,Assessment Specialist,E12733,International Staff,Democratic Republic of the Congo,2026-04-06,2026-05-23
+SRG-2026-0296,JIRA,Chad,2026-03-24,Filled,GIS Specialist,E11933,International Staff,Jordan,2026-04-02,2026-05-28
+SRG-2026-0305,JIRA,Mozambique,2026-03-26,Filled,GIS Specialist,E13317,International Staff,Lebanon,2026-04-23,2026-06-28
+SRG-2026-0297,JIRA,Ukraine,2026-03-30,Filled,Assessment Specialist,E13536,Global non-HQ Staff,Jordan,2026-04-14,2026-05-28
+SRG-2026-0301,JIRA,Ethiopia,2026-03-30,Filled,Research Manager,E11127,National Staff,Myanmar,2026-04-21,2026-06-20
+SRG-2026-0312,JIRA,South Sudan,2026-04-01,Filled,Field Coordinator,E12579,International Staff,Haiti,2026-04-15,2026-07-01
+SRG-2026-0314,JIRA,Sudan,2026-04-01,Filled,Data Manager,E11901,National Staff,Ukraine,2026-04-25,2026-07-04
+SRG-2026-0313,JIRA,Syria,2026-04-04,Filled,Field Coordinator,E11334,National Staff,Nigeria,2026-04-18,2026-05-28
+SRG-2026-0315,JIRA,Sudan,2026-04-09,Filled,Assessment Specialist,E13376,National Staff,Mozambique,2026-05-06,2026-07-12
+SRG-2026-0311,JIRA,Myanmar,2026-04-20,Filled,Field Coordinator,E12101,Global non-HQ Staff,Jordan,2026-04-30,2026-07-27
+SRG-2026-0309,JIRA,Somalia,2026-04-24,Filled,GIS Specialist,E10672,International Staff,Ethiopia,2026-05-21,2026-07-15
+SRG-2026-0308,JIRA,Iraq,2026-04-27,Filled,Research Manager,E11636,National Staff,Sudan,2026-05-12,2026-06-28
+SRG-2026-0307,JIRA,Iraq,2026-04-28,Filled,GIS Specialist,E13688,National Staff,Chad,2026-05-22,2026-06-24
+SRG-2026-0316,JIRA,Sudan,2026-04-29,Filled,Assessment Specialist,E13630,National Staff,Senegal,2026-05-19,2026-08-06
+SRG-2026-0310,JIRA,Central African Republic,2026-04-30,Filled,Assessment Specialist,E12837,Global non-HQ Staff,Senegal,2026-05-08,2026-06-08
+SRG-2026-0320,JIRA,South Sudan,2026-05-03,Filled,Field Coordinator,E11965,International Staff,Ukraine,2026-05-26,2026-06-29
+SRG-2026-0322,JIRA,South Sudan,2026-05-10,Filled,Assessment Specialist,E13569,National Staff,Central African Republic,2026-06-03,2026-08-13
+SRG-2026-0319,JIRA,South Sudan,2026-05-12,Filled,GIS Specialist,E13603,Global non-HQ Staff,Kenya,2026-05-28,2026-06-29
+SRG-2026-0321,JIRA,Burkina Faso,2026-05-13,Cancelled,Assessment Specialist,,,,,
+SRG-2026-0317,JIRA,Central African Republic,2026-05-14,Filled,Field Coordinator,E13198,International Staff,Nigeria,2026-06-09,2026-07-23
+SRG-2026-0318,JIRA,Ethiopia,2026-05-23,Filled,Research Manager,E13556,National Staff,Nigeria,2026-06-01,2026-08-13
+SRG-2026-0326,JIRA,Colombia,2026-06-02,Filled,Field Coordinator,E13571,International Staff,Burkina Faso,2026-06-16,2026-07-27
+SRG-2026-0323,JIRA,Yemen,2026-06-10,Filled,Data Manager,E10077,National Staff,Afghanistan,2026-07-06,2026-09-09
+SRG-2026-0324,JIRA,Ukraine,2026-06-15,Filled,Assessment Specialist,E12592,National Staff,Nigeria,2026-06-25,2026-08-04
+SRG-2026-0325,JIRA,Somalia,2026-06-16,Filled,Data Manager,E12114,Global non-HQ Staff,Senegal,2026-07-10,2026-09-12
+SRG-2026-0327,JIRA,Afghanistan,2026-06-17,Filled,Field Coordinator,E12096,Global non-HQ Staff,Kenya,2026-07-02,2026-09-03
+SRG-2026-0328,JIRA,Iraq,2026-06-25,Filled,Assessment Specialist,E13099,International Staff,Bangladesh,2026-07-19,2026-10-07
+SRG-2026-0332,JIRA,Somalia,2026-07-13,Filled,Field Coordinator,E10597,National Staff,Ethiopia,2026-07-31,2026-10-14
+SRG-2026-0331,JIRA,Niger,2026-07-15,Filled,Assessment Specialist,E13711,National Staff,South Sudan,2026-07-24,2026-10-07
+SRG-2026-0330,JIRA,Burkina Faso,2026-07-20,Filled,Field Coordinator,E10129,National Staff,Bangladesh,2026-08-05,2026-10-14
+SRG-2026-0329,JIRA,Colombia,2026-07-27,Filled,Research Manager,E12849,National Staff,Mozambique,2026-08-19,2026-10-17
+SRG-2026-0336,JIRA,Chad,2026-08-04,Filled,Field Coordinator,E10898,National Staff,Kenya,2026-08-21,2026-10-23
+SRG-2026-0338,JIRA,South Sudan,2026-08-14,Filled,GIS Specialist,E13644,International Staff,Iraq,2026-09-07,2026-11-08
+SRG-2026-0339,JIRA,Mozambique,2026-08-15,Filled,Assessment Specialist,E13748,National Staff,Sudan,2026-08-26,2026-11-01
+SRG-2026-0334,JIRA,Burkina Faso,2026-08-18,Filled,Research Manager,E10596,National Staff,Ethiopia,2026-09-01,2026-10-09
+SRG-2026-0333,JIRA,Somalia,2026-08-20,Filled,GIS Specialist,E12430,International Staff,Lebanon,2026-09-12,2026-12-09
+SRG-2026-0342,JIRA,Nigeria,2026-08-23,Filled,GIS Specialist,E11813,International Staff,Syria,2026-09-19,2026-10-26
+SRG-2026-0340,JIRA,Somalia,2026-08-24,Filled,Assessment Specialist,E13271,International Staff,Mozambique,2026-09-10,2026-11-04
+SRG-2026-0335,JIRA,Iraq,2026-08-25,Filled,Research Manager,E11016,Global non-HQ Staff,Kenya,2026-09-05,2026-10-26
+SRG-2026-0341,JIRA,Ukraine,2026-08-29,Filled,Assessment Specialist,E12805,International Staff,Yemen,2026-09-22,2026-10-25
+SRG-2026-0337,JIRA,Syria,2026-08-30,Cancelled,GIS Specialist,,,,,
+SRG-2026-0343,JIRA,Lebanon,2026-08-30,Filled,Assessment Specialist,E12616,International Staff,Myanmar,2026-09-15,2026-11-24
+SRG-2026-0345,JIRA,Burkina Faso,2026-09-08,Filled,Field Coordinator,E13800,International Staff,South Sudan,2026-09-26,2026-10-26
+SRG-2026-0344,JIRA,Iraq,2026-09-12,Filled,Field Coordinator,E13231,International Staff,Libya,2026-09-30,2026-11-20
+SRG-2026-0347,JIRA,Mozambique,2026-09-21,Filled,Assessment Specialist,E10328,National Staff,Central African Republic,2026-10-14,2026-12-03
+SRG-2026-0346,JIRA,South Sudan,2026-09-29,Filled,GIS Specialist,E12733,International Staff,Democratic Republic of the Congo,2026-10-14,2026-12-03
+SRG-2026-0349,JIRA,Haiti,2026-10-11,Cancelled,GIS Specialist,,,,,
+SRG-2026-0352,JIRA,Mali,2026-10-14,Filled,Data Manager,E10586,International Staff,Democratic Republic of the Congo,2026-10-22,2026-12-30
+SRG-2026-0348,JIRA,Ukraine,2026-10-22,Open,Assessment Specialist,,,,,
+SRG-2026-0350,JIRA,Afghanistan,2026-10-27,Open,Assessment Specialist,,,,,
+SRG-2026-0351,JIRA,Bangladesh,2026-10-31,Open,Assessment Specialist,,,,,

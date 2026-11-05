@@ -1,0 +1,944 @@
+{
+ "generated_at": "2026-11-05T08:18:52Z",
+ "seed": 20261031,
+ "overall_completeness": 99.91,
+ "raw_completeness": 99.87,
+ "issues_total": 1673,
+ "issues_resolved": 1597,
+ "issues_open": 76,
+ "records_merged": 4060,
+ "rules_total": 34,
+ "rules_passed": 15,
+ "sources": [
+  {
+   "source": "CORE HR",
+   "completeness": 99.87,
+   "issues": 472,
+   "rules": 15
+  },
+  {
+   "source": "JIRA Recruitment",
+   "completeness": 99.85,
+   "issues": 84,
+   "rules": 7
+  },
+  {
+   "source": "Excel Trackers",
+   "completeness": 99.86,
+   "issues": 1117,
+   "rules": 12
+  }
+ ],
+ "completeness_by_field": [
+  {
+   "source": "CORE HR",
+   "field": "employee_id",
+   "completeness": 100.0,
+   "records": 3354
+  },
+  {
+   "source": "CORE HR",
+   "field": "gender",
+   "completeness": 99.52,
+   "records": 3354
+  },
+  {
+   "source": "CORE HR",
+   "field": "birth_date",
+   "completeness": 98.63,
+   "records": 3354
+  },
+  {
+   "source": "CORE HR",
+   "field": "nationality",
+   "completeness": 98.93,
+   "records": 3354
+  },
+  {
+   "source": "CORE HR",
+   "field": "first_hire_date",
+   "completeness": 100.0,
+   "records": 3354
+  },
+  {
+   "source": "CORE HR",
+   "field": "contract_id",
+   "completeness": 100.0,
+   "records": 7587
+  },
+  {
+   "source": "CORE HR",
+   "field": "employee_id",
+   "completeness": 100.0,
+   "records": 7587
+  },
+  {
+   "source": "CORE HR",
+   "field": "start_date",
+   "completeness": 100.0,
+   "records": 7587
+  },
+  {
+   "source": "CORE HR",
+   "field": "contract_type",
+   "completeness": 100.0,
+   "records": 7587
+  },
+  {
+   "source": "CORE HR",
+   "field": "country",
+   "completeness": 100.0,
+   "records": 7587
+  },
+  {
+   "source": "CORE HR",
+   "field": "grade",
+   "completeness": 100.0,
+   "records": 7587
+  },
+  {
+   "source": "CORE HR",
+   "field": "staff_category",
+   "completeness": 100.0,
+   "records": 7587
+  },
+  {
+   "source": "CORE HR",
+   "field": "department",
+   "completeness": 100.0,
+   "records": 7587
+  },
+  {
+   "source": "Excel Trackers",
+   "field": "Staff ID",
+   "completeness": 100.0,
+   "records": 2788
+  },
+  {
+   "source": "Excel Trackers",
+   "field": "Sex",
+   "completeness": 100.0,
+   "records": 2788
+  },
+  {
+   "source": "Excel Trackers",
+   "field": "Date of Birth",
+   "completeness": 98.03,
+   "records": 2788
+  },
+  {
+   "source": "Excel Trackers",
+   "field": "Nationality",
+   "completeness": 98.53,
+   "records": 2788
+  },
+  {
+   "source": "Excel Trackers",
+   "field": "Date of Hire",
+   "completeness": 100.0,
+   "records": 2788
+  },
+  {
+   "source": "Excel Trackers",
+   "field": "Contract Ref",
+   "completeness": 100.0,
+   "records": 6566
+  },
+  {
+   "source": "Excel Trackers",
+   "field": "Staff ID",
+   "completeness": 100.0,
+   "records": 6566
+  },
+  {
+   "source": "Excel Trackers",
+   "field": "Contract Start",
+   "completeness": 100.0,
+   "records": 6566
+  },
+  {
+   "source": "Excel Trackers",
+   "field": "Contract Type",
+   "completeness": 100.0,
+   "records": 6566
+  },
+  {
+   "source": "Excel Trackers",
+   "field": "Duty Station Country",
+   "completeness": 100.0,
+   "records": 6566
+  },
+  {
+   "source": "Excel Trackers",
+   "field": "Grade",
+   "completeness": 100.0,
+   "records": 6566
+  },
+  {
+   "source": "Excel Trackers",
+   "field": "Department",
+   "completeness": 100.0,
+   "records": 6566
+  },
+  {
+   "source": "JIRA Recruitment",
+   "field": "Issue key",
+   "completeness": 100.0,
+   "records": 1436
+  },
+  {
+   "source": "JIRA Recruitment",
+   "field": "Created",
+   "completeness": 100.0,
+   "records": 1436
+  },
+  {
+   "source": "JIRA Recruitment",
+   "field": "Due date",
+   "completeness": 98.54,
+   "records": 1436
+  },
+  {
+   "source": "JIRA Recruitment",
+   "field": "Country",
+   "completeness": 100.0,
+   "records": 1436
+  },
+  {
+   "source": "JIRA Recruitment",
+   "field": "Grade",
+   "completeness": 100.0,
+   "records": 1436
+  },
+  {
+   "source": "JIRA Recruitment",
+   "field": "Opening Type",
+   "completeness": 100.0,
+   "records": 1436
+  },
+  {
+   "source": "JIRA Recruitment",
+   "field": "Staff Category",
+   "completeness": 100.0,
+   "records": 1436
+  },
+  {
+   "source": "JIRA Recruitment",
+   "field": "Department",
+   "completeness": 100.0,
+   "records": 1436
+  },
+  {
+   "source": "JIRA Recruitment",
+   "field": "Resolved",
+   "completeness": 100.0,
+   "records": 1336
+  },
+  {
+   "source": "JIRA Recruitment",
+   "field": "Resolution",
+   "completeness": 100.0,
+   "records": 1336
+  },
+  {
+   "source": "Excel Trackers",
+   "field": "Vacancy Ref",
+   "completeness": 100.0,
+   "records": 1530
+  },
+  {
+   "source": "Excel Trackers",
+   "field": "Country",
+   "completeness": 100.0,
+   "records": 1530
+  },
+  {
+   "source": "Excel Trackers",
+   "field": "Grade",
+   "completeness": 100.0,
+   "records": 1530
+  },
+  {
+   "source": "Excel Trackers",
+   "field": "Date Opened",
+   "completeness": 100.0,
+   "records": 1530
+  },
+  {
+   "source": "Excel Trackers",
+   "field": "Target Date",
+   "completeness": 100.0,
+   "records": 1530
+  },
+  {
+   "source": "Excel Trackers",
+   "field": "Opening Type",
+   "completeness": 100.0,
+   "records": 1530
+  },
+  {
+   "source": "Excel Trackers",
+   "field": "Surge Ref",
+   "completeness": 100.0,
+   "records": 272
+  },
+  {
+   "source": "Excel Trackers",
+   "field": "Requesting Country",
+   "completeness": 100.0,
+   "records": 272
+  },
+  {
+   "source": "Excel Trackers",
+   "field": "Request Date",
+   "completeness": 100.0,
+   "records": 272
+  },
+  {
+   "source": "Excel Trackers",
+   "field": "Status",
+   "completeness": 100.0,
+   "records": 272
+  },
+  {
+   "source": "JIRA Recruitment",
+   "field": "Issue key",
+   "completeness": 100.0,
+   "records": 80
+  },
+  {
+   "source": "JIRA Recruitment",
+   "field": "Country",
+   "completeness": 100.0,
+   "records": 80
+  },
+  {
+   "source": "JIRA Recruitment",
+   "field": "Created",
+   "completeness": 100.0,
+   "records": 80
+  },
+  {
+   "source": "JIRA Recruitment",
+   "field": "Status",
+   "completeness": 100.0,
+   "records": 80
+  }
+ ],
+ "rules": [
+  {
+   "rule_id": "EMP-01",
+   "source": "CORE HR",
+   "description": "Employee ID is unique in CORE extract",
+   "records_checked": 3354,
+   "issues_found": 0,
+   "records_merged": 0,
+   "action": "-",
+   "status": "Pass",
+   "dimension": "Uniqueness"
+  },
+  {
+   "rule_id": "EMP-02",
+   "source": "Excel Trackers",
+   "description": "Gender consistent between CORE and Excel tracker for overlapping staff",
+   "records_checked": 2011,
+   "issues_found": 40,
+   "records_merged": 0,
+   "action": "CORE value retained",
+   "status": "Resolved",
+   "dimension": "Consistency"
+  },
+  {
+   "rule_id": "EMP-03",
+   "source": "CORE HR",
+   "description": "Missing attributes enriched from Excel tracker (nationality, birth date, gender)",
+   "records_checked": 2011,
+   "issues_found": 56,
+   "records_merged": 0,
+   "action": "Enriched from secondary source",
+   "status": "Resolved",
+   "dimension": "Completeness"
+  },
+  {
+   "rule_id": "EMP-04",
+   "source": "Excel Trackers",
+   "description": "Staff present in both CORE and Excel tracker de-duplicated",
+   "records_checked": 2788,
+   "issues_found": 0,
+   "records_merged": 2011,
+   "action": "Merged (CORE precedence)",
+   "status": "Merged",
+   "dimension": "Uniqueness"
+  },
+  {
+   "rule_id": "EMP-05",
+   "source": "CORE HR",
+   "description": "Birth date plausible (age 16-75 at hire)",
+   "records_checked": 4098,
+   "issues_found": 4,
+   "records_merged": 0,
+   "action": "Excluded from metrics",
+   "status": "Warning",
+   "dimension": "Validity"
+  },
+  {
+   "rule_id": "EMP-06",
+   "source": "CORE HR",
+   "description": "Nationality recorded (required for GN/GS classification)",
+   "records_checked": 4131,
+   "issues_found": 24,
+   "records_merged": 0,
+   "action": "Flagged",
+   "status": "Warning",
+   "dimension": "Completeness"
+  },
+  {
+   "rule_id": "EMP-07",
+   "source": "CORE HR",
+   "description": "Birth date recorded (required for age metrics)",
+   "records_checked": 4131,
+   "issues_found": 37,
+   "records_merged": 0,
+   "action": "Flagged",
+   "status": "Warning",
+   "dimension": "Completeness"
+  },
+  {
+   "rule_id": "EMP-08",
+   "source": "CORE HR",
+   "description": "Gender recorded",
+   "records_checked": 4131,
+   "issues_found": 6,
+   "records_merged": 0,
+   "action": "Flagged",
+   "status": "Warning",
+   "dimension": "Completeness"
+  },
+  {
+   "rule_id": "CTR-01",
+   "source": "CORE HR",
+   "description": "Country names standardised to reference list",
+   "records_checked": 7587,
+   "issues_found": 138,
+   "records_merged": 0,
+   "action": "Standardised",
+   "status": "Resolved",
+   "dimension": "Consistency"
+  },
+  {
+   "rule_id": "CTR-02",
+   "source": "Excel Trackers",
+   "description": "Country names standardised to reference list",
+   "records_checked": 6566,
+   "issues_found": 188,
+   "records_merged": 0,
+   "action": "Standardised",
+   "status": "Resolved",
+   "dimension": "Consistency"
+  },
+  {
+   "rule_id": "CTR-03",
+   "source": "Excel Trackers",
+   "description": "Contracts spanning the CORE go-live (01/2025) de-duplicated",
+   "records_checked": 6566,
+   "issues_found": 0,
+   "records_merged": 1956,
+   "action": "Merged (CORE precedence)",
+   "status": "Merged",
+   "dimension": "Uniqueness"
+  },
+  {
+   "rule_id": "CTR-04",
+   "source": "CORE HR",
+   "description": "Contract type matches controlled vocabulary",
+   "records_checked": 12197,
+   "issues_found": 201,
+   "records_merged": 0,
+   "action": "Standardised",
+   "status": "Resolved",
+   "dimension": "Consistency"
+  },
+  {
+   "rule_id": "CTR-05",
+   "source": "CORE HR",
+   "description": "Fixed/short-term contracts have a planned end date",
+   "records_checked": 12197,
+   "issues_found": 6,
+   "records_merged": 0,
+   "action": "Imputed from contract duration",
+   "status": "Resolved",
+   "dimension": "Completeness"
+  },
+  {
+   "rule_id": "CTR-06",
+   "source": "CORE HR",
+   "description": "Contract end date on or after start date",
+   "records_checked": 12197,
+   "issues_found": 0,
+   "records_merged": 0,
+   "action": "-",
+   "status": "Pass",
+   "dimension": "Validity"
+  },
+  {
+   "rule_id": "CTR-07",
+   "source": "CORE HR",
+   "description": "Country, grade, staff category and department are valid reference values",
+   "records_checked": 12197,
+   "issues_found": 0,
+   "records_merged": 0,
+   "action": "-",
+   "status": "Pass",
+   "dimension": "Validity"
+  },
+  {
+   "rule_id": "CTR-08",
+   "source": "CORE HR",
+   "description": "No overlapping contracts for the same employee (no double counting)",
+   "records_checked": 12197,
+   "issues_found": 0,
+   "records_merged": 0,
+   "action": "-",
+   "status": "Pass",
+   "dimension": "Uniqueness"
+  },
+  {
+   "rule_id": "CTR-09",
+   "source": "CORE HR",
+   "description": "Every contract links to an employee record",
+   "records_checked": 12197,
+   "issues_found": 0,
+   "records_merged": 0,
+   "action": "-",
+   "status": "Pass",
+   "dimension": "Integrity"
+  },
+  {
+   "rule_id": "SEP-01",
+   "source": "CORE HR",
+   "description": "Separation date equals end date of the last contract",
+   "records_checked": 1894,
+   "issues_found": 0,
+   "records_merged": 0,
+   "action": "-",
+   "status": "Pass",
+   "dimension": "Consistency"
+  },
+  {
+   "rule_id": "SEP-02",
+   "source": "Excel Trackers",
+   "description": "Separations de-duplicated across sources",
+   "records_checked": 1894,
+   "issues_found": 0,
+   "records_merged": 0,
+   "action": "-",
+   "status": "Pass",
+   "dimension": "Uniqueness"
+  },
+  {
+   "rule_id": "APR-01",
+   "source": "CORE HR",
+   "description": "Appraisal linked to an employee active on the appraisal date",
+   "records_checked": 7599,
+   "issues_found": 0,
+   "records_merged": 0,
+   "action": "-",
+   "status": "Pass",
+   "dimension": "Integrity"
+  },
+  {
+   "rule_id": "VAC-01",
+   "source": "JIRA Recruitment",
+   "description": "Duplicate tickets from overlapping exports removed",
+   "records_checked": 1436,
+   "issues_found": 9,
+   "records_merged": 0,
+   "action": "Merged",
+   "status": "Resolved",
+   "dimension": "Uniqueness"
+  },
+  {
+   "rule_id": "VAC-02",
+   "source": "Excel Trackers",
+   "description": "Vacancies migrated to JIRA removed from historical tracker (JIRA retained)",
+   "records_checked": 1530,
+   "issues_found": 0,
+   "records_merged": 93,
+   "action": "Merged (JIRA precedence)",
+   "status": "Merged",
+   "dimension": "Uniqueness"
+  },
+  {
+   "rule_id": "VAC-03",
+   "source": "Excel Trackers",
+   "description": "Closure outcome labels mapped to standard outcomes",
+   "records_checked": 1437,
+   "issues_found": 823,
+   "records_merged": 0,
+   "action": "Standardised",
+   "status": "Resolved",
+   "dimension": "Consistency"
+  },
+  {
+   "rule_id": "VAC-04",
+   "source": "JIRA Recruitment",
+   "description": "Country names standardised to reference list",
+   "records_checked": 2864,
+   "issues_found": 49,
+   "records_merged": 0,
+   "action": "Standardised",
+   "status": "Resolved",
+   "dimension": "Consistency"
+  },
+  {
+   "rule_id": "VAC-09",
+   "source": "JIRA Recruitment",
+   "description": "Due date (initial planned duration) recorded on recruitment request",
+   "records_checked": 2864,
+   "issues_found": 21,
+   "records_merged": 0,
+   "action": "Imputed from standard planned duration",
+   "status": "Resolved",
+   "dimension": "Completeness"
+  },
+  {
+   "rule_id": "VAC-05",
+   "source": "JIRA Recruitment",
+   "description": "Resolution date on or after creation date",
+   "records_checked": 2765,
+   "issues_found": 5,
+   "records_merged": 0,
+   "action": "Excluded from metrics",
+   "status": "Warning",
+   "dimension": "Validity"
+  },
+  {
+   "rule_id": "VAC-06",
+   "source": "JIRA Recruitment",
+   "description": "Filled vacancies link to the hired employee in CORE HR",
+   "records_checked": 2534,
+   "issues_found": 0,
+   "records_merged": 0,
+   "action": "-",
+   "status": "Pass",
+   "dimension": "Integrity"
+  },
+  {
+   "rule_id": "VAC-07",
+   "source": "JIRA Recruitment",
+   "description": "Closed vacancies carry a closure outcome",
+   "records_checked": 2765,
+   "issues_found": 0,
+   "records_merged": 0,
+   "action": "-",
+   "status": "Pass",
+   "dimension": "Completeness"
+  },
+  {
+   "rule_id": "VAC-08",
+   "source": "JIRA Recruitment",
+   "description": "Vacancy ID unique after consolidation",
+   "records_checked": 2864,
+   "issues_found": 0,
+   "records_merged": 0,
+   "action": "-",
+   "status": "Pass",
+   "dimension": "Uniqueness"
+  },
+  {
+   "rule_id": "SRG-01",
+   "source": "Excel Trackers",
+   "description": "Requesting country names standardised",
+   "records_checked": 352,
+   "issues_found": 9,
+   "records_merged": 0,
+   "action": "Standardised",
+   "status": "Resolved",
+   "dimension": "Consistency"
+  },
+  {
+   "rule_id": "SRG-02",
+   "source": "Excel Trackers",
+   "description": "Filled surges link to a deployed employee",
+   "records_checked": 321,
+   "issues_found": 0,
+   "records_merged": 0,
+   "action": "-",
+   "status": "Pass",
+   "dimension": "Integrity"
+  },
+  {
+   "rule_id": "REC-01",
+   "source": "Excel Trackers",
+   "description": "Monthly national headcount snapshots reconcile with consolidated contracts",
+   "records_checked": 615,
+   "issues_found": 15,
+   "records_merged": 0,
+   "action": "Model (contract-level) retained",
+   "status": "Resolved",
+   "dimension": "Reconciliation"
+  },
+  {
+   "rule_id": "REC-02",
+   "source": "Excel Trackers",
+   "description": "Missing monthly snapshot submissions by country offices",
+   "records_checked": 624,
+   "issues_found": 9,
+   "records_merged": 0,
+   "action": "Derived from contracts",
+   "status": "Resolved",
+   "dimension": "Completeness"
+  },
+  {
+   "rule_id": "REC-03",
+   "source": "Excel Trackers",
+   "description": "Expatriation tracker reconciles with nationality vs duty-country in model",
+   "records_checked": 972,
+   "issues_found": 33,
+   "records_merged": 0,
+   "action": "Model (contract-level) retained",
+   "status": "Resolved",
+   "dimension": "Reconciliation"
+  }
+ ],
+ "lineage": [
+  {
+   "entity": "Employees",
+   "source": "CORE HR",
+   "records": 3354
+  },
+  {
+   "entity": "Employees",
+   "source": "Excel national staff tracker",
+   "records": 2788
+  },
+  {
+   "entity": "Contracts",
+   "source": "CORE HR",
+   "records": 7587
+  },
+  {
+   "entity": "Contracts",
+   "source": "Excel national staff tracker",
+   "records": 6566
+  },
+  {
+   "entity": "Separations",
+   "source": "CORE HR",
+   "records": 1035
+  },
+  {
+   "entity": "Separations",
+   "source": "Excel national staff tracker",
+   "records": 859
+  },
+  {
+   "entity": "Appraisals",
+   "source": "CORE HR",
+   "records": 7599
+  },
+  {
+   "entity": "Vacancies",
+   "source": "JIRA Recruitment",
+   "records": 1427
+  },
+  {
+   "entity": "Vacancies",
+   "source": "Excel vacancy tracker",
+   "records": 1437
+  },
+  {
+   "entity": "Surge deployments",
+   "source": "Excel surge tracker",
+   "records": 272
+  },
+  {
+   "entity": "Surge deployments",
+   "source": "JIRA Surge",
+   "records": 80
+  }
+ ],
+ "reconciliation": {
+  "headcount_cells": 615,
+  "headcount_matched": 600,
+  "expat_cells": 972,
+  "expat_matched": 939,
+  "sample_differences": [
+   {
+    "tracker": "National headcount snapshots",
+    "month": "2023-01",
+    "country": "Syria",
+    "tracker_value": 127,
+    "model_value": 128
+   },
+   {
+    "tracker": "National headcount snapshots",
+    "month": "2023-01",
+    "country": "Yemen",
+    "tracker_value": 105,
+    "model_value": 103
+   },
+   {
+    "tracker": "National headcount snapshots",
+    "month": "2023-03",
+    "country": "Ukraine",
+    "tracker_value": 147,
+    "model_value": 146
+   },
+   {
+    "tracker": "National headcount snapshots",
+    "month": "2023-05",
+    "country": "Democratic Republic of the Congo",
+    "tracker_value": 118,
+    "model_value": 117
+   },
+   {
+    "tracker": "National headcount snapshots",
+    "month": "2023-05",
+    "country": "Senegal",
+    "tracker_value": 26,
+    "model_value": 27
+   },
+   {
+    "tracker": "National headcount snapshots",
+    "month": "2023-08",
+    "country": "Libya",
+    "tracker_value": 26,
+    "model_value": 28
+   },
+   {
+    "tracker": "National headcount snapshots",
+    "month": "2023-11",
+    "country": "Kenya",
+    "tracker_value": 46,
+    "model_value": 47
+   },
+   {
+    "tracker": "National headcount snapshots",
+    "month": "2023-11",
+    "country": "Mozambique",
+    "tracker_value": 46,
+    "model_value": 44
+   },
+   {
+    "tracker": "National headcount snapshots",
+    "month": "2023-11",
+    "country": "Syria",
+    "tracker_value": 129,
+    "model_value": 127
+   },
+   {
+    "tracker": "National headcount snapshots",
+    "month": "2023-12",
+    "country": "Niger",
+    "tracker_value": 51,
+    "model_value": 53
+   },
+   {
+    "tracker": "National headcount snapshots",
+    "month": "2024-05",
+    "country": "Central African Republic",
+    "tracker_value": 54,
+    "model_value": 56
+   },
+   {
+    "tracker": "National headcount snapshots",
+    "month": "2024-05",
+    "country": "Nigeria",
+    "tracker_value": 115,
+    "model_value": 113
+   },
+   {
+    "tracker": "National headcount snapshots",
+    "month": "2024-08",
+    "country": "Iraq",
+    "tracker_value": 90,
+    "model_value": 89
+   },
+   {
+    "tracker": "National headcount snapshots",
+    "month": "2024-09",
+    "country": "Ukraine",
+    "tracker_value": 145,
+    "model_value": 144
+   },
+   {
+    "tracker": "National headcount snapshots",
+    "month": "2024-12",
+    "country": "Democratic Republic of the Congo",
+    "tracker_value": 123,
+    "model_value": 124
+   },
+   {
+    "tracker": "Expatriation tracker",
+    "month": "2023-03",
+    "country": "Sudan",
+    "tracker_value": 7,
+    "model_value": 6
+   },
+   {
+    "tracker": "Expatriation tracker",
+    "month": "2023-05",
+    "country": "Lebanon",
+    "tracker_value": 4,
+    "model_value": 5
+   },
+   {
+    "tracker": "Expatriation tracker",
+    "month": "2023-08",
+    "country": "Kenya",
+    "tracker_value": 20,
+    "model_value": 21
+   },
+   {
+    "tracker": "Expatriation tracker",
+    "month": "2023-09",
+    "country": "Switzerland",
+    "tracker_value": 93,
+    "model_value": 89
+   },
+   {
+    "tracker": "Expatriation tracker",
+    "month": "2023-10",
+    "country": "Niger",
+    "tracker_value": 6,
+    "model_value": 7
+   },
+   {
+    "tracker": "Expatriation tracker",
+    "month": "2023-10",
+    "country": "Yemen",
+    "tracker_value": 6,
+    "model_value": 7
+   },
+   {
+    "tracker": "Expatriation tracker",
+    "month": "2023-12",
+    "country": "Chad",
+    "tracker_value": 7,
+    "model_value": 6
+   },
+   {
+    "tracker": "Expatriation tracker",
+    "month": "2024-01",
+    "country": "Central African Republic",
+    "tracker_value": 4,
+    "model_value": 5
+   },
+   {
+    "tracker": "Expatriation tracker",
+    "month": "2024-01",
+    "country": "Niger",
+    "tracker_value": 6,
+    "model_value": 7
+   },
+   {
+    "tracker": "Expatriation tracker",
+    "month": "2024-02",
+    "country": "Colombia",
+    "tracker_value": 6,
+    "model_value": 5
+   }
+  ]
+ }
+}

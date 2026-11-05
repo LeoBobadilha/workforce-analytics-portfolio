@@ -1,0 +1,1036 @@
+employee_id,exit_date,exit_type,exit_reason,staff_category,country,grade,department,contract_id
+E10919,2023-01-25,Involuntary,Contract not renewed,International Staff,Kenya,G5,Programme Management,CT000919
+E11014,2023-01-18,Involuntary,End of project / funding,International Staff,Libya,G4,Programme Management,CT001014
+E11967,2023-01-21,Voluntary,Did not wish to renew,International Staff,Ukraine,G5,Finance & Compliance,CT001967
+E11972,2023-01-25,Involuntary,End of project / funding,International Staff,Ukraine,G4,Logistics & IT,CT001972
+E12083,2023-01-23,Involuntary,Contract not renewed,International Staff,Yemen,G3,Finance & Compliance,CT002083
+E12108,2023-01-06,Involuntary,Contract not renewed,Global non-HQ Staff,Jordan,G5,Research & Assessment,CT002108
+E11358,2023-01-20,Voluntary,Resignation,International Staff,Nigeria,G4,Programme Management,CT001358
+E12154,2023-01-24,Voluntary,Resignation,HQ Staff,Switzerland,G4,Research & Assessment,CT002154
+E10590,2023-02-12,Involuntary,End of project / funding,International Staff,Democratic Republic of the Congo,G6,Logistics & IT,CT000590
+E10717,2023-02-02,Involuntary,End of project / funding,International Staff,Haiti,G3,Research & Assessment,CT000717
+E10914,2023-02-06,Voluntary,Did not wish to renew,International Staff,Kenya,G5,Research & Assessment,CT000914
+E11364,2023-02-21,Voluntary,Did not wish to renew,International Staff,Nigeria,G3,Research & Assessment,CT001364
+E11674,2023-02-14,Voluntary,Did not wish to renew,International Staff,Sudan,G4,Programme Management,CT001674
+E12153,2023-02-06,Voluntary,Did not wish to renew,HQ Staff,Switzerland,G5,Programme Management,CT002153
+E10290,2023-02-13,Voluntary,Resignation,International Staff,Burkina Faso,G3,HR & Administration,CT000290
+E12177,2023-02-22,Voluntary,Resignation,HQ Staff,Switzerland,G6,Finance & Compliance,CT002177
+E10358,2023-03-17,Voluntary,Did not wish to renew,International Staff,Central African Republic,G4,GIS & Data Management,CT000358
+E10584,2023-03-01,Involuntary,Contract not renewed,International Staff,Democratic Republic of the Congo,G3,Programme Management,CT000584
+E11242,2023-03-26,Voluntary,Did not wish to renew,International Staff,Niger,G4,GIS & Data Management,CT001242
+E11359,2023-03-16,Voluntary,Did not wish to renew,International Staff,Nigeria,G5,Logistics & IT,CT001359
+E11971,2023-03-22,Voluntary,Resignation,International Staff,Ukraine,G4,Research & Assessment,CT001971
+E10114,2023-04-12,Involuntary,End of project / funding,International Staff,Afghanistan,G5,Programme Management,CT000114
+E10462,2023-04-26,Voluntary,Did not wish to renew,International Staff,Colombia,G5,HR & Administration,CT000462
+E11070,2023-04-21,Voluntary,Did not wish to renew,International Staff,Mali,G5,GIS & Data Management,CT001070
+E11672,2023-04-14,Voluntary,Did not wish to renew,International Staff,Sudan,G5,HR & Administration,CT001672
+E10587,2023-04-01,Voluntary,Resignation,International Staff,Democratic Republic of the Congo,G5,HR & Administration,CT000587
+E11181,2023-04-27,Voluntary,Resignation,International Staff,Myanmar,G4,Programme Management,CT001181
+E12207,2023-04-04,Voluntary,Resignation,HQ Staff,Switzerland,G4,HR & Administration,CT002207
+E12269,2023-04-18,Voluntary,Resignation,International Staff,Democratic Republic of the Congo,G6,Logistics & IT,CT002741
+E10110,2023-05-17,Involuntary,Contract not renewed,International Staff,Afghanistan,G3,Research & Assessment,CT000110
+E10215,2023-05-07,Voluntary,Did not wish to renew,International Staff,Bangladesh,G6,HR & Administration,CT000215
+E10816,2023-05-29,Voluntary,Did not wish to renew,International Staff,Iraq,G4,Finance & Compliance,CT000816
+E11183,2023-05-08,Voluntary,Did not wish to renew,International Staff,Myanmar,G4,Finance & Compliance,CT001183
+E11615,2023-05-23,Voluntary,Did not wish to renew,International Staff,South Sudan,G3,GIS & Data Management,CT002657
+E11807,2023-05-14,Involuntary,End of project / funding,International Staff,Syria,G3,GIS & Data Management,CT001807
+E10820,2023-05-28,Voluntary,Resignation,International Staff,Iraq,G5,Research & Assessment,CT000820
+E11363,2023-05-12,Voluntary,Resignation,International Staff,Nigeria,G4,Research & Assessment,CT001363
+E11675,2023-05-02,Voluntary,Resignation,International Staff,Sudan,G3,Research & Assessment,CT002399
+E11968,2023-05-21,Voluntary,Resignation,International Staff,Ukraine,G4,GIS & Data Management,CT002437
+E10864,2023-06-23,Involuntary,End of project / funding,International Staff,Jordan,G3,Programme Management,CT000864
+E10867,2023-06-03,Voluntary,Did not wish to renew,International Staff,Jordan,G5,Programme Management,CT000867
+E11397,2023-06-13,Involuntary,Contract not renewed,International Staff,Senegal,G4,Research & Assessment,CT001397
+E11812,2023-06-20,Voluntary,Did not wish to renew,International Staff,Syria,G3,Research & Assessment,CT001812
+E12120,2023-06-08,Involuntary,End of project / funding,HQ Staff,Switzerland,G6,Finance & Compliance,CT002120
+E12195,2023-06-09,Voluntary,Did not wish to renew,HQ Staff,Switzerland,G5,Research & Assessment,CT002195
+E11497,2023-06-14,Voluntary,Resignation,International Staff,Somalia,G6,HR & Administration,CT001497
+E12167,2023-06-21,Voluntary,Resignation,HQ Staff,Switzerland,G4,HR & Administration,CT002167
+E10216,2023-08-29,Involuntary,End of project / funding,International Staff,Bangladesh,G6,GIS & Data Management,CT000216
+E10818,2023-08-11,Voluntary,Did not wish to renew,International Staff,Iraq,G4,HR & Administration,CT002580
+E11500,2023-08-12,Involuntary,Contract not renewed,International Staff,Somalia,G4,Research & Assessment,CT002644
+E11805,2023-08-27,Voluntary,Did not wish to renew,International Staff,Syria,G3,Research & Assessment,CT002676
+E10714,2023-08-14,Involuntary,Dismissal,International Staff,Haiti,G6,Programme Management,CT000714
+E12093,2023-08-28,Voluntary,Resignation,Global non-HQ Staff,Kenya,G6,Research & Assessment,CT003209
+E12160,2023-08-27,Voluntary,Resignation,HQ Staff,Switzerland,G6,Finance & Compliance,CT003865
+E10414,2023-09-07,Involuntary,Contract not renewed,International Staff,Chad,G3,Logistics & IT,CT000414
+E10588,2023-09-23,Involuntary,Contract not renewed,International Staff,Democratic Republic of the Congo,G4,Programme Management,CT002834
+E11184,2023-09-21,Voluntary,Did not wish to renew,International Staff,Myanmar,G4,Research & Assessment,CT002892
+E11969,2023-09-23,Involuntary,Contract not renewed,International Staff,Ukraine,G3,GIS & Data Management,CT002979
+E10289,2023-09-27,Voluntary,Resignation,International Staff,Burkina Faso,G5,GIS & Data Management,CT000289
+E11610,2023-09-06,Voluntary,Resignation,International Staff,South Sudan,G3,Research & Assessment,CT001610
+E12178,2023-09-06,Voluntary,Resignation,HQ Staff,Switzerland,G4,Research & Assessment,CT003441
+E11072,2023-10-03,Involuntary,Contract not renewed,International Staff,Mali,G4,Research & Assessment,CT003131
+E12105,2023-10-20,Involuntary,End of project / funding,Global non-HQ Staff,Jordan,G5,Programme Management,CT002105
+E12086,2023-10-04,Involuntary,Dismissal,International Staff,Central African Republic,G3,Programme Management,CT004076
+E11493,2023-11-14,Involuntary,End of project / funding,International Staff,Ukraine,G4,Logistics & IT,CT003240
+E10866,2023-11-03,Voluntary,Resignation,International Staff,Jordan,G5,Finance & Compliance,CT004405
+E10356,2023-12-20,Involuntary,Contract not renewed,International Staff,Ukraine,G4,Research & Assessment,CT003261
+E12132,2023-12-04,Involuntary,Contract not renewed,HQ Staff,Switzerland,G5,GIS & Data Management,CT002132
+E10411,2023-12-09,Voluntary,Resignation,International Staff,Chad,G4,Research & Assessment,CT004579
+E10716,2024-01-01,Voluntary,Did not wish to renew,International Staff,Haiti,G4,Finance & Compliance,CT002293
+E11357,2024-01-26,Voluntary,Did not wish to renew,International Staff,Sudan,G5,HR & Administration,CT003481
+E11673,2024-01-08,Voluntary,Did not wish to renew,International Staff,Sudan,G4,Programme Management,CT003830
+E11975,2024-01-12,Voluntary,Resignation,International Staff,Lebanon,G4,Research & Assessment,CT003472
+E11362,2024-02-13,Voluntary,Did not wish to renew,International Staff,Nigeria,G4,Research & Assessment,CT002637
+E12106,2024-02-12,Involuntary,End of project / funding,Global non-HQ Staff,Jordan,G5,Research & Assessment,CT002705
+E12404,2024-02-09,Involuntary,Contract not renewed,International Staff,Yemen,G3,Finance & Compliance,CT003681
+E11180,2024-02-28,Voluntary,Resignation,International Staff,Myanmar,G4,Research & Assessment,CT004429
+E12089,2024-02-21,Voluntary,Resignation,Global non-HQ Staff,Kenya,G5,Programme Management,CT004477
+E10920,2024-03-17,Voluntary,Did not wish to renew,International Staff,Kenya,G4,Research & Assessment,CT004782
+E11963,2024-03-31,Involuntary,Contract not renewed,International Staff,Ukraine,G5,Research & Assessment,CT004267
+E11240,2024-03-01,Voluntary,Resignation,International Staff,Niger,G4,Research & Assessment,CT004801
+E12111,2024-03-04,Voluntary,Resignation,Global non-HQ Staff,Senegal,G4,Logistics & IT,CT002111
+E12133,2024-03-07,Involuntary,Dismissal,HQ Staff,Switzerland,G5,Research & Assessment,CT002133
+E12166,2024-03-01,Voluntary,Resignation,HQ Staff,Switzerland,G6,Research & Assessment,CT003212
+E10109,2024-04-30,Involuntary,Contract not renewed,International Staff,Afghanistan,G5,Research & Assessment,CT004938
+E12115,2024-04-20,Involuntary,Contract not renewed,Global non-HQ Staff,Senegal,G6,HR & Administration,CT003210
+E12529,2024-04-10,Voluntary,Did not wish to renew,International Staff,South Sudan,G3,GIS & Data Management,CT004297
+E11361,2024-04-22,Voluntary,Resignation,International Staff,Nigeria,G6,Logistics & IT,CT005036
+E12094,2024-04-14,Voluntary,Resignation,Global non-HQ Staff,Kenya,G4,GIS & Data Management,CT004859
+E10412,2024-05-21,Voluntary,Resignation,International Staff,Chad,G4,GIS & Data Management,CT004162
+E12079,2024-05-04,Voluntary,Resignation,International Staff,Yemen,G3,Programme Management,CT004662
+E12665,2024-05-10,Voluntary,Resignation,HQ Staff,Switzerland,G4,Research & Assessment,CT004908
+E11498,2024-06-22,Involuntary,Contract not renewed,International Staff,Somalia,G5,Research & Assessment,CT003600
+E12135,2024-06-13,Voluntary,Did not wish to renew,HQ Staff,Switzerland,G4,Research & Assessment,CT003655
+E12370,2024-06-29,Voluntary,Did not wish to renew,International Staff,Myanmar,G4,Finance & Compliance,CT003453
+E12399,2024-06-29,Involuntary,Contract not renewed,International Staff,Burkina Faso,G3,HR & Administration,CT003673
+E10288,2024-06-16,Voluntary,Resignation,International Staff,Burkina Faso,G6,Programme Management,CT004954
+E10293,2024-07-05,Voluntary,Did not wish to renew,International Staff,Burkina Faso,G3,Research & Assessment,CT003742
+E12107,2024-07-08,Involuntary,End of project / funding,Global non-HQ Staff,Jordan,G6,Programme Management,CT005099
+E10975,2024-08-06,Voluntary,Did not wish to renew,International Staff,Ukraine,G5,Finance & Compliance,CT003714
+E12466,2024-08-28,Involuntary,End of project / funding,Global non-HQ Staff,Jordan,G6,Programme Management,CT003906
+E10211,2024-08-09,Voluntary,Resignation,International Staff,Bangladesh,G3,Programme Management,CT004738
+E12165,2024-08-28,Voluntary,Resignation,HQ Staff,Switzerland,G4,Finance & Compliance,CT003866
+E12730,2024-08-11,Voluntary,Resignation,Global non-HQ Staff,Jordan,G5,Programme Management,CT005363
+E10671,2024-09-12,Voluntary,Did not wish to renew,International Staff,Ethiopia,G3,GIS & Data Management,CT006087
+E12082,2024-09-09,Voluntary,Did not wish to renew,International Staff,Yemen,G5,Programme Management,CT004276
+E12512,2024-09-26,Voluntary,Resignation,International Staff,Nigeria,G6,Programme Management,CT004122
+E11973,2024-10-23,Involuntary,Contract not renewed,International Staff,Ukraine,G3,HR & Administration,CT004472
+E10868,2024-10-18,Involuntary,Dismissal,International Staff,Jordan,G6,Programme Management,CT006097
+E10410,2024-11-14,Involuntary,Contract not renewed,International Staff,Chad,G5,GIS & Data Management,CT000410
+E10463,2024-11-25,Voluntary,Did not wish to renew,International Staff,Colombia,G6,Programme Management,CT004580
+E12099,2024-11-21,Voluntary,Did not wish to renew,Global non-HQ Staff,Jordan,G6,GIS & Data Management,CT002099
+E12420,2024-11-03,Voluntary,Did not wish to renew,International Staff,Kenya,G4,Research & Assessment,CT004671
+E10916,2024-12-05,Involuntary,End of project / funding,International Staff,Kenya,G3,GIS & Data Management,CT004781
+E11970,2024-12-29,Involuntary,End of project / funding,International Staff,Ukraine,G4,Programme Management,CT006164
+E11395,2024-12-01,Voluntary,Resignation,International Staff,Senegal,G7,Programme Management,CT006320
+E11809,2024-12-14,Voluntary,Resignation,International Staff,Syria,G5,Logistics & IT,CT005300
+E12194,2024-12-26,Voluntary,Resignation,HQ Staff,Switzerland,G4,GIS & Data Management,CT004870
+E12200,2024-12-16,Voluntary,Resignation,HQ Staff,Switzerland,G6,Finance & Compliance,CT002200
+E12201,2024-12-20,Voluntary,Resignation,HQ Staff,Switzerland,G5,Finance & Compliance,CT002201
+E12591,2024-12-17,Voluntary,Resignation,International Staff,Chad,G4,Logistics & IT,CT005342
+E10128,2025-01-15,Involuntary,Contract not renewed,National Staff,Bangladesh,G2,Research & Assessment,CT004942
+E10162,2025-01-20,Voluntary,Did not wish to renew,National Staff,Bangladesh,G1,Field Operations,CT006915
+E10339,2025-01-25,Involuntary,Contract not renewed,National Staff,Central African Republic,G2,HR & Administration,CT004958
+E10409,2025-01-08,Involuntary,Contract not renewed,National Staff,Chad,G1,Field Operations,CT006227
+E10444,2025-01-15,Involuntary,Contract not renewed,National Staff,Colombia,G2,Field Operations,CT004969
+E10583,2025-01-20,Involuntary,Contract not renewed,National Staff,Democratic Republic of the Congo,G2,Field Operations,CT004976
+E11064,2025-01-22,Voluntary,Did not wish to renew,National Staff,Mali,G2,Field Operations,CT005019
+E11271,2025-01-25,Voluntary,Did not wish to renew,National Staff,Nigeria,G2,Field Operations,CT005031
+E11536,2025-01-05,Voluntary,Did not wish to renew,National Staff,South Sudan,G1,Research & Assessment,CT004898
+E11785,2025-01-10,Voluntary,Did not wish to renew,National Staff,Syria,G4,HR & Administration,CT007003
+E11852,2025-01-27,Voluntary,Did not wish to renew,National Staff,Ukraine,G2,Finance & Compliance,CT006344
+E11863,2025-01-17,Involuntary,End of project / funding,National Staff,Ukraine,G4,GIS & Data Management,CT005074
+E11914,2025-01-10,Involuntary,End of project / funding,National Staff,Ukraine,G4,GIS & Data Management,CT005079
+E11943,2025-01-11,Involuntary,Contract not renewed,National Staff,Ukraine,G3,Logistics & IT,CT005085
+E12228,2025-01-18,Voluntary,Did not wish to renew,National Staff,Burkina Faso,G1,Field Operations,CT005110
+E12421,2025-01-04,Involuntary,Contract not renewed,National Staff,Ukraine,G2,HR & Administration,CT006372
+E12528,2025-01-11,Involuntary,Contract not renewed,International Staff,Colombia,G4,Research & Assessment,CT005123
+E10005,2025-01-31,Voluntary,Resignation,National Staff,Afghanistan,G3,Field Operations,CT006476
+E10160,2025-01-27,Involuntary,Dismissal,National Staff,Bangladesh,G4,HR & Administration,CT007524
+E10214,2025-01-21,Voluntary,Resignation,International Staff,Bangladesh,G6,Finance & Compliance,CT006487
+E10642,2025-01-24,Voluntary,Resignation,National Staff,Ethiopia,G4,HR & Administration,CT005658
+E11110,2025-01-30,Voluntary,Resignation,National Staff,Mozambique,G1,GIS & Data Management,CT007357
+E11293,2025-01-17,Voluntary,Resignation,National Staff,Nigeria,G3,Research & Assessment,CT001293
+E11318,2025-01-12,Voluntary,Resignation,National Staff,Nigeria,G1,Finance & Compliance,CT002361
+E11570,2025-01-21,Voluntary,Resignation,National Staff,South Sudan,G3,Field Operations,CT007391
+E11676,2025-01-14,Voluntary,Resignation,International Staff,Sudan,G5,Finance & Compliance,CT005717
+E11715,2025-01-21,Voluntary,Resignation,National Staff,Syria,G2,Logistics & IT,CT005721
+E12122,2025-01-25,Voluntary,Resignation,HQ Staff,Switzerland,G5,GIS & Data Management,CT007412
+E12185,2025-01-20,Voluntary,Resignation,HQ Staff,Switzerland,G3,Programme Management,CT004280
+E12225,2025-01-09,Voluntary,Resignation,National Staff,Bangladesh,G4,GIS & Data Management,CT007014
+E12267,2025-01-22,Voluntary,Resignation,National Staff,Niger,G2,GIS & Data Management,CT005555
+E12631,2025-01-04,Voluntary,Resignation,National Staff,Democratic Republic of the Congo,G2,Field Operations,CT005983
+E12905,2025-01-19,Voluntary,Resignation,National Staff,Ethiopia,G2,Field Operations,CT006260
+E12912,2025-01-19,Voluntary,Resignation,National Staff,Syria,G3,Finance & Compliance,CT006397
+E12995,2025-01-23,Voluntary,Resignation,National Staff,Chad,G2,Research & Assessment,CT006651
+E10090,2025-02-27,Involuntary,Contract not renewed,National Staff,Afghanistan,G3,Logistics & IT,CT005179
+E10116,2025-02-18,Involuntary,Contract not renewed,International Staff,Afghanistan,G4,GIS & Data Management,CT005183
+E10295,2025-02-05,Voluntary,Did not wish to renew,National Staff,Central African Republic,G3,Field Operations,CT005197
+E10335,2025-02-07,Voluntary,Did not wish to renew,National Staff,Central African Republic,G2,GIS & Data Management,CT005201
+E10670,2025-02-10,Involuntary,End of project / funding,International Staff,Ethiopia,G4,Finance & Compliance,CT005219
+E10837,2025-02-22,Involuntary,End of project / funding,National Staff,Jordan,G1,Research & Assessment,CT005234
+E10890,2025-02-11,Involuntary,End of project / funding,National Staff,Kenya,G3,Field Operations,CT005241
+E11030,2025-02-11,Voluntary,Did not wish to renew,National Staff,Mali,G2,GIS & Data Management,CT005247
+E11126,2025-02-11,Involuntary,Contract not renewed,National Staff,Myanmar,G1,Field Operations,CT005255
+E11876,2025-02-14,Involuntary,Contract not renewed,National Staff,Ukraine,G2,Logistics & IT,CT006565
+E11932,2025-02-21,Involuntary,End of project / funding,National Staff,Ukraine,G2,Finance & Compliance,CT005171
+E12232,2025-02-01,Voluntary,Did not wish to renew,National Staff,Ukraine,G2,Field Operations,CT005320
+E12242,2025-02-13,Involuntary,Contract not renewed,National Staff,Nigeria,G3,Programme Management,CT005326
+E12555,2025-02-08,Involuntary,Contract not renewed,International Staff,Haiti,G6,Programme Management,CT005340
+E12904,2025-02-12,Involuntary,End of project / funding,International Staff,Ukraine,G4,Research & Assessment,CT006259
+E13107,2025-02-03,Involuntary,End of project / funding,National Staff,Ukraine,G2,Field Operations,CT007091
+E10492,2025-02-18,Voluntary,Resignation,National Staff,Democratic Republic of the Congo,G3,Field Operations,CT007143
+E10574,2025-02-10,Voluntary,Resignation,National Staff,Democratic Republic of the Congo,G1,Field Operations,CT005653
+E10576,2025-02-20,Involuntary,Dismissal,National Staff,Democratic Republic of the Congo,G3,Research & Assessment,CT007340
+E10843,2025-02-13,Voluntary,Resignation,National Staff,Jordan,G1,GIS & Data Management,CT005670
+E11143,2025-02-09,Voluntary,Resignation,National Staff,Myanmar,G3,Programme Management,CT006966
+E11811,2025-02-26,Voluntary,Resignation,International Staff,Syria,G5,GIS & Data Management,CT006343
+E11920,2025-02-24,Involuntary,Dismissal,National Staff,Ukraine,G2,Field Operations,CT003635
+E12361,2025-02-14,Voluntary,Resignation,National Staff,Yemen,G2,Logistics & IT,CT003444
+E12673,2025-02-05,Voluntary,Resignation,International Staff,Ukraine,G5,Research & Assessment,CT007896
+E12771,2025-02-13,Voluntary,Resignation,National Staff,South Sudan,G2,Programme Management,CT005618
+E12865,2025-02-19,Voluntary,Resignation,National Staff,Iraq,G1,Field Operations,CT006054
+E13090,2025-02-11,Voluntary,Resignation,National Staff,Sudan,G3,Field Operations,CT007073
+E10111,2025-03-23,Voluntary,Did not wish to renew,International Staff,Afghanistan,G4,Programme Management,CT002763
+E10183,2025-03-11,Voluntary,Did not wish to renew,National Staff,Bangladesh,G2,Field Operations,CT006704
+E10266,2025-03-27,Involuntary,End of project / funding,National Staff,Burkina Faso,G2,Research & Assessment,CT005402
+E10291,2025-03-13,Involuntary,Contract not renewed,International Staff,Burkina Faso,G5,GIS & Data Management,CT006707
+E10429,2025-03-19,Voluntary,Did not wish to renew,National Staff,Colombia,G1,Field Operations,CT005418
+E10530,2025-03-17,Voluntary,Did not wish to renew,National Staff,Democratic Republic of the Congo,G3,Research & Assessment,CT005427
+E10822,2025-03-07,Voluntary,Did not wish to renew,International Staff,Iraq,G5,GIS & Data Management,CT006726
+E11115,2025-03-03,Voluntary,Did not wish to renew,National Staff,Mozambique,G3,GIS & Data Management,CT005464
+E11170,2025-03-18,Involuntary,Contract not renewed,National Staff,Myanmar,G3,Programme Management,CT005467
+E11329,2025-03-04,Voluntary,Did not wish to renew,National Staff,Nigeria,G2,Field Operations,CT005478
+E11442,2025-03-25,Voluntary,Did not wish to renew,National Staff,Somalia,G3,HR & Administration,CT005490
+E11757,2025-03-14,Involuntary,Contract not renewed,National Staff,Syria,G2,Research & Assessment,CT005513
+E11810,2025-03-21,Involuntary,Contract not renewed,International Staff,Syria,G5,Programme Management,CT002956
+E11841,2025-03-06,Involuntary,End of project / funding,National Staff,Ukraine,G3,Field Operations,CT005523
+E11931,2025-03-19,Involuntary,Contract not renewed,National Staff,Ukraine,G6,Research & Assessment,CT006789
+E11962,2025-03-26,Involuntary,Contract not renewed,International Staff,Ukraine,G5,Research & Assessment,CT005532
+E12064,2025-03-02,Involuntary,Contract not renewed,National Staff,Yemen,G4,Research & Assessment,CT006798
+E12263,2025-03-03,Voluntary,Did not wish to renew,National Staff,Iraq,G3,Field Operations,CT005553
+E12281,2025-03-20,Voluntary,Did not wish to renew,National Staff,Myanmar,G3,Research & Assessment,CT005560
+E12284,2025-03-14,Voluntary,Did not wish to renew,National Staff,Nigeria,G3,Field Operations,CT005562
+E12480,2025-03-28,Involuntary,Contract not renewed,International Staff,Kenya,G4,Programme Management,CT006812
+E12738,2025-03-15,Involuntary,Contract not renewed,National Staff,Afghanistan,G2,Field Operations,CT005373
+E12739,2025-03-04,Voluntary,Did not wish to renew,National Staff,South Sudan,G4,Finance & Compliance,CT005374
+E12745,2025-03-23,Involuntary,End of project / funding,National Staff,Ukraine,G3,Field Operations,CT005381
+E13002,2025-03-04,Involuntary,End of project / funding,National Staff,Bangladesh,G3,GIS & Data Management,CT006659
+E13017,2025-03-23,Voluntary,Did not wish to renew,National Staff,Nigeria,G3,Research & Assessment,CT006678
+E13019,2025-03-15,Voluntary,Did not wish to renew,National Staff,Nigeria,G2,Research & Assessment,CT006680
+E13021,2025-03-05,Voluntary,Did not wish to renew,National Staff,Bangladesh,G2,GIS & Data Management,CT007459
+E13028,2025-03-05,Voluntary,Did not wish to renew,National Staff,Sudan,G2,Field Operations,CT006690
+E10233,2025-03-17,Voluntary,Resignation,National Staff,Burkina Faso,G3,GIS & Data Management,CT007532
+E10754,2025-03-28,Voluntary,Resignation,National Staff,Iraq,G3,Field Operations,CT008001
+E10878,2025-03-05,Voluntary,Resignation,National Staff,Kenya,G2,Field Operations,CT000878
+E10947,2025-03-10,Voluntary,Resignation,National Staff,Lebanon,G3,Research & Assessment,CT007303
+E11572,2025-03-21,Voluntary,Resignation,National Staff,South Sudan,G1,HR & Administration,CT001572
+E11693,2025-03-27,Voluntary,Resignation,National Staff,Syria,G2,HR & Administration,CT006778
+E11734,2025-03-02,Voluntary,Resignation,National Staff,Syria,G1,HR & Administration,CT004916
+E11746,2025-03-17,Voluntary,Resignation,National Staff,Syria,G1,Logistics & IT,CT002407
+E12342,2025-03-09,Voluntary,Resignation,International Staff,Syria,G3,Research & Assessment,CT005961
+E10364,2025-04-09,Involuntary,Contract not renewed,National Staff,Chad,G3,Field Operations,CT007538
+E10538,2025-04-06,Involuntary,Contract not renewed,National Staff,Democratic Republic of the Congo,G1,Field Operations,CT005651
+E10763,2025-04-09,Involuntary,Contract not renewed,National Staff,Iraq,G2,Research & Assessment,CT005665
+E11096,2025-04-21,Voluntary,Did not wish to renew,National Staff,Mozambique,G2,Logistics & IT,CT006960
+E11123,2025-04-10,Voluntary,Did not wish to renew,National Staff,Myanmar,G2,Research & Assessment,CT006963
+E11400,2025-04-15,Voluntary,Did not wish to renew,National Staff,Somalia,G3,Field Operations,CT005699
+E11482,2025-04-02,Voluntary,Did not wish to renew,National Staff,Somalia,G2,Research & Assessment,CT005704
+E11534,2025-04-30,Involuntary,Contract not renewed,National Staff,South Sudan,G2,Research & Assessment,CT005707
+E11849,2025-04-13,Involuntary,End of project / funding,National Staff,Ukraine,G4,GIS & Data Management,CT005599
+E11853,2025-04-22,Involuntary,End of project / funding,National Staff,Ukraine,G3,Research & Assessment,CT007006
+E11893,2025-04-09,Involuntary,End of project / funding,National Staff,Ukraine,G3,Research & Assessment,CT005731
+E11939,2025-04-02,Involuntary,End of project / funding,National Staff,Ukraine,G3,Field Operations,CT005735
+E12293,2025-04-08,Voluntary,Did not wish to renew,National Staff,Iraq,G2,HR & Administration,CT005747
+E12543,2025-04-02,Involuntary,End of project / funding,National Staff,Lebanon,G2,HR & Administration,CT007037
+E12732,2025-04-15,Involuntary,End of project / funding,National Staff,Sudan,G4,Programme Management,CT007072
+E12757,2025-04-27,Involuntary,Contract not renewed,International Staff,Chad,G4,Research & Assessment,CT005597
+E13044,2025-04-15,Involuntary,Contract not renewed,Global non-HQ Staff,Jordan,G6,Programme Management,CT006848
+E13063,2025-04-06,Involuntary,End of project / funding,National Staff,Chad,G3,Finance & Compliance,CT006875
+E13201,2025-04-10,Involuntary,End of project / funding,National Staff,Burkina Faso,G1,Field Operations,CT007494
+E13214,2025-04-15,Involuntary,End of project / funding,National Staff,Lebanon,G2,Field Operations,CT007508
+E10060,2025-04-27,Voluntary,Resignation,National Staff,Afghanistan,G3,Field Operations,CT008188
+E10241,2025-04-02,Voluntary,Resignation,National Staff,Burkina Faso,G3,Field Operations,CT004952
+E10432,2025-04-12,Involuntary,Dismissal,National Staff,Colombia,G2,Research & Assessment,CT006500
+E10650,2025-04-22,Voluntary,Resignation,National Staff,Ethiopia,G2,Research & Assessment,CT007940
+E10687,2025-04-11,Voluntary,Resignation,National Staff,Haiti,G2,Finance & Compliance,CT006090
+E10728,2025-04-28,Voluntary,Resignation,National Staff,Iraq,G4,Research & Assessment,CT007155
+E10900,2025-04-14,Voluntary,Resignation,National Staff,Kenya,G2,Research & Assessment,CT007818
+E11627,2025-04-17,Voluntary,Resignation,National Staff,Sudan,G1,Research & Assessment,CT007109
+E11659,2025-04-10,Voluntary,Resignation,National Staff,Sudan,G5,Finance & Compliance,CT005925
+E12301,2025-04-25,Voluntary,Resignation,National Staff,Syria,G3,Programme Management,CT007015
+E12562,2025-04-25,Voluntary,Resignation,National Staff,Lebanon,G2,Research & Assessment,CT007676
+E13215,2025-04-19,Voluntary,Resignation,National Staff,Democratic Republic of the Congo,G1,Research & Assessment,CT007509
+E13284,2025-04-30,Voluntary,Resignation,International Staff,Kenya,G3,GIS & Data Management,CT008144
+E13290,2025-04-14,Voluntary,Resignation,National Staff,Democratic Republic of the Congo,G1,Field Operations,CT008150
+E10016,2025-05-17,Involuntary,End of project / funding,National Staff,Afghanistan,G3,GIS & Data Management,CT005843
+E10078,2025-05-16,Voluntary,Did not wish to renew,National Staff,Afghanistan,G2,Field Operations,CT007132
+E10260,2025-05-21,Involuntary,End of project / funding,National Staff,Burkina Faso,G1,Finance & Compliance,CT005848
+E10594,2025-05-06,Involuntary,End of project / funding,National Staff,Ethiopia,G2,GIS & Data Management,CT005858
+E10757,2025-05-01,Voluntary,Did not wish to renew,National Staff,Iraq,G5,Research & Assessment,CT005868
+E10976,2025-05-19,Involuntary,End of project / funding,HQ Staff,Switzerland,G5,Programme Management,CT005878
+E11306,2025-05-19,Involuntary,Contract not renewed,National Staff,Nigeria,G2,Research & Assessment,CT005899
+E11348,2025-05-14,Involuntary,Contract not renewed,National Staff,Nigeria,G1,Field Operations,CT007836
+E11921,2025-05-09,Involuntary,End of project / funding,National Staff,Ukraine,G2,GIS & Data Management,CT005937
+E11981,2025-05-25,Involuntary,Contract not renewed,National Staff,Yemen,G3,Field Operations,CT005940
+E12339,2025-05-11,Voluntary,Did not wish to renew,International Staff,Nigeria,G5,Logistics & IT,CT005958
+E12373,2025-05-19,Voluntary,Did not wish to renew,National Staff,Mali,G2,Research & Assessment,CT005971
+E12574,2025-05-01,Voluntary,Did not wish to renew,National Staff,Ukraine,G3,GIS & Data Management,CT005976
+E12793,2025-05-09,Involuntary,End of project / funding,National Staff,Iraq,G3,Research & Assessment,CT005809
+E12811,2025-05-02,Involuntary,End of project / funding,National Staff,Burkina Faso,G5,Research & Assessment,CT005833
+E12812,2025-05-11,Involuntary,End of project / funding,National Staff,Yemen,G2,GIS & Data Management,CT005835
+E12816,2025-05-21,Involuntary,Contract not renewed,National Staff,Democratic Republic of the Congo,G2,Field Operations,CT005839
+E13100,2025-05-10,Voluntary,Did not wish to renew,National Staff,Democratic Republic of the Congo,G2,Field Operations,CT007084
+E13127,2025-05-13,Involuntary,End of project / funding,National Staff,Burkina Faso,G3,Finance & Compliance,CT007118
+E13224,2025-05-04,Involuntary,End of project / funding,National Staff,Yemen,G3,Field Operations,CT007725
+E13230,2025-05-24,Involuntary,End of project / funding,International Staff,Sudan,G3,Finance & Compliance,CT007733
+E13270,2025-05-26,Involuntary,End of project / funding,National Staff,Yemen,G3,Programme Management,CT007953
+E10124,2025-05-08,Involuntary,Dismissal,National Staff,Bangladesh,G3,Research & Assessment,CT007966
+E10430,2025-05-27,Involuntary,Dismissal,National Staff,Colombia,G3,HR & Administration,CT006406
+E10441,2025-05-13,Voluntary,Resignation,National Staff,Colombia,G2,Field Operations,CT006930
+E10498,2025-05-18,Voluntary,Resignation,National Staff,Democratic Republic of the Congo,G4,Logistics & IT,CT006933
+E10811,2025-05-23,Voluntary,Resignation,National Staff,Iraq,G2,Research & Assessment,CT008221
+E11069,2025-05-30,Voluntary,Resignation,International Staff,Mali,G4,Research & Assessment,CT004004
+E11231,2025-05-13,Voluntary,Resignation,National Staff,Niger,G3,Logistics & IT,CT006972
+E11339,2025-05-22,Voluntary,Resignation,National Staff,Nigeria,G1,Research & Assessment,CT008477
+E11388,2025-05-03,Voluntary,Resignation,National Staff,Senegal,G2,GIS & Data Management,CT004635
+E11687,2025-05-02,Voluntary,Resignation,National Staff,Syria,G4,Research & Assessment,CT008045
+E11900,2025-05-22,Voluntary,Resignation,National Staff,Ukraine,G3,Field Operations,CT006159
+E12218,2025-05-23,Voluntary,Resignation,National Staff,Ukraine,G3,Field Operations,CT007659
+E12231,2025-05-03,Voluntary,Resignation,National Staff,Somalia,G1,HR & Administration,CT006358
+E12248,2025-05-12,Voluntary,Resignation,National Staff,Myanmar,G3,Field Operations,CT007877
+E12552,2025-05-22,Voluntary,Resignation,National Staff,Nigeria,G3,Field Operations,CT007674
+E12650,2025-05-05,Voluntary,Resignation,National Staff,Lebanon,G2,Programme Management,CT006202
+E12731,2025-05-31,Voluntary,Resignation,National Staff,Senegal,G1,Finance & Compliance,CT008100
+E12820,2025-05-22,Voluntary,Resignation,National Staff,Ukraine,G3,Field Operations,CT006613
+E12999,2025-05-27,Voluntary,Resignation,National Staff,Democratic Republic of the Congo,G3,Research & Assessment,CT008114
+E13275,2025-05-23,Voluntary,Resignation,International Staff,Colombia,G5,Research & Assessment,CT008131
+E13363,2025-05-31,Voluntary,Resignation,National Staff,Democratic Republic of the Congo,G1,Field Operations,CT008410
+E10161,2025-06-06,Involuntary,End of project / funding,National Staff,Bangladesh,G3,Field Operations,CT007319
+E10265,2025-06-06,Involuntary,End of project / funding,National Staff,Burkina Faso,G4,Research & Assessment,CT006066
+E10267,2025-06-03,Involuntary,End of project / funding,National Staff,Burkina Faso,G3,Field Operations,CT006067
+E10745,2025-06-13,Involuntary,Contract not renewed,National Staff,Iraq,G1,Research & Assessment,CT006040
+E10775,2025-06-13,Involuntary,End of project / funding,National Staff,Iraq,G4,Logistics & IT,CT006094
+E10974,2025-06-08,Involuntary,Contract not renewed,International Staff,Lebanon,G6,Research & Assessment,CT003556
+E10985,2025-06-25,Involuntary,Contract not renewed,National Staff,Libya,G4,HR & Administration,CT006105
+E11079,2025-06-20,Involuntary,End of project / funding,National Staff,Mozambique,G1,GIS & Data Management,CT008017
+E11107,2025-06-02,Involuntary,End of project / funding,National Staff,Mozambique,G1,Research & Assessment,CT008019
+E11269,2025-06-05,Involuntary,Contract not renewed,National Staff,Nigeria,G1,Field Operations,CT006116
+E11343,2025-06-13,Involuntary,Contract not renewed,National Staff,Nigeria,G2,Finance & Compliance,CT006121
+E11354,2025-06-17,Involuntary,End of project / funding,National Staff,Nigeria,G2,Logistics & IT,CT007373
+E11415,2025-06-10,Voluntary,Did not wish to renew,National Staff,Somalia,G1,Research & Assessment,CT006128
+E11490,2025-06-05,Voluntary,Did not wish to renew,National Staff,Somalia,G4,Research & Assessment,CT007381
+E11492,2025-06-01,Involuntary,End of project / funding,National Staff,Somalia,G3,Field Operations,CT006136
+E11688,2025-06-20,Involuntary,End of project / funding,National Staff,Syria,G3,Research & Assessment,CT006145
+E11719,2025-06-06,Involuntary,End of project / funding,National Staff,Syria,G3,Field Operations,CT006148
+E11887,2025-06-11,Involuntary,Contract not renewed,National Staff,Ukraine,G3,Logistics & IT,CT006156
+E11964,2025-06-18,Involuntary,End of project / funding,International Staff,Ukraine,G3,Research & Assessment,CT006163
+E12092,2025-06-11,Involuntary,Contract not renewed,Global non-HQ Staff,Kenya,G4,Research & Assessment,CT003652
+E12109,2025-06-02,Involuntary,End of project / funding,Global non-HQ Staff,Senegal,G5,Research & Assessment,CT006171
+E12161,2025-06-02,Voluntary,Did not wish to renew,HQ Staff,Switzerland,G5,Programme Management,CT006172
+E12398,2025-06-19,Voluntary,Did not wish to renew,National Staff,Bangladesh,G3,HR & Administration,CT006187
+E12403,2025-06-26,Involuntary,Contract not renewed,National Staff,Bangladesh,G2,Research & Assessment,CT006189
+E12644,2025-06-13,Voluntary,Did not wish to renew,National Staff,Nigeria,G1,Finance & Compliance,CT007957
+E12651,2025-06-26,Involuntary,End of project / funding,National Staff,Democratic Republic of the Congo,G4,Research & Assessment,CT007441
+E12660,2025-06-29,Involuntary,End of project / funding,National Staff,Afghanistan,G2,Research & Assessment,CT006204
+E12827,2025-06-30,Involuntary,End of project / funding,International Staff,Sudan,G5,HR & Administration,CT005999
+E12855,2025-06-26,Involuntary,Contract not renewed,International Staff,Jordan,G4,Research & Assessment,CT006042
+E12860,2025-06-18,Voluntary,Did not wish to renew,National Staff,Colombia,G2,Research & Assessment,CT006048
+E12869,2025-06-15,Involuntary,End of project / funding,National Staff,Syria,G2,Field Operations,CT006207
+E12872,2025-06-18,Involuntary,End of project / funding,National Staff,Nigeria,G4,GIS & Data Management,CT006212
+E12874,2025-06-19,Voluntary,Did not wish to renew,National Staff,Ukraine,G2,Field Operations,CT007457
+E12875,2025-06-18,Involuntary,End of project / funding,National Staff,Syria,G2,Field Operations,CT006215
+E12883,2025-06-27,Voluntary,Did not wish to renew,National Staff,Mali,G3,Research & Assessment,CT006228
+E13158,2025-06-17,Involuntary,Contract not renewed,National Staff,Ukraine,G2,Field Operations,CT007291
+E13163,2025-06-20,Involuntary,End of project / funding,National Staff,Yemen,G2,Research & Assessment,CT007297
+E13194,2025-06-28,Involuntary,End of project / funding,National Staff,Yemen,G2,Field Operations,CT007486
+E13259,2025-06-09,Involuntary,End of project / funding,National Staff,South Sudan,G1,Research & Assessment,CT007939
+E10099,2025-06-19,Voluntary,Resignation,National Staff,Afghanistan,G2,Research & Assessment,CT007964
+E10744,2025-06-02,Voluntary,Resignation,National Staff,Iraq,G3,Research & Assessment,CT007808
+E10821,2025-06-22,Voluntary,Resignation,International Staff,Iraq,G5,Finance & Compliance,CT006517
+E11071,2025-06-25,Voluntary,Resignation,International Staff,Mali,G6,Programme Management,CT005020
+E11100,2025-06-13,Voluntary,Resignation,National Staff,Mozambique,G2,GIS & Data Management,CT006742
+E11195,2025-06-28,Voluntary,Resignation,National Staff,Niger,G3,GIS & Data Management,CT007588
+E11481,2025-06-21,Voluntary,Resignation,National Staff,Somalia,G3,Logistics & IT,CT007184
+E11563,2025-06-20,Voluntary,Resignation,National Staff,South Sudan,G2,Research & Assessment,CT007613
+E11600,2025-06-29,Voluntary,Resignation,National Staff,South Sudan,G3,Field Operations,CT008490
+E11750,2025-06-17,Voluntary,Resignation,National Staff,Syria,G3,Field Operations,CT008612
+E12176,2025-06-25,Voluntary,Resignation,HQ Staff,Switzerland,G5,Logistics & IT,CT006173
+E12276,2025-06-22,Voluntary,Resignation,National Staff,Myanmar,G3,Research & Assessment,CT007749
+E12753,2025-06-11,Voluntary,Resignation,National Staff,Colombia,G3,GIS & Data Management,CT008111
+E12970,2025-06-07,Voluntary,Resignation,National Staff,Burkina Faso,G2,Logistics & IT,CT006620
+E13136,2025-06-26,Voluntary,Resignation,National Staff,Chad,G1,Finance & Compliance,CT007265
+E10107,2025-07-23,Involuntary,End of project / funding,National Staff,Afghanistan,G3,Field Operations,CT006269
+E10275,2025-07-25,Involuntary,Contract not renewed,National Staff,Burkina Faso,G3,Field Operations,CT006275
+E10565,2025-07-05,Involuntary,Contract not renewed,National Staff,Democratic Republic of the Congo,G2,Field Operations,CT006280
+E10647,2025-07-18,Voluntary,Did not wish to renew,National Staff,Ethiopia,G2,Field Operations,CT006283
+E10794,2025-07-26,Involuntary,End of project / funding,National Staff,Iraq,G4,Finance & Compliance,CT006289
+E10871,2025-07-02,Involuntary,End of project / funding,National Staff,Kenya,G3,Research & Assessment,CT006293
+E10895,2025-07-09,Involuntary,End of project / funding,National Staff,Kenya,G2,Research & Assessment,CT006295
+E10923,2025-07-07,Involuntary,End of project / funding,National Staff,Lebanon,G2,Field Operations,CT006298
+E10984,2025-07-09,Involuntary,Contract not renewed,National Staff,Libya,G3,Programme Management,CT006301
+E11083,2025-07-27,Involuntary,End of project / funding,National Staff,Mozambique,G3,GIS & Data Management,CT006303
+E11256,2025-07-29,Involuntary,End of project / funding,National Staff,Nigeria,G2,Research & Assessment,CT006313
+E11389,2025-07-26,Involuntary,Contract not renewed,National Staff,Senegal,G3,Research & Assessment,CT007599
+E11398,2025-07-07,Voluntary,Did not wish to renew,International Staff,Senegal,G4,GIS & Data Management,CT007600
+E11426,2025-07-26,Involuntary,End of project / funding,National Staff,Somalia,G2,Research & Assessment,CT008253
+E11472,2025-07-22,Involuntary,End of project / funding,National Staff,Somalia,G1,Programme Management,CT006326
+E11544,2025-07-12,Voluntary,Did not wish to renew,National Staff,South Sudan,G2,Field Operations,CT007611
+E11608,2025-07-09,Voluntary,Did not wish to renew,National Staff,South Sudan,G3,GIS & Data Management,CT007617
+E11672,2025-07-02,Involuntary,Contract not renewed,International Staff,Senegal,G4,GIS & Data Management,CT007296
+E11682,2025-07-12,Involuntary,Contract not renewed,National Staff,Syria,G3,Logistics & IT,CT008263
+E11701,2025-07-21,Voluntary,Did not wish to renew,National Staff,Syria,G3,GIS & Data Management,CT006337
+E11729,2025-07-08,Involuntary,End of project / funding,National Staff,Syria,G1,Research & Assessment,CT008267
+E11782,2025-07-20,Voluntary,Did not wish to renew,National Staff,Syria,G2,Field Operations,CT007630
+E11923,2025-07-27,Involuntary,End of project / funding,National Staff,Ukraine,G3,Field Operations,CT006346
+E11986,2025-07-29,Voluntary,Did not wish to renew,National Staff,Yemen,G3,Research & Assessment,CT006348
+E12422,2025-07-06,Involuntary,End of project / funding,National Staff,Afghanistan,G3,Field Operations,CT006373
+E12423,2025-07-18,Voluntary,Did not wish to renew,National Staff,Somalia,G3,Logistics & IT,CT007668
+E12425,2025-07-08,Involuntary,End of project / funding,National Staff,Myanmar,G3,Logistics & IT,CT006375
+E12443,2025-07-16,Involuntary,End of project / funding,National Staff,Bangladesh,G3,Finance & Compliance,CT006383
+E12527,2025-07-19,Involuntary,Contract not renewed,National Staff,Sudan,G4,HR & Administration,CT007673
+E12763,2025-07-02,Involuntary,Contract not renewed,National Staff,Haiti,G1,HR & Administration,CT008325
+E12858,2025-07-06,Involuntary,Contract not renewed,International Staff,Ukraine,G4,Programme Management,CT006046
+E12895,2025-07-07,Involuntary,End of project / funding,National Staff,Somalia,G3,Field Operations,CT006247
+E12900,2025-07-25,Voluntary,Did not wish to renew,National Staff,Colombia,G3,Logistics & IT,CT006254
+E12902,2025-07-18,Involuntary,Contract not renewed,National Staff,Iraq,G1,Research & Assessment,CT007704
+E12907,2025-07-12,Involuntary,End of project / funding,National Staff,Yemen,G1,Field Operations,CT006262
+E12910,2025-07-26,Voluntary,Did not wish to renew,National Staff,Afghanistan,G2,Research & Assessment,CT006395
+E12942,2025-07-26,Involuntary,Contract not renewed,National Staff,Yemen,G2,Field Operations,CT006442
+E13184,2025-07-26,Voluntary,Did not wish to renew,National Staff,Yemen,G2,Logistics & IT,CT007722
+E13304,2025-07-18,Involuntary,End of project / funding,National Staff,Jordan,G3,Finance & Compliance,CT008168
+E13320,2025-07-23,Involuntary,Contract not renewed,National Staff,Nigeria,G2,Field Operations,CT008357
+E13339,2025-07-27,Involuntary,End of project / funding,National Staff,Myanmar,G2,Research & Assessment,CT008379
+E10104,2025-07-06,Voluntary,Resignation,National Staff,Afghanistan,G2,Research & Assessment,CT007965
+E10362,2025-07-29,Voluntary,Resignation,National Staff,Chad,G4,Finance & Compliance,CT000362
+E10706,2025-07-29,Voluntary,Resignation,National Staff,Haiti,G3,Field Operations,CT000706
+E10863,2025-07-10,Voluntary,Resignation,International Staff,Jordan,G4,GIS & Data Management,CT008007
+E11070,2025-07-03,Voluntary,Resignation,International Staff,Sudan,G5,Research & Assessment,CT008358
+E11135,2025-07-22,Voluntary,Resignation,National Staff,Myanmar,G1,Field Operations,CT006305
+E11324,2025-07-02,Voluntary,Resignation,International Staff,Myanmar,G4,Programme Management,CT006751
+E11546,2025-07-08,Voluntary,Resignation,National Staff,South Sudan,G1,Finance & Compliance,CT004638
+E11643,2025-07-28,Involuntary,Dismissal,National Staff,Sudan,G2,HR & Administration,CT008043
+E11952,2025-07-02,Voluntary,Resignation,National Staff,Ukraine,G4,Research & Assessment,CT008720
+E12575,2025-07-04,Voluntary,Resignation,National Staff,Democratic Republic of the Congo,G4,Research & Assessment,CT007117
+E12608,2025-07-27,Voluntary,Resignation,National Staff,Somalia,G2,Research & Assessment,CT007231
+E12628,2025-07-04,Voluntary,Resignation,National Staff,Iraq,G2,Research & Assessment,CT008744
+E12683,2025-07-08,Voluntary,Resignation,National Staff,Myanmar,G3,Field Operations,CT008539
+E12831,2025-07-17,Voluntary,Resignation,International Staff,Myanmar,G5,GIS & Data Management,CT008756
+E12886,2025-07-07,Voluntary,Resignation,National Staff,Chad,G3,Field Operations,CT008603
+E12932,2025-07-03,Voluntary,Resignation,National Staff,Ethiopia,G2,GIS & Data Management,CT006426
+E12969,2025-07-13,Voluntary,Resignation,National Staff,Colombia,G2,Field Operations,CT006619
+E13116,2025-07-19,Voluntary,Resignation,National Staff,Iraq,G3,Field Operations,CT007103
+E13314,2025-07-15,Voluntary,Resignation,National Staff,Ukraine,G3,Field Operations,CT008181
+E10092,2025-08-11,Involuntary,End of project / funding,National Staff,Afghanistan,G3,GIS & Data Management,CT006480
+E10208,2025-08-04,Involuntary,End of project / funding,National Staff,Bangladesh,G1,Finance & Compliance,CT006486
+E10296,2025-08-13,Voluntary,Did not wish to renew,National Staff,Central African Republic,G2,Field Operations,CT006490
+E10695,2025-08-10,Involuntary,Contract not renewed,National Staff,Haiti,G1,GIS & Data Management,CT006513
+E10718,2025-08-07,Involuntary,End of project / funding,National Staff,Iraq,G2,Field Operations,CT007805
+E10892,2025-08-21,Involuntary,End of project / funding,National Staff,Kenya,G2,Field Operations,CT008447
+E10901,2025-08-28,Involuntary,End of project / funding,National Staff,Kenya,G3,Logistics & IT,CT006521
+E11045,2025-08-26,Involuntary,End of project / funding,National Staff,Mali,G2,Logistics & IT,CT006527
+E11091,2025-08-02,Involuntary,Contract not renewed,National Staff,Mozambique,G4,HR & Administration,CT007825
+E11116,2025-08-27,Voluntary,Did not wish to renew,National Staff,Mozambique,G3,Finance & Compliance,CT007826
+E11226,2025-08-23,Involuntary,End of project / funding,National Staff,Niger,G4,HR & Administration,CT006536
+E11276,2025-08-20,Involuntary,End of project / funding,National Staff,Nigeria,G2,GIS & Data Management,CT006623
+E11396,2025-08-16,Involuntary,Contract not renewed,International Staff,Senegal,G4,Research & Assessment,CT006545
+E11654,2025-08-16,Voluntary,Did not wish to renew,National Staff,Sudan,G2,GIS & Data Management,CT006555
+E11706,2025-08-06,Involuntary,Contract not renewed,National Staff,Syria,G3,Research & Assessment,CT007853
+E11709,2025-08-29,Voluntary,Did not wish to renew,National Staff,Syria,G1,Research & Assessment,CT008497
+E11710,2025-08-14,Involuntary,End of project / funding,National Staff,Syria,G2,Finance & Compliance,CT006557
+E11755,2025-08-04,Voluntary,Did not wish to renew,National Staff,Syria,G4,Logistics & IT,CT007724
+E11793,2025-08-03,Voluntary,Did not wish to renew,National Staff,Syria,G3,GIS & Data Management,CT007858
+E11882,2025-08-09,Involuntary,End of project / funding,National Staff,Ukraine,G1,Programme Management,CT007862
+E11991,2025-08-13,Involuntary,End of project / funding,National Staff,Yemen,G3,Research & Assessment,CT006569
+E12050,2025-08-21,Voluntary,Did not wish to renew,National Staff,Yemen,G1,Field Operations,CT006572
+E12255,2025-08-02,Involuntary,End of project / funding,National Staff,Colombia,G2,Research & Assessment,CT006431
+E12259,2025-08-19,Involuntary,End of project / funding,National Staff,Afghanistan,G1,GIS & Data Management,CT007879
+E12312,2025-08-20,Involuntary,End of project / funding,National Staff,Central African Republic,G2,HR & Administration,CT007751
+E12345,2025-08-31,Involuntary,End of project / funding,National Staff,Democratic Republic of the Congo,G1,Field Operations,CT006580
+E12459,2025-08-03,Involuntary,End of project / funding,National Staff,Afghanistan,G4,GIS & Data Management,CT006587
+E12479,2025-08-26,Involuntary,End of project / funding,National Staff,Ukraine,G5,Logistics & IT,CT006596
+E12483,2025-08-15,Involuntary,End of project / funding,National Staff,Niger,G3,Field Operations,CT006597
+E12614,2025-08-31,Voluntary,Did not wish to renew,International Staff,Democratic Republic of the Congo,G4,Programme Management,CT007893
+E12653,2025-08-26,Voluntary,Did not wish to renew,International Staff,Lebanon,G4,Research & Assessment,CT007895
+E12708,2025-08-07,Voluntary,Did not wish to renew,National Staff,Iraq,G2,Field Operations,CT007904
+E12714,2025-08-20,Voluntary,Did not wish to renew,National Staff,Afghanistan,G2,Finance & Compliance,CT006607
+E12741,2025-08-31,Involuntary,End of project / funding,National Staff,Bangladesh,G1,Finance & Compliance,CT007916
+E12833,2025-08-30,Involuntary,End of project / funding,National Staff,Somalia,G4,Research & Assessment,CT008566
+E12840,2025-08-25,Involuntary,Contract not renewed,National Staff,Iraq,G2,Field Operations,CT008569
+E12917,2025-08-03,Involuntary,Contract not renewed,National Staff,Bangladesh,G5,Research & Assessment,CT006404
+E12929,2025-08-09,Voluntary,Did not wish to renew,National Staff,Senegal,G1,Research & Assessment,CT006423
+E12943,2025-08-03,Involuntary,End of project / funding,National Staff,Democratic Republic of the Congo,G2,GIS & Data Management,CT006443
+E12954,2025-08-03,Voluntary,Did not wish to renew,National Staff,Lebanon,G2,Research & Assessment,CT006460
+E12956,2025-08-12,Voluntary,Did not wish to renew,National Staff,Democratic Republic of the Congo,G1,HR & Administration,CT006462
+E12962,2025-08-04,Involuntary,End of project / funding,National Staff,Senegal,G3,Field Operations,CT006469
+E12966,2025-08-11,Involuntary,Contract not renewed,National Staff,Sudan,G1,Field Operations,CT006616
+E12988,2025-08-21,Involuntary,End of project / funding,National Staff,Democratic Republic of the Congo,G5,Research & Assessment,CT006640
+E12990,2025-08-21,Voluntary,Did not wish to renew,National Staff,Yemen,G2,Field Operations,CT006642
+E10166,2025-08-11,Voluntary,Resignation,National Staff,Bangladesh,G3,Field Operations,CT008644
+E11425,2025-08-20,Voluntary,Resignation,National Staff,Somalia,G4,HR & Administration,CT008252
+E12338,2025-08-13,Voluntary,Resignation,National Staff,South Sudan,G2,Field Operations,CT008519
+E12346,2025-08-01,Voluntary,Resignation,National Staff,Afghanistan,G2,Research & Assessment,CT008523
+E12658,2025-08-06,Voluntary,Resignation,National Staff,Central African Republic,G2,GIS & Data Management,CT004896
+E12808,2025-08-08,Voluntary,Resignation,National Staff,Nigeria,G3,Research & Assessment,CT008338
+E12994,2025-08-13,Voluntary,Resignation,National Staff,Mali,G3,Field Operations,CT006650
+E13228,2025-08-23,Voluntary,Resignation,International Staff,Chad,G6,Research & Assessment,CT009186
+E13351,2025-08-19,Involuntary,Dismissal,International Staff,Bangladesh,G6,Finance & Compliance,CT008395
+E13426,2025-08-02,Voluntary,Resignation,National Staff,Yemen,G2,Programme Management,CT008803
+E10715,2025-09-28,Voluntary,Did not wish to renew,International Staff,Haiti,G6,GIS & Data Management,CT004178
+E10735,2025-09-05,Involuntary,End of project / funding,National Staff,Iraq,G3,Field Operations,CT008000
+E10762,2025-09-16,Involuntary,Contract not renewed,National Staff,Iraq,G1,Research & Assessment,CT006724
+E10981,2025-09-21,Involuntary,End of project / funding,National Staff,Libya,G3,Programme Management,CT006737
+E11009,2025-09-07,Involuntary,Contract not renewed,National Staff,Libya,G2,Finance & Compliance,CT006738
+E11089,2025-09-20,Involuntary,Contract not renewed,National Staff,Mozambique,G3,Field Operations,CT006741
+E11210,2025-09-17,Involuntary,End of project / funding,National Staff,Niger,G2,Field Operations,CT006746
+E11297,2025-09-27,Involuntary,Contract not renewed,National Staff,Nigeria,G2,GIS & Data Management,CT006750
+E11446,2025-09-23,Involuntary,Contract not renewed,National Staff,Somalia,G3,Finance & Compliance,CT008034
+E11516,2025-09-21,Involuntary,Contract not renewed,National Staff,South Sudan,G1,Logistics & IT,CT006764
+E11626,2025-09-16,Involuntary,End of project / funding,National Staff,Sudan,G1,Programme Management,CT008702
+E11937,2025-09-15,Voluntary,Did not wish to renew,National Staff,Ukraine,G5,GIS & Data Management,CT006670
+E12076,2025-09-12,Involuntary,End of project / funding,National Staff,Yemen,G3,Programme Management,CT008068
+E12261,2025-09-11,Involuntary,Contract not renewed,National Staff,Burkina Faso,G2,Research & Assessment,CT008076
+E12488,2025-09-01,Involuntary,End of project / funding,National Staff,Mali,G3,Field Operations,CT006813
+E12514,2025-09-17,Involuntary,End of project / funding,National Staff,Colombia,G3,HR & Administration,CT006817
+E12522,2025-09-09,Involuntary,End of project / funding,National Staff,Niger,G2,Finance & Compliance,CT006819
+E12866,2025-09-15,Voluntary,Did not wish to renew,National Staff,Ukraine,G2,Research & Assessment,CT006834
+E13011,2025-09-08,Involuntary,End of project / funding,National Staff,Iraq,G2,Field Operations,CT006669
+E13026,2025-09-19,Involuntary,End of project / funding,National Staff,Democratic Republic of the Congo,G4,Logistics & IT,CT006688
+E13031,2025-09-14,Involuntary,End of project / funding,National Staff,Sudan,G2,Logistics & IT,CT006693
+E13032,2025-09-10,Involuntary,Contract not renewed,National Staff,Nigeria,G3,Field Operations,CT006694
+E13034,2025-09-17,Involuntary,Contract not renewed,National Staff,Somalia,G2,Programme Management,CT006696
+E13037,2025-09-12,Involuntary,Contract not renewed,National Staff,Yemen,G1,Finance & Compliance,CT006841
+E13045,2025-09-22,Voluntary,Did not wish to renew,National Staff,Nigeria,G4,Logistics & IT,CT006849
+E13058,2025-09-29,Involuntary,Contract not renewed,National Staff,Central African Republic,G1,Research & Assessment,CT006866
+E13073,2025-09-30,Involuntary,End of project / funding,National Staff,Ukraine,G2,HR & Administration,CT006892
+E13283,2025-09-18,Involuntary,End of project / funding,National Staff,Bangladesh,G2,GIS & Data Management,CT008143
+E13285,2025-09-28,Voluntary,Did not wish to renew,National Staff,Myanmar,G3,Research & Assessment,CT008145
+E13375,2025-09-03,Involuntary,Contract not renewed,National Staff,South Sudan,G2,Research & Assessment,CT008593
+E10368,2025-09-25,Involuntary,Dismissal,National Staff,Chad,G2,HR & Administration,CT008854
+E10387,2025-09-18,Voluntary,Resignation,National Staff,Chad,G1,Research & Assessment,CT007330
+E10539,2025-09-02,Voluntary,Resignation,National Staff,Democratic Republic of the Congo,G3,Field Operations,CT003750
+E10604,2025-09-17,Voluntary,Resignation,National Staff,Ethiopia,G2,Field Operations,CT007148
+E11430,2025-09-26,Voluntary,Resignation,National Staff,Somalia,G2,Finance & Compliance,CT009325
+E11625,2025-09-29,Voluntary,Resignation,National Staff,Sudan,G3,GIS & Data Management,CT008260
+E11744,2025-09-19,Involuntary,Dismissal,National Staff,Syria,G3,Field Operations,CT008904
+E11868,2025-09-09,Voluntary,Resignation,National Staff,Ukraine,G3,Field Operations,CT008056
+E11916,2025-09-25,Voluntary,Resignation,National Staff,Ukraine,G2,GIS & Data Management,CT009350
+E12191,2025-09-13,Voluntary,Resignation,HQ Staff,Switzerland,G4,Programme Management,CT003867
+E12471,2025-09-13,Voluntary,Resignation,National Staff,Colombia,G4,Research & Assessment,CT007884
+E12595,2025-09-30,Involuntary,Dismissal,National Staff,Ethiopia,G2,Field Operations,CT007228
+E12602,2025-09-15,Voluntary,Resignation,National Staff,Niger,G1,Logistics & IT,CT007229
+E12611,2025-09-13,Voluntary,Resignation,International Staff,Burkina Faso,G5,GIS & Data Management,CT007761
+E12702,2025-09-01,Voluntary,Resignation,National Staff,Burkina Faso,G4,GIS & Data Management,CT008319
+E12898,2025-09-29,Voluntary,Resignation,National Staff,South Sudan,G2,Research & Assessment,CT008954
+E13300,2025-09-13,Voluntary,Resignation,National Staff,Lebanon,G3,Research & Assessment,CT008163
+E13352,2025-09-12,Voluntary,Resignation,National Staff,Syria,G5,HR & Administration,CT008396
+E13436,2025-09-15,Voluntary,Resignation,National Staff,Chad,G4,HR & Administration,CT008815
+E13509,2025-09-01,Voluntary,Resignation,National Staff,Myanmar,G1,Field Operations,CT009045
+E10262,2025-10-12,Involuntary,End of project / funding,National Staff,Burkina Faso,G4,GIS & Data Management,CT006920
+E10316,2025-10-08,Involuntary,End of project / funding,National Staff,Central African Republic,G2,Finance & Compliance,CT008169
+E10560,2025-10-04,Involuntary,End of project / funding,National Staff,Democratic Republic of the Congo,G2,Field Operations,CT008858
+E10731,2025-10-08,Involuntary,Contract not renewed,National Staff,Iraq,G3,GIS & Data Management,CT006943
+E10888,2025-10-04,Involuntary,Contract not renewed,National Staff,Kenya,G2,Field Operations,CT006948
+E10903,2025-10-09,Voluntary,Did not wish to renew,National Staff,Kenya,G3,Field Operations,CT006949
+E10970,2025-10-12,Involuntary,End of project / funding,National Staff,Lebanon,G3,Field Operations,CT006956
+E11132,2025-10-26,Involuntary,Contract not renewed,National Staff,Myanmar,G3,Field Operations,CT006964
+E11192,2025-10-04,Voluntary,Did not wish to renew,National Staff,Niger,G3,GIS & Data Management,CT008237
+E11694,2025-10-13,Involuntary,Contract not renewed,National Staff,Syria,G3,Field Operations,CT008264
+E11765,2025-10-24,Voluntary,Did not wish to renew,National Staff,Syria,G1,HR & Administration,CT008272
+E12309,2025-10-13,Involuntary,End of project / funding,National Staff,Syria,G1,Research & Assessment,CT006895
+E12314,2025-10-15,Involuntary,Contract not renewed,National Staff,Somalia,G3,Field Operations,CT007018
+E12417,2025-10-01,Voluntary,Did not wish to renew,National Staff,Iraq,G3,Field Operations,CT008926
+E12418,2025-10-06,Involuntary,Contract not renewed,National Staff,Sudan,G3,GIS & Data Management,CT006889
+E12532,2025-10-08,Involuntary,Contract not renewed,International Staff,Afghanistan,G3,Research & Assessment,CT007035
+E12565,2025-10-06,Voluntary,Did not wish to renew,National Staff,Haiti,G2,Field Operations,CT007044
+E12696,2025-10-26,Involuntary,End of project / funding,National Staff,Afghanistan,G2,Field Operations,CT007058
+E13052,2025-10-31,Involuntary,Contract not renewed,International Staff,Sudan,G4,GIS & Data Management,CT008341
+E13095,2025-10-21,Involuntary,End of project / funding,National Staff,Democratic Republic of the Congo,G3,Research & Assessment,CT007079
+E13286,2025-10-06,Involuntary,End of project / funding,National Staff,Lebanon,G1,Research & Assessment,CT008146
+E13315,2025-10-08,Voluntary,Did not wish to renew,National Staff,Kenya,G4,Research & Assessment,CT008182
+E13347,2025-10-25,Involuntary,End of project / funding,National Staff,Central African Republic,G2,Finance & Compliance,CT008388
+E10068,2025-10-04,Voluntary,Resignation,National Staff,Afghanistan,G2,Field Operations,CT007961
+E10206,2025-10-15,Voluntary,Resignation,National Staff,Bangladesh,G2,Research & Assessment,CT008422
+E10563,2025-10-17,Voluntary,Resignation,National Staff,Democratic Republic of the Congo,G2,HR & Administration,CT009288
+E10688,2025-10-17,Involuntary,Dismissal,National Staff,Haiti,G2,HR & Administration,CT002569
+E10722,2025-10-04,Voluntary,Resignation,National Staff,Iraq,G2,Field Operations,CT007559
+E11562,2025-10-06,Voluntary,Resignation,National Staff,South Sudan,G5,Logistics & IT,CT008041
+E11617,2025-10-01,Voluntary,Resignation,International Staff,South Sudan,G4,Programme Management,CT008896
+E12119,2025-10-30,Voluntary,Resignation,HQ Staff,Switzerland,G4,Programme Management,CT002995
+E12226,2025-10-09,Voluntary,Resignation,National Staff,South Sudan,G3,Field Operations,CT008289
+E12654,2025-10-27,Voluntary,Resignation,International Staff,Nigeria,G4,Research & Assessment,CT007682
+E12725,2025-10-25,Voluntary,Resignation,National Staff,Myanmar,G3,Field Operations,CT009148
+E12890,2025-10-13,Voluntary,Resignation,National Staff,Iraq,G1,Programme Management,CT008768
+E13013,2025-10-18,Voluntary,Resignation,National Staff,Mozambique,G2,Logistics & IT,CT008386
+E13273,2025-10-25,Involuntary,Dismissal,National Staff,Bangladesh,G3,GIS & Data Management,CT007956
+E13491,2025-10-23,Voluntary,Resignation,National Staff,Myanmar,G3,Research & Assessment,CT009023
+E13541,2025-10-14,Voluntary,Resignation,National Staff,Iraq,G1,Research & Assessment,CT009237
+E13555,2025-10-09,Voluntary,Resignation,National Staff,Syria,G2,Research & Assessment,CT009258
+E10007,2025-11-28,Involuntary,Contract not renewed,National Staff,Afghanistan,G3,Field Operations,CT007126
+E10533,2025-11-02,Voluntary,Did not wish to renew,National Staff,Democratic Republic of the Congo,G2,Finance & Compliance,CT007145
+E10752,2025-11-16,Voluntary,Did not wish to renew,National Staff,Iraq,G1,Field Operations,CT007116
+E10824,2025-11-18,Voluntary,Did not wish to renew,National Staff,Jordan,G3,HR & Administration,CT008441
+E10977,2025-11-05,Involuntary,End of project / funding,International Staff,Jordan,G6,Finance & Compliance,CT008453
+E11198,2025-11-14,Involuntary,Contract not renewed,National Staff,Niger,G3,Logistics & IT,CT009094
+E11251,2025-11-23,Voluntary,Did not wish to renew,National Staff,Nigeria,G3,GIS & Data Management,CT008467
+E11555,2025-11-06,Voluntary,Did not wish to renew,National Staff,South Sudan,G3,HR & Administration,CT007186
+E11948,2025-11-15,Voluntary,Did not wish to renew,National Staff,Ukraine,G2,Research & Assessment,CT007201
+E12424,2025-11-15,Voluntary,Did not wish to renew,International Staff,Nigeria,G4,Programme Management,CT008526
+E12446,2025-11-29,Voluntary,Did not wish to renew,National Staff,Kenya,G1,Field Operations,CT008527
+E12474,2025-11-22,Involuntary,End of project / funding,National Staff,Colombia,G2,Field Operations,CT007218
+E12477,2025-11-20,Involuntary,End of project / funding,National Staff,Lebanon,G2,Research & Assessment,CT007219
+E12712,2025-11-23,Involuntary,Contract not renewed,National Staff,Mali,G3,Logistics & IT,CT008542
+E12780,2025-11-02,Involuntary,End of project / funding,National Staff,Mali,G3,Field Operations,CT007243
+E12782,2025-11-02,Involuntary,End of project / funding,National Staff,Lebanon,G2,Research & Assessment,CT008546
+E12792,2025-11-07,Voluntary,Did not wish to renew,National Staff,Burkina Faso,G1,GIS & Data Management,CT008548
+E12834,2025-11-28,Involuntary,Contract not renewed,National Staff,Afghanistan,G3,Field Operations,CT008567
+E12842,2025-11-30,Involuntary,Contract not renewed,National Staff,Democratic Republic of the Congo,G2,HR & Administration,CT007250
+E13093,2025-11-05,Voluntary,Did not wish to renew,National Staff,Myanmar,G3,Field Operations,CT007077
+E13112,2025-11-04,Involuntary,Contract not renewed,National Staff,Afghanistan,G5,Research & Assessment,CT007098
+E13115,2025-11-15,Involuntary,End of project / funding,National Staff,Ukraine,G2,Field Operations,CT007102
+E13267,2025-11-26,Involuntary,Contract not renewed,National Staff,Myanmar,G3,Programme Management,CT009190
+E13344,2025-11-04,Voluntary,Did not wish to renew,National Staff,Yemen,G1,GIS & Data Management,CT008384
+E13356,2025-11-20,Voluntary,Did not wish to renew,National Staff,Jordan,G1,GIS & Data Management,CT008401
+E13510,2025-11-20,Involuntary,Contract not renewed,National Staff,Iraq,G2,Field Operations,CT009199
+E10385,2025-11-26,Voluntary,Resignation,National Staff,Chad,G3,Field Operations,CT008425
+E10504,2025-11-09,Voluntary,Resignation,National Staff,Democratic Republic of the Congo,G3,GIS & Data Management,CT009506
+E10748,2025-11-09,Voluntary,Resignation,National Staff,Iraq,G1,Research & Assessment,CT007345
+E10950,2025-11-22,Involuntary,Dismissal,National Staff,Lebanon,G4,Research & Assessment,CT007578
+E10999,2025-11-15,Voluntary,Resignation,National Staff,Libya,G2,Field Operations,CT009710
+E11383,2025-11-15,Voluntary,Resignation,National Staff,Senegal,G4,Research & Assessment,CT008690
+E11401,2025-11-15,Voluntary,Resignation,National Staff,Somalia,G3,Research & Assessment,CT007601
+E11448,2025-11-24,Voluntary,Resignation,National Staff,Somalia,G2,Research & Assessment,CT001448
+E11542,2025-11-13,Voluntary,Resignation,National Staff,South Sudan,G3,Field Operations,CT008697
+E11609,2025-11-17,Voluntary,Resignation,International Staff,South Sudan,G3,Programme Management,CT008491
+E11623,2025-11-05,Voluntary,Resignation,National Staff,Sudan,G1,Research & Assessment,CT007619
+E11670,2025-11-30,Voluntary,Resignation,National Staff,Sudan,G3,Field Operations,CT007398
+E12760,2025-11-14,Voluntary,Resignation,HQ Staff,Switzerland,G3,Research & Assessment,CT005601
+E13386,2025-11-03,Voluntary,Resignation,National Staff,Somalia,G3,Field Operations,CT008606
+E13554,2025-11-16,Voluntary,Resignation,National Staff,Kenya,G3,Research & Assessment,CT009255
+E13580,2025-11-30,Voluntary,Resignation,National Staff,Syria,G4,Research & Assessment,CT009447
+E10021,2025-12-12,Involuntary,Contract not renewed,National Staff,Afghanistan,G2,Research & Assessment,CT007312
+E10045,2025-12-26,Involuntary,End of project / funding,National Staff,Afghanistan,G2,GIS & Data Management,CT007314
+E10677,2025-12-03,Voluntary,Did not wish to renew,National Staff,Haiti,G4,Finance & Compliance,CT008662
+E10801,2025-12-14,Voluntary,Did not wish to renew,National Staff,Iraq,G3,Logistics & IT,CT009298
+E10839,2025-12-20,Voluntary,Did not wish to renew,National Staff,Jordan,G3,HR & Administration,CT008668
+E10840,2025-12-27,Involuntary,End of project / funding,National Staff,Jordan,G5,Logistics & IT,CT007347
+E11202,2025-12-12,Voluntary,Did not wish to renew,National Staff,Niger,G3,GIS & Data Management,CT008685
+E11909,2025-12-08,Involuntary,End of project / funding,National Staff,Ukraine,G3,GIS & Data Management,CT007407
+E12667,2025-12-21,Involuntary,Contract not renewed,National Staff,Sudan,G3,Field Operations,CT008750
+E12980,2025-12-11,Voluntary,Did not wish to renew,National Staff,Ukraine,G3,Field Operations,CT007299
+E13123,2025-12-31,Involuntary,End of project / funding,National Staff,Sudan,G3,Finance & Compliance,CT008793
+E13162,2025-12-04,Voluntary,Did not wish to renew,National Staff,Ethiopia,G4,Research & Assessment,CT007295
+E13388,2025-12-27,Voluntary,Did not wish to renew,International Staff,Haiti,G4,Programme Management,CT008610
+E13395,2025-12-05,Voluntary,Did not wish to renew,National Staff,South Sudan,G3,Research & Assessment,CT008618
+E13539,2025-12-11,Involuntary,Contract not renewed,National Staff,South Sudan,G3,Field Operations,CT009235
+E10103,2025-12-28,Voluntary,Resignation,National Staff,Afghanistan,G3,Field Operations,CT007768
+E10133,2025-12-29,Voluntary,Resignation,National Staff,Bangladesh,G3,GIS & Data Management,CT007967
+E10591,2025-12-12,Involuntary,Dismissal,International Staff,Mali,G5,GIS & Data Management,CT008433
+E11244,2025-12-28,Voluntary,Resignation,National Staff,Nigeria,G3,Research & Assessment,CT009944
+E11713,2025-12-08,Voluntary,Resignation,National Staff,Syria,G2,GIS & Data Management,CT007854
+E12364,2025-12-19,Voluntary,Resignation,National Staff,Sudan,G3,Field Operations,CT009204
+E12859,2025-12-26,Voluntary,Resignation,National Staff,Afghanistan,G4,Research & Assessment,CT010016
+E12916,2025-12-28,Voluntary,Resignation,National Staff,Myanmar,G3,Field Operations,CT008989
+E13006,2025-12-10,Voluntary,Resignation,National Staff,South Sudan,G2,Logistics & IT,CT009798
+E13042,2025-12-22,Voluntary,Resignation,National Staff,Ukraine,G3,Field Operations,CT010022
+E13216,2025-12-05,Voluntary,Resignation,National Staff,Ukraine,G3,Field Operations,CT007510
+E13288,2025-12-10,Voluntary,Resignation,National Staff,Somalia,G2,Research & Assessment,CT009620
+E13333,2025-12-04,Involuntary,Dismissal,National Staff,Lebanon,G2,Field Operations,CT008373
+E13530,2025-12-10,Voluntary,Resignation,HQ Staff,Switzerland,G6,Programme Management,CT009223
+E13540,2025-12-08,Voluntary,Resignation,International Staff,Democratic Republic of the Congo,G5,Finance & Compliance,CT009236
+E10194,2026-01-04,Involuntary,Contract not renewed,National Staff,Bangladesh,G4,Finance & Compliance,CT007527
+E10350,2026-01-31,Involuntary,Contract not renewed,National Staff,Central African Republic,G3,Field Operations,CT007537
+E10625,2026-01-30,Voluntary,Did not wish to renew,National Staff,Ethiopia,G1,Field Operations,CT007550
+E10978,2026-01-11,Voluntary,Did not wish to renew,International Staff,Lebanon,G4,GIS & Data Management,CT008872
+E11487,2026-01-24,Voluntary,Retirement,National Staff,Somalia,G1,Field Operations,CT007723
+E11665,2026-01-04,Voluntary,Did not wish to renew,National Staff,Sudan,G2,Logistics & IT,CT007621
+E11884,2026-01-29,Involuntary,End of project / funding,National Staff,Ukraine,G2,Research & Assessment,CT007636
+E12894,2026-01-01,Voluntary,Did not wish to renew,National Staff,Democratic Republic of the Congo,G2,Research & Assessment,CT008952
+E12913,2026-01-19,Involuntary,Contract not renewed,National Staff,Mozambique,G3,Research & Assessment,CT007706
+E13084,2026-01-22,Involuntary,Contract not renewed,National Staff,Somalia,G2,Research & Assessment,CT007714
+E13209,2026-01-06,Involuntary,Contract not renewed,National Staff,Nigeria,G2,Research & Assessment,CT007502
+E13488,2026-01-31,Involuntary,Contract not renewed,National Staff,Syria,G1,Research & Assessment,CT009020
+E10084,2026-01-18,Voluntary,Resignation,National Staff,Afghanistan,G4,Finance & Compliance,CT007963
+E11294,2026-01-22,Voluntary,Resignation,National Staff,Nigeria,G2,Logistics & IT,CT005265
+E11326,2026-01-05,Involuntary,Dismissal,National Staff,Nigeria,G1,Field Operations,CT009948
+E11495,2026-01-06,Voluntary,Resignation,International Staff,Yemen,G6,GIS & Data Management,CT009959
+E12453,2026-01-26,Voluntary,Resignation,National Staff,Nigeria,G4,Research & Assessment,CT010230
+E13014,2026-01-07,Voluntary,Resignation,International Staff,Somalia,G4,Research & Assessment,CT009596
+E13106,2026-01-15,Voluntary,Resignation,National Staff,Ethiopia,G3,Finance & Compliance,CT009804
+E13310,2026-01-03,Voluntary,Resignation,National Staff,Ethiopia,G4,HR & Administration,CT008176
+E13318,2026-01-28,Voluntary,Resignation,International Staff,Ukraine,G3,GIS & Data Management,CT010100
+E13435,2026-01-19,Voluntary,Resignation,National Staff,Nigeria,G3,Field Operations,CT008814
+E13511,2026-01-11,Voluntary,Resignation,National Staff,Kenya,G2,Field Operations,CT009200
+E13519,2026-01-18,Voluntary,Resignation,National Staff,Colombia,G3,Research & Assessment,CT009211
+E13577,2026-01-17,Voluntary,Resignation,National Staff,Lebanon,G2,Field Operations,CT009443
+E13685,2026-01-06,Voluntary,Resignation,National Staff,Nigeria,G5,Finance & Compliance,CT009896
+E10035,2026-02-13,Voluntary,Did not wish to renew,National Staff,Afghanistan,G1,Field Operations,CT007765
+E10055,2026-02-09,Involuntary,Contract not renewed,National Staff,Afghanistan,G3,HR & Administration,CT007767
+E11656,2026-02-25,Voluntary,Did not wish to renew,National Staff,Sudan,G5,Logistics & IT,CT007850
+E11666,2026-02-13,Involuntary,End of project / funding,National Staff,Sudan,G3,Finance & Compliance,CT007748
+E12559,2026-02-22,Involuntary,Contract not renewed,International Staff,Jordan,G5,Programme Management,CT005341
+E12723,2026-02-25,Involuntary,Contract not renewed,National Staff,Senegal,G4,Research & Assessment,CT007912
+E12736,2026-02-28,Voluntary,Did not wish to renew,National Staff,Iraq,G1,Research & Assessment,CT007915
+E12839,2026-02-27,Involuntary,Contract not renewed,National Staff,Niger,G3,Programme Management,CT009152
+E12947,2026-02-12,Voluntary,Did not wish to renew,National Staff,Somalia,G4,Finance & Compliance,CT009162
+E13241,2026-02-03,Voluntary,Did not wish to renew,National Staff,Sudan,G1,Programme Management,CT007750
+E13263,2026-02-26,Voluntary,Did not wish to renew,National Staff,Somalia,G2,GIS & Data Management,CT007944
+E10004,2026-02-05,Voluntary,Resignation,National Staff,Afghanistan,G2,Field Operations,CT009909
+E10018,2026-02-01,Involuntary,Dismissal,National Staff,Afghanistan,G2,Programme Management,CT000018
+E10360,2026-02-20,Voluntary,Resignation,National Staff,Chad,G3,GIS & Data Management,CT007976
+E10651,2026-02-20,Voluntary,Resignation,National Staff,Ethiopia,G3,Field Operations,CT010147
+E11128,2026-02-01,Voluntary,Resignation,National Staff,Myanmar,G3,Programme Management,CT008165
+E11556,2026-02-27,Voluntary,Resignation,National Staff,South Sudan,G4,Research & Assessment,CT008487
+E11925,2026-02-20,Voluntary,Resignation,National Staff,Ukraine,G3,Research & Assessment,CT008910
+E12204,2026-02-09,Voluntary,Resignation,HQ Staff,Switzerland,G5,GIS & Data Management,CT008515
+E12244,2026-02-19,Involuntary,Dismissal,National Staff,Ethiopia,G3,Logistics & IT,CT002711
+E12523,2026-02-14,Voluntary,Resignation,National Staff,Syria,G2,HR & Administration,CT009377
+E13253,2026-02-11,Voluntary,Resignation,National Staff,Lebanon,G2,Field Operations,CT009188
+E13451,2026-02-04,Voluntary,Resignation,National Staff,Democratic Republic of the Congo,G1,GIS & Data Management,CT008837
+E13505,2026-02-02,Voluntary,Resignation,Global non-HQ Staff,Senegal,G5,Research & Assessment,CT009040
+E13535,2026-02-21,Voluntary,Resignation,National Staff,South Sudan,G1,Finance & Compliance,CT009231
+E13566,2026-02-28,Voluntary,Resignation,International Staff,Colombia,G3,Finance & Compliance,CT009429
+E13567,2026-02-03,Involuntary,Dismissal,National Staff,Iraq,G3,Field Operations,CT009431
+E10046,2026-03-03,Voluntary,Did not wish to renew,National Staff,Afghanistan,G4,Finance & Compliance,CT007960
+E10137,2026-03-26,Voluntary,Did not wish to renew,National Staff,Bangladesh,G3,HR & Administration,CT007968
+E10202,2026-03-11,Voluntary,Did not wish to renew,National Staff,Bangladesh,G1,Research & Assessment,CT007946
+E10382,2026-03-16,Voluntary,Did not wish to renew,National Staff,Chad,G4,HR & Administration,CT007979
+E10398,2026-03-07,Involuntary,Contract not renewed,National Staff,Chad,G2,Field Operations,CT007982
+E10568,2026-03-12,Voluntary,Did not wish to renew,National Staff,Democratic Republic of the Congo,G1,Field Operations,CT007992
+E10865,2026-03-01,Voluntary,Did not wish to renew,International Staff,Colombia,G5,HR & Administration,CT009301
+E11187,2026-03-25,Voluntary,Did not wish to renew,National Staff,Niger,G2,HR & Administration,CT008024
+E11878,2026-03-26,Involuntary,Contract not renewed,National Staff,Ukraine,G2,Field Operations,CT008057
+E11974,2026-03-17,Voluntary,Did not wish to renew,International Staff,Syria,G4,Programme Management,CT008060
+E11985,2026-03-04,Voluntary,Did not wish to renew,National Staff,Yemen,G3,Field Operations,CT008061
+E12634,2026-03-05,Voluntary,Did not wish to renew,National Staff,Afghanistan,G2,Finance & Compliance,CT008094
+E12670,2026-03-26,Involuntary,Contract not renewed,National Staff,Colombia,G2,GIS & Data Management,CT008096
+E13065,2026-03-22,Voluntary,Did not wish to renew,National Staff,Colombia,G2,Finance & Compliance,CT008125
+E13175,2026-03-21,Involuntary,Contract not renewed,National Staff,Mozambique,G2,Finance & Compliance,CT008127
+E13232,2026-03-17,Voluntary,Did not wish to renew,National Staff,Democratic Republic of the Congo,G2,Field Operations,CT008140
+E13268,2026-03-05,Involuntary,Contract not renewed,National Staff,Syria,G2,Logistics & IT,CT009416
+E13279,2026-03-22,Involuntary,Contract not renewed,National Staff,Yemen,G5,Research & Assessment,CT008137
+E10221,2026-03-27,Voluntary,Resignation,National Staff,Burkina Faso,G2,Finance & Compliance,CT010328
+E10277,2026-03-06,Voluntary,Resignation,National Staff,Burkina Faso,G3,Finance & Compliance,CT000277
+E10416,2026-03-10,Voluntary,Resignation,National Staff,Colombia,G5,Programme Management,CT008653
+E10633,2026-03-01,Voluntary,Resignation,National Staff,Ethiopia,G2,HR & Administration,CT010345
+E10675,2026-03-21,Voluntary,Resignation,National Staff,Haiti,G3,Research & Assessment,CT008861
+E10938,2026-03-10,Voluntary,Resignation,National Staff,Lebanon,G2,Research & Assessment,CT009083
+E11038,2026-03-06,Voluntary,Resignation,National Staff,Mali,G1,GIS & Data Management,CT008679
+E11280,2026-03-23,Voluntary,Resignation,National Staff,Nigeria,G4,Research & Assessment,CT001280
+E11968,2026-03-06,Voluntary,Resignation,International Staff,Mozambique,G6,Research & Assessment,CT009552
+E12390,2026-03-23,Voluntary,Resignation,Global non-HQ Staff,Jordan,G5,Research & Assessment,CT006365
+E12476,2026-03-04,Voluntary,Resignation,National Staff,Colombia,G2,Field Operations,CT009137
+E12744,2026-03-11,Voluntary,Resignation,National Staff,Ethiopia,G1,Field Operations,CT008320
+E13064,2026-03-08,Voluntary,Resignation,National Staff,Niger,G3,Field Operations,CT009604
+E13401,2026-03-15,Voluntary,Resignation,National Staff,Sudan,G3,Research & Assessment,CT008630
+E13503,2026-03-04,Voluntary,Resignation,National Staff,Niger,G3,Field Operations,CT010500
+E13636,2026-03-17,Voluntary,Resignation,National Staff,Democratic Republic of the Congo,G3,Finance & Compliance,CT009666
+E10076,2026-04-03,Involuntary,End of project / funding,National Staff,Afghanistan,G2,Field Operations,CT008189
+E10123,2026-04-07,Voluntary,Did not wish to renew,National Staff,Bangladesh,G3,GIS & Data Management,CT008192
+E11046,2026-04-09,Involuntary,Contract not renewed,National Staff,Mali,G3,Programme Management,CT008230
+E11050,2026-04-03,Voluntary,Did not wish to renew,International Staff,Jordan,G4,Research & Assessment,CT009430
+E11067,2026-04-02,Voluntary,Did not wish to renew,National Staff,Mali,G3,Field Operations,CT008231
+E11386,2026-04-06,Involuntary,Contract not renewed,National Staff,Senegal,G1,GIS & Data Management,CT008249
+E11537,2026-04-13,Voluntary,Did not wish to renew,National Staff,South Sudan,G3,Field Operations,CT009541
+E11745,2026-04-11,Voluntary,Did not wish to renew,National Staff,Syria,G1,Logistics & IT,CT008268
+E11835,2026-04-27,Voluntary,Did not wish to renew,National Staff,Ukraine,G2,Finance & Compliance,CT009551
+E12313,2026-04-13,Voluntary,Did not wish to renew,National Staff,Burkina Faso,G2,Finance & Compliance,CT008296
+E12316,2026-04-06,Involuntary,End of project / funding,National Staff,Chad,G2,Field Operations,CT008297
+E12560,2026-04-17,Involuntary,Contract not renewed,International Staff,Senegal,G3,Finance & Compliance,CT009577
+E12672,2026-04-10,Voluntary,Did not wish to renew,International Staff,Democratic Republic of the Congo,G5,Research & Assessment,CT008312
+E12772,2026-04-24,Involuntary,End of project / funding,National Staff,Burkina Faso,G3,GIS & Data Management,CT008328
+E13082,2026-04-08,Voluntary,Did not wish to renew,National Staff,Afghanistan,G1,GIS & Data Management,CT008348
+E13297,2026-04-14,Involuntary,End of project / funding,National Staff,Lebanon,G1,Finance & Compliance,CT008160
+E13431,2026-04-15,Voluntary,Did not wish to renew,International Staff,Nigeria,G4,Programme Management,CT009623
+E13589,2026-04-04,Voluntary,Did not wish to renew,National Staff,Yemen,G2,Programme Management,CT009458
+E13605,2026-04-12,Involuntary,End of project / funding,National Staff,Afghanistan,G5,GIS & Data Management,CT009481
+E10210,2026-04-28,Voluntary,Resignation,International Staff,Bangladesh,G4,Research & Assessment,CT010770
+E10471,2026-04-27,Voluntary,Resignation,National Staff,Democratic Republic of the Congo,G2,Finance & Compliance,CT000471
+E10666,2026-04-28,Voluntary,Resignation,National Staff,Ethiopia,G3,HR & Administration,CT010791
+E11155,2026-04-20,Involuntary,Dismissal,National Staff,Myanmar,G1,HR & Administration,CT009528
+E11724,2026-04-15,Voluntary,Resignation,National Staff,Syria,G2,Field Operations,CT008711
+E11779,2026-04-21,Voluntary,Resignation,National Staff,Syria,G1,Field Operations,CT008905
+E12103,2026-04-21,Voluntary,Resignation,Global non-HQ Staff,Jordan,G5,Finance & Compliance,CT010214
+E12319,2026-04-22,Voluntary,Resignation,National Staff,Haiti,G1,GIS & Data Management,CT003049
+E12395,2026-04-25,Voluntary,Resignation,HQ Staff,Switzerland,G5,Programme Management,CT010431
+E12547,2026-04-11,Voluntary,Resignation,National Staff,Ethiopia,G2,Logistics & IT,CT006828
+E12887,2026-04-16,Voluntary,Resignation,National Staff,Syria,G3,Field Operations,CT008949
+E13827,2026-04-27,Involuntary,Dismissal,National Staff,South Sudan,G2,Logistics & IT,CT010759
+E10140,2026-05-04,Involuntary,Contract not renewed,National Staff,Bangladesh,G2,Field Operations,CT008404
+E10165,2026-05-27,Voluntary,Did not wish to renew,National Staff,Bangladesh,G1,Programme Management,CT008417
+E10370,2026-05-07,Involuntary,Contract not renewed,National Staff,Chad,G3,Programme Management,CT008424
+E10634,2026-05-27,Involuntary,End of project / funding,National Staff,Ethiopia,G3,Logistics & IT,CT009696
+E10756,2026-05-18,Voluntary,Did not wish to renew,National Staff,Iraq,G1,Research & Assessment,CT009873
+E10773,2026-05-24,Involuntary,Contract not renewed,National Staff,Iraq,G3,Finance & Compliance,CT008440
+E10880,2026-05-06,Involuntary,End of project / funding,International Staff,Jordan,G4,Logistics & IT,CT010364
+E10910,2026-05-16,Involuntary,Contract not renewed,National Staff,Kenya,G4,Programme Management,CT008448
+E10973,2026-05-10,Involuntary,End of project / funding,National Staff,Lebanon,G1,Research & Assessment,CT008393
+E11032,2026-05-31,Voluntary,Did not wish to renew,National Staff,Mali,G2,GIS & Data Management,CT008457
+E11722,2026-05-22,Involuntary,Contract not renewed,National Staff,Syria,G2,Logistics & IT,CT010403
+E12588,2026-05-09,Involuntary,Contract not renewed,National Staff,Central African Republic,G3,Research & Assessment,CT009774
+E12605,2026-05-02,Involuntary,End of project / funding,National Staff,Yemen,G2,Research & Assessment,CT009776
+E12613,2026-05-14,Voluntary,Did not wish to renew,National Staff,Libya,G3,Field Operations,CT009777
+E12615,2026-05-21,Involuntary,End of project / funding,National Staff,Lebanon,G2,GIS & Data Management,CT009778
+E12707,2026-05-01,Involuntary,End of project / funding,National Staff,Ukraine,G3,Research & Assessment,CT009784
+E12769,2026-05-19,Involuntary,Contract not renewed,International Staff,Somalia,G4,GIS & Data Management,CT008544
+E12801,2026-05-09,Voluntary,Did not wish to renew,National Staff,Afghanistan,G3,Finance & Compliance,CT008553
+E12822,2026-05-25,Involuntary,Contract not renewed,National Staff,Chad,G3,HR & Administration,CT009788
+E13133,2026-05-18,Voluntary,Did not wish to renew,National Staff,Sudan,G1,Research & Assessment,CT008580
+E13342,2026-05-03,Involuntary,End of project / funding,National Staff,Central African Republic,G3,GIS & Data Management,CT008382
+E13358,2026-05-15,Involuntary,End of project / funding,National Staff,Burkina Faso,G3,GIS & Data Management,CT008403
+E13617,2026-05-08,Voluntary,Did not wish to renew,National Staff,Somalia,G3,Logistics & IT,CT009639
+E13754,2026-05-01,Involuntary,Contract not renewed,National Staff,Lebanon,G4,Research & Assessment,CT010310
+E10005,2026-05-22,Voluntary,Resignation,National Staff,Afghanistan,G4,Finance & Compliance,CT010542
+E10374,2026-05-28,Voluntary,Resignation,National Staff,Chad,G2,Field Operations,CT010137
+E10877,2026-05-25,Voluntary,Resignation,National Staff,Kenya,G3,Field Operations,CT010363
+E11085,2026-05-08,Voluntary,Resignation,International Staff,Ukraine,G5,Research & Assessment,CT008681
+E11393,2026-05-13,Involuntary,Dismissal,National Staff,Senegal,G4,GIS & Data Management,CT010591
+E11759,2026-05-20,Voluntary,Resignation,National Staff,Syria,G3,Finance & Compliance,CT010833
+E12063,2026-05-04,Voluntary,Resignation,National Staff,Yemen,G1,Finance & Compliance,CT002700
+E12461,2026-05-18,Voluntary,Resignation,International Staff,Syria,G3,Research & Assessment,CT009131
+E12554,2026-05-15,Voluntary,Resignation,International Staff,Afghanistan,G5,Programme Management,CT009139
+E12576,2026-05-15,Involuntary,Dismissal,International Staff,Iraq,G4,HR & Administration,CT010441
+E12709,2026-05-06,Voluntary,Resignation,National Staff,Lebanon,G2,GIS & Data Management,CT008939
+E12715,2026-05-12,Voluntary,Resignation,National Staff,Nigeria,G2,Field Operations,CT010453
+E12851,2026-05-22,Voluntary,Resignation,National Staff,Sudan,G3,Field Operations,CT009154
+E12856,2026-05-15,Voluntary,Resignation,National Staff,Niger,G2,Research & Assessment,CT010014
+E13070,2026-05-20,Involuntary,Dismissal,National Staff,Afghanistan,G2,Programme Management,CT010890
+E13147,2026-05-14,Voluntary,Resignation,National Staff,Yemen,G3,Logistics & IT,CT008771
+E13726,2026-05-30,Voluntary,Resignation,National Staff,Sudan,G2,Finance & Compliance,CT010113
+E13839,2026-05-25,Voluntary,Resignation,National Staff,Bangladesh,G1,GIS & Data Management,CT010943
+E13852,2026-05-20,Voluntary,Resignation,National Staff,Lebanon,G1,Finance & Compliance,CT010958
+E10181,2026-06-16,Involuntary,End of project / funding,National Staff,Bangladesh,G2,Research & Assessment,CT008645
+E10324,2026-06-27,Involuntary,Contract not renewed,National Staff,Central African Republic,G2,Field Operations,CT009915
+E10886,2026-06-12,Voluntary,Did not wish to renew,National Staff,Kenya,G4,Research & Assessment,CT009931
+E10988,2026-06-27,Involuntary,End of project / funding,National Staff,Libya,G2,Logistics & IT,CT008676
+E11178,2026-06-14,Involuntary,End of project / funding,National Staff,Myanmar,G3,Field Operations,CT010586
+E11334,2026-06-02,Voluntary,Did not wish to renew,National Staff,Nigeria,G3,Field Operations,CT008688
+E11479,2026-06-08,Involuntary,End of project / funding,National Staff,Somalia,G2,HR & Administration,CT009958
+E11867,2026-06-06,Voluntary,Did not wish to renew,National Staff,Ukraine,G2,HR & Administration,CT008716
+E11990,2026-06-16,Voluntary,Did not wish to renew,National Staff,Yemen,G2,Field Operations,CT008721
+E12491,2026-06-02,Involuntary,End of project / funding,National Staff,Iraq,G1,Finance & Compliance,CT009995
+E12510,2026-06-06,Involuntary,End of project / funding,National Staff,Democratic Republic of the Congo,G2,Research & Assessment,CT008742
+E12538,2026-06-29,Involuntary,Contract not renewed,National Staff,Syria,G3,Field Operations,CT009996
+E12633,2026-06-10,Involuntary,End of project / funding,National Staff,Bangladesh,G3,Field Operations,CT008746
+E12845,2026-06-07,Voluntary,Did not wish to renew,National Staff,Kenya,G2,Research & Assessment,CT008758
+E12880,2026-06-16,Voluntary,Did not wish to renew,National Staff,Burkina Faso,G3,Finance & Compliance,CT008635
+E13027,2026-06-17,Involuntary,End of project / funding,National Staff,Myanmar,G2,Programme Management,CT010664
+E13180,2026-06-12,Involuntary,End of project / funding,National Staff,South Sudan,G2,GIS & Data Management,CT008774
+E13306,2026-06-29,Involuntary,End of project / funding,National Staff,Bangladesh,G5,GIS & Data Management,CT008780
+E13390,2026-06-07,Voluntary,Did not wish to renew,National Staff,Central African Republic,G2,Finance & Compliance,CT008613
+E13391,2026-06-01,Voluntary,Did not wish to renew,National Staff,Nigeria,G2,Field Operations,CT008614
+E13410,2026-06-26,Voluntary,Did not wish to renew,National Staff,Yemen,G2,Field Operations,CT008785
+E13419,2026-06-22,Involuntary,End of project / funding,National Staff,Bangladesh,G2,Research & Assessment,CT008796
+E13422,2026-06-26,Voluntary,Did not wish to renew,National Staff,Syria,G1,Logistics & IT,CT008799
+E13433,2026-06-30,Involuntary,Contract not renewed,National Staff,Kenya,G2,Field Operations,CT008811
+E13590,2026-06-26,Involuntary,End of project / funding,National Staff,Bangladesh,G2,Research & Assessment,CT010076
+E13687,2026-06-11,Involuntary,Contract not renewed,National Staff,Chad,G2,Research & Assessment,CT009899
+E13694,2026-06-13,Involuntary,End of project / funding,National Staff,Iraq,G3,GIS & Data Management,CT009907
+E13782,2026-06-23,Involuntary,End of project / funding,National Staff,Ethiopia,G4,HR & Administration,CT010538
+E13791,2026-06-13,Involuntary,Contract not renewed,National Staff,Iraq,G3,Research & Assessment,CT010716
+E10426,2026-06-25,Voluntary,Resignation,National Staff,Colombia,G4,HR & Administration,CT010562
+E10503,2026-06-23,Voluntary,Resignation,National Staff,Democratic Republic of the Congo,G3,Field Operations,CT010563
+E10659,2026-06-26,Voluntary,Resignation,National Staff,Ethiopia,G3,GIS & Data Management,CT008215
+E11636,2026-06-28,Voluntary,Resignation,National Staff,Sudan,G3,Research & Assessment,CT009735
+E11697,2026-06-11,Voluntary,Resignation,National Staff,Syria,G2,Field Operations,CT011035
+E11732,2026-06-01,Voluntary,Resignation,National Staff,Syria,G2,Logistics & IT,CT010199
+E12008,2026-06-21,Voluntary,Resignation,National Staff,Yemen,G2,Field Operations,CT010843
+E12081,2026-06-10,Voluntary,Resignation,HQ Staff,Switzerland,G4,Research & Assessment,CT006856
+E12889,2026-06-20,Voluntary,Resignation,International Staff,Nigeria,G6,Logistics & IT,CT006240
+E13049,2026-06-02,Voluntary,Resignation,National Staff,Mali,G3,Field Operations,CT009600
+E13114,2026-06-02,Voluntary,Resignation,International Staff,South Sudan,G5,Research & Assessment,CT010025
+E13414,2026-06-05,Voluntary,Resignation,National Staff,Nigeria,G2,HR & Administration,CT010276
+E13489,2026-06-10,Voluntary,Resignation,National Staff,Afghanistan,G2,Field Operations,CT010498
+E13537,2026-06-25,Voluntary,Resignation,National Staff,Democratic Republic of the Congo,G5,Research & Assessment,CT009233
+E10032,2026-07-31,Involuntary,Contract not renewed,National Staff,Afghanistan,G1,Finance & Compliance,CT010127
+E10439,2026-07-19,Involuntary,End of project / funding,National Staff,Colombia,G2,Research & Assessment,CT010141
+E10618,2026-07-19,Involuntary,End of project / funding,National Staff,Ethiopia,G2,Research & Assessment,CT010146
+E10641,2026-07-13,Voluntary,Did not wish to renew,National Staff,Ethiopia,G3,Field Operations,CT008859
+E11080,2026-07-08,Involuntary,End of project / funding,National Staff,Mozambique,G2,GIS & Data Management,CT008982
+E11238,2026-07-24,Voluntary,Did not wish to renew,National Staff,Niger,G1,Research & Assessment,CT008878
+E11470,2026-07-20,Voluntary,Did not wish to renew,National Staff,Somalia,G4,GIS & Data Management,CT010822
+E11523,2026-07-15,Involuntary,End of project / funding,National Staff,South Sudan,G2,GIS & Data Management,CT008892
+E11662,2026-07-11,Voluntary,Did not wish to renew,National Staff,Sudan,G3,Field Operations,CT010196
+E11845,2026-07-20,Involuntary,End of project / funding,National Staff,Ukraine,G3,Research & Assessment,CT010839
+E12025,2026-07-14,Involuntary,Contract not renewed,National Staff,Yemen,G3,GIS & Data Management,CT008914
+E12048,2026-07-29,Involuntary,End of project / funding,National Staff,Yemen,G3,GIS & Data Management,CT008843
+E12234,2026-07-22,Involuntary,Contract not renewed,National Staff,Ukraine,G4,HR & Administration,CT008922
+E12302,2026-07-18,Involuntary,Contract not renewed,National Staff,Bangladesh,G3,Research & Assessment,CT008842
+E12405,2026-07-02,Involuntary,End of project / funding,National Staff,Ethiopia,G2,Research & Assessment,CT010225
+E12432,2026-07-08,Voluntary,Did not wish to renew,National Staff,Yemen,G3,Logistics & IT,CT008929
+E12581,2026-07-26,Involuntary,End of project / funding,National Staff,Iraq,G3,Finance & Compliance,CT010231
+E12681,2026-07-07,Voluntary,Did not wish to renew,National Staff,Bangladesh,G4,GIS & Data Management,CT008937
+E12754,2026-07-03,Involuntary,Contract not renewed,National Staff,Lebanon,G3,Research & Assessment,CT008941
+E12756,2026-07-15,Involuntary,Contract not renewed,National Staff,Niger,G5,HR & Administration,CT010114
+E12881,2026-07-10,Voluntary,Did not wish to renew,National Staff,South Sudan,G3,Research & Assessment,CT008947
+E12901,2026-07-16,Involuntary,End of project / funding,National Staff,Ukraine,G2,Field Operations,CT008955
+E12903,2026-07-13,Involuntary,End of project / funding,National Staff,Somalia,G2,HR & Administration,CT008956
+E12921,2026-07-19,Voluntary,Did not wish to renew,National Staff,Democratic Republic of the Congo,G1,Field Operations,CT008960
+E12931,2026-07-22,Involuntary,End of project / funding,National Staff,Lebanon,G2,Field Operations,CT010257
+E12937,2026-07-23,Involuntary,Contract not renewed,National Staff,Niger,G1,Programme Management,CT008963
+E13086,2026-07-09,Involuntary,Contract not renewed,National Staff,Ukraine,G3,Finance & Compliance,CT010262
+E13088,2026-07-26,Involuntary,End of project / funding,National Staff,South Sudan,G3,Programme Management,CT010895
+E13096,2026-07-17,Involuntary,Contract not renewed,National Staff,Syria,G1,Field Operations,CT010897
+E13199,2026-07-01,Involuntary,End of project / funding,National Staff,Lebanon,G1,GIS & Data Management,CT008967
+E13444,2026-07-14,Involuntary,Contract not renewed,National Staff,Syria,G2,Research & Assessment,CT008826
+E13467,2026-07-17,Involuntary,End of project / funding,National Staff,Sudan,G2,Research & Assessment,CT008997
+E13471,2026-07-31,Involuntary,Contract not renewed,National Staff,Yemen,G2,Field Operations,CT009002
+E13485,2026-07-24,Involuntary,Contract not renewed,National Staff,Syria,G3,Research & Assessment,CT009016
+E13794,2026-07-01,Involuntary,End of project / funding,National Staff,Myanmar,G2,Logistics & IT,CT010720
+E13807,2026-07-20,Involuntary,End of project / funding,National Staff,Iraq,G3,Field Operations,CT010737
+E10376,2026-07-01,Voluntary,Resignation,National Staff,Chad,G2,Finance & Compliance,CT010555
+E10589,2026-07-15,Voluntary,Resignation,International Staff,Democratic Republic of the Congo,G5,Programme Management,CT010567
+E10781,2026-07-20,Voluntary,Resignation,National Staff,Iraq,G2,Field Operations,CT011408
+E11066,2026-07-10,Voluntary,Resignation,National Staff,Mali,G1,HR & Administration,CT011218
+E11475,2026-07-31,Voluntary,Resignation,National Staff,Somalia,G3,HR & Administration,CT010596
+E12797,2026-07-30,Voluntary,Resignation,National Staff,Somalia,G1,Research & Assessment,CT010884
+E13546,2026-07-29,Involuntary,Dismissal,National Staff,Somalia,G2,HR & Administration,CT011391
+E13676,2026-07-15,Voluntary,Resignation,National Staff,Mozambique,G2,Logistics & IT,CT011324
+E13768,2026-07-07,Voluntary,Resignation,National Staff,Iraq,G3,Research & Assessment,CT010517
+E10029,2026-08-03,Voluntary,Did not wish to renew,National Staff,Afghanistan,G3,Field Operations,CT009047
+E10057,2026-08-13,Involuntary,Contract not renewed,National Staff,Afghanistan,G3,GIS & Data Management,CT009048
+E10725,2026-08-15,Voluntary,Did not wish to renew,National Staff,Iraq,G2,Field Operations,CT010356
+E10990,2026-08-24,Involuntary,Contract not renewed,National Staff,Libya,G3,Research & Assessment,CT009086
+E11108,2026-08-31,Involuntary,Contract not renewed,National Staff,Mozambique,G3,HR & Administration,CT010372
+E11302,2026-08-11,Involuntary,End of project / funding,International Staff,Syria,G3,Research & Assessment,CT011019
+E11338,2026-08-13,Involuntary,End of project / funding,National Staff,Nigeria,G1,Research & Assessment,CT009098
+E11365,2026-08-13,Involuntary,Contract not renewed,International Staff,Nigeria,G6,Programme Management,CT009101
+E11485,2026-08-30,Voluntary,Did not wish to renew,National Staff,Somalia,G3,Field Operations,CT011025
+E11499,2026-08-02,Voluntary,Did not wish to renew,International Staff,Somalia,G7,Research & Assessment,CT011027
+E11619,2026-08-11,Involuntary,End of project / funding,National Staff,Sudan,G3,Field Operations,CT010397
+E11752,2026-08-12,Involuntary,End of project / funding,National Staff,Syria,G3,Field Operations,CT010405
+E11826,2026-08-03,Involuntary,End of project / funding,National Staff,Ukraine,G3,Research & Assessment,CT009114
+E12238,2026-08-16,Involuntary,Contract not renewed,National Staff,Yemen,G3,Logistics & IT,CT009123
+E12239,2026-08-01,Voluntary,Did not wish to renew,National Staff,Bangladesh,G2,Logistics & IT,CT010422
+E12410,2026-08-02,Involuntary,End of project / funding,International Staff,Bangladesh,G6,HR & Administration,CT009128
+E12511,2026-08-27,Voluntary,Did not wish to renew,National Staff,Bangladesh,G2,Logistics & IT,CT010440
+E12592,2026-08-04,Involuntary,End of project / funding,National Staff,Nigeria,G5,Research & Assessment,CT009140
+E12720,2026-08-10,Involuntary,Contract not renewed,National Staff,Syria,G3,Research & Assessment,CT010454
+E12807,2026-08-06,Involuntary,End of project / funding,National Staff,Yemen,G2,HR & Administration,CT009149
+E12814,2026-08-25,Involuntary,Contract not renewed,National Staff,Ukraine,G4,Finance & Compliance,CT011072
+E12926,2026-08-11,Involuntary,End of project / funding,National Staff,Myanmar,G3,Research & Assessment,CT009028
+E12959,2026-08-04,Involuntary,End of project / funding,National Staff,Mali,G4,Research & Assessment,CT009166
+E12967,2026-08-24,Involuntary,End of project / funding,National Staff,Ukraine,G3,Field Operations,CT009169
+E12974,2026-08-24,Involuntary,End of project / funding,National Staff,Ukraine,G2,Research & Assessment,CT009170
+E13366,2026-08-14,Voluntary,Did not wish to renew,National Staff,Bangladesh,G2,Logistics & IT,CT009195
+E13385,2026-08-29,Involuntary,End of project / funding,National Staff,Bangladesh,G2,Logistics & IT,CT011116
+E13476,2026-08-06,Involuntary,Contract not renewed,National Staff,Iraq,G1,Field Operations,CT009007
+E13478,2026-08-03,Involuntary,End of project / funding,National Staff,Ethiopia,G3,Field Operations,CT009009
+E13529,2026-08-25,Involuntary,End of project / funding,National Staff,Ethiopia,G2,Field Operations,CT009221
+E13538,2026-08-30,Involuntary,End of project / funding,National Staff,Syria,G2,Programme Management,CT009234
+E13749,2026-08-01,Voluntary,Did not wish to renew,National Staff,Central African Republic,G3,Field Operations,CT010303
+E10437,2026-08-26,Voluntary,Resignation,National Staff,Colombia,G1,HR & Administration,CT011404
+E10954,2026-08-02,Voluntary,Resignation,National Staff,Lebanon,G3,Field Operations,CT009311
+E11095,2026-08-17,Voluntary,Resignation,National Staff,Mozambique,G2,Field Operations,CT010583
+E11629,2026-08-23,Voluntary,Resignation,National Staff,Sudan,G3,Field Operations,CT009968
+E11737,2026-08-07,Voluntary,Resignation,National Staff,Syria,G4,GIS & Data Management,CT001737
+E11928,2026-08-23,Voluntary,Resignation,National Staff,Ukraine,G1,Research & Assessment,CT001928
+E12450,2026-08-16,Voluntary,Resignation,International Staff,Ukraine,G6,Programme Management,CT011667
+E13208,2026-08-30,Voluntary,Resignation,National Staff,Lebanon,G2,Research & Assessment,CT007501
+E13784,2026-08-05,Voluntary,Resignation,International Staff,Jordan,G5,Programme Management,CT010540
+E13894,2026-08-08,Voluntary,Resignation,National Staff,Somalia,G5,Research & Assessment,CT011164
+E13921,2026-08-06,Voluntary,Resignation,National Staff,Burkina Faso,G3,Field Operations,CT011345
+E10172,2026-09-14,Involuntary,End of project / funding,National Staff,Bangladesh,G2,HR & Administration,CT009275
+E10219,2026-09-07,Involuntary,End of project / funding,National Staff,Burkina Faso,G6,Research & Assessment,CT010550
+E10220,2026-09-29,Involuntary,Contract not renewed,National Staff,Burkina Faso,G2,Research & Assessment,CT010551
+E10388,2026-09-29,Voluntary,Did not wish to renew,National Staff,Chad,G2,Finance & Compliance,CT010556
+E10394,2026-09-15,Involuntary,Contract not renewed,National Staff,Chad,G4,Finance & Compliance,CT009266
+E10531,2026-09-06,Involuntary,End of project / funding,National Staff,Democratic Republic of the Congo,G3,GIS & Data Management,CT010565
+E10712,2026-09-14,Involuntary,End of project / funding,National Staff,Haiti,G1,GIS & Data Management,CT010571
+E10887,2026-09-20,Involuntary,End of project / funding,National Staff,Kenya,G1,Field Operations,CT009303
+E10902,2026-09-04,Involuntary,End of project / funding,National Staff,Kenya,G2,Field Operations,CT009305
+E11113,2026-09-27,Involuntary,End of project / funding,National Staff,Mozambique,G4,Research & Assessment,CT010584
+E11235,2026-09-18,Voluntary,Did not wish to renew,National Staff,Niger,G3,GIS & Data Management,CT009318
+E11299,2026-09-10,Involuntary,Contract not renewed,National Staff,Nigeria,G2,Field Operations,CT009321
+E11419,2026-09-07,Voluntary,Did not wish to renew,National Staff,Somalia,G1,GIS & Data Management,CT009323
+E11459,2026-09-24,Voluntary,Did not wish to renew,National Staff,Somalia,G4,Research & Assessment,CT009330
+E11514,2026-09-17,Voluntary,Did not wish to renew,National Staff,South Sudan,G3,Field Operations,CT009334
+E11584,2026-09-02,Voluntary,Did not wish to renew,National Staff,South Sudan,G1,GIS & Data Management,CT009338
+E11637,2026-09-24,Involuntary,End of project / funding,National Staff,Sudan,G2,Field Operations,CT010603
+E11789,2026-09-29,Involuntary,End of project / funding,National Staff,Syria,G4,Research & Assessment,CT009347
+E12034,2026-09-09,Voluntary,Did not wish to renew,National Staff,Yemen,G1,Finance & Compliance,CT009250
+E12101,2026-09-25,Involuntary,Contract not renewed,Global non-HQ Staff,Jordan,G5,Research & Assessment,CT009360
+E12290,2026-09-19,Involuntary,Contract not renewed,National Staff,Burkina Faso,G3,HR & Administration,CT009366
+E12300,2026-09-25,Involuntary,Contract not renewed,National Staff,Mali,G3,Research & Assessment,CT009367
+E12400,2026-09-19,Voluntary,Did not wish to renew,International Staff,Jordan,G4,GIS & Data Management,CT010633
+E12964,2026-09-24,Involuntary,End of project / funding,International Staff,Kenya,G3,Research & Assessment,CT009394
+E12998,2026-09-03,Voluntary,Did not wish to renew,National Staff,Burkina Faso,G1,Research & Assessment,CT010661
+E13012,2026-09-16,Involuntary,Contract not renewed,National Staff,Central African Republic,G2,Logistics & IT,CT009400
+E13060,2026-09-20,Involuntary,End of project / funding,National Staff,Burkina Faso,G3,Finance & Compliance,CT010672
+E13061,2026-09-21,Voluntary,Did not wish to renew,National Staff,Kenya,G1,Research & Assessment,CT010673
+E13182,2026-09-10,Involuntary,End of project / funding,National Staff,Yemen,G3,Field Operations,CT010678
+E13197,2026-09-22,Involuntary,End of project / funding,National Staff,Yemen,G3,Logistics & IT,CT010680
+E13369,2026-09-15,Voluntary,Did not wish to renew,International Staff,Mali,G6,Programme Management,CT009043
+E13402,2026-09-24,Involuntary,End of project / funding,National Staff,Bangladesh,G3,HR & Administration,CT009419
+E13425,2026-09-28,Involuntary,End of project / funding,National Staff,Nigeria,G1,Field Operations,CT009421
+E13521,2026-09-04,Voluntary,Did not wish to renew,National Staff,Sudan,G2,GIS & Data Management,CT010698
+E13523,2026-09-23,Voluntary,Did not wish to renew,International Staff,Syria,G5,GIS & Data Management,CT009215
+E13527,2026-09-06,Involuntary,End of project / funding,National Staff,Mozambique,G5,Research & Assessment,CT009219
+E13560,2026-09-18,Involuntary,End of project / funding,National Staff,Kenya,G2,Field Operations,CT009269
+E13569,2026-09-20,Involuntary,End of project / funding,National Staff,Central African Republic,G3,Field Operations,CT009434
+E13780,2026-09-29,Voluntary,Did not wish to renew,Global non-HQ Staff,Kenya,G4,GIS & Data Management,CT010534
+E10135,2026-09-13,Voluntary,Resignation,National Staff,Bangladesh,G3,Research & Assessment,CT011553
+E10138,2026-09-06,Voluntary,Resignation,National Staff,Bangladesh,G3,Field Operations,CT000138
+E10403,2026-09-21,Voluntary,Resignation,National Staff,Chad,G2,GIS & Data Management,CT011812
+E10459,2026-09-22,Voluntary,Resignation,National Staff,Colombia,G2,Field Operations,CT009900
+E11526,2026-09-14,Voluntary,Resignation,National Staff,South Sudan,G3,Field Operations,CT010184
+E11681,2026-09-24,Voluntary,Resignation,National Staff,Syria,G3,Field Operations,CT010197
+E12074,2026-09-09,Voluntary,Resignation,National Staff,Yemen,G2,Research & Assessment,CT002074
+E12577,2026-09-20,Voluntary,Resignation,International Staff,Bangladesh,G7,GIS & Data Management,CT009583
+E13254,2026-09-19,Voluntary,Resignation,National Staff,Sudan,G3,Field Operations,CT011705
+E13776,2026-09-25,Voluntary,Resignation,National Staff,Democratic Republic of the Congo,G1,Field Operations,CT010529
+E13922,2026-09-02,Voluntary,Resignation,National Staff,Sudan,G3,Field Operations,CT011346
+E10105,2026-10-26,Involuntary,End of project / funding,National Staff,Afghanistan,G2,Field Operations,CT010944
+E10132,2026-10-14,Voluntary,Did not wish to renew,National Staff,Bangladesh,G4,Research & Assessment,CT009487
+E10152,2026-10-04,Involuntary,End of project / funding,National Staff,Bangladesh,G2,Field Operations,CT009489
+E10366,2026-10-29,Involuntary,End of project / funding,National Staff,Chad,G2,Field Operations,CT009497
+E10582,2026-10-28,Voluntary,Did not wish to renew,National Staff,Democratic Republic of the Congo,G2,Research & Assessment,CT010787
+E10620,2026-10-25,Involuntary,End of project / funding,National Staff,Ethiopia,G2,Programme Management,CT009511
+E10638,2026-10-06,Voluntary,Did not wish to renew,National Staff,Ethiopia,G2,Finance & Compliance,CT009513
+E10957,2026-10-28,Involuntary,Contract not renewed,National Staff,Lebanon,G2,Field Operations,CT009522
+E10963,2026-10-13,Involuntary,End of project / funding,National Staff,Lebanon,G2,GIS & Data Management,CT009523
+E11191,2026-10-07,Involuntary,End of project / funding,National Staff,Niger,G3,Field Operations,CT009529
+E11272,2026-10-14,Involuntary,End of project / funding,National Staff,Nigeria,G2,Research & Assessment,CT010814
+E11575,2026-10-01,Involuntary,Contract not renewed,National Staff,South Sudan,G2,GIS & Data Management,CT010824
+E11597,2026-10-30,Voluntary,Did not wish to renew,International Staff,Lebanon,G4,Research & Assessment,CT009423
+E11601,2026-10-06,Involuntary,End of project / funding,National Staff,South Sudan,G2,Research & Assessment,CT009543
+E11640,2026-10-27,Involuntary,End of project / funding,National Staff,Sudan,G3,Field Operations,CT011436
+E12317,2026-10-23,Involuntary,Contract not renewed,National Staff,Central African Republic,G4,GIS & Data Management,CT010850
+E12318,2026-10-14,Involuntary,Contract not renewed,National Staff,Somalia,G3,GIS & Data Management,CT010851
+E12323,2026-10-28,Involuntary,End of project / funding,National Staff,Mozambique,G3,Field Operations,CT010853
+E12329,2026-10-27,Involuntary,End of project / funding,National Staff,Somalia,G2,Logistics & IT,CT009565
+E12391,2026-10-28,Voluntary,Did not wish to renew,International Staff,Syria,G3,GIS & Data Management,CT009567
+E12438,2026-10-11,Voluntary,Did not wish to renew,National Staff,Libya,G5,Finance & Compliance,CT009570
+E12604,2026-10-27,Involuntary,Contract not renewed,National Staff,Ukraine,G1,Logistics & IT,CT009587
+E12784,2026-10-15,Involuntary,End of project / funding,National Staff,South Sudan,G3,Field Operations,CT010880
+E13047,2026-10-02,Involuntary,Contract not renewed,National Staff,Kenya,G4,Programme Management,CT009599
+E13062,2026-10-11,Involuntary,End of project / funding,National Staff,Sudan,G3,Field Operations,CT009603
+E13075,2026-10-20,Voluntary,Did not wish to renew,National Staff,Sudan,G2,Logistics & IT,CT009605
+E13091,2026-10-18,Involuntary,End of project / funding,National Staff,Libya,G4,GIS & Data Management,CT009613
+E13098,2026-10-23,Involuntary,End of project / funding,National Staff,Central African Republic,G1,Programme Management,CT009614
+E13218,2026-10-07,Involuntary,End of project / funding,National Staff,Mali,G2,Research & Assessment,CT011496
+E13289,2026-10-12,Involuntary,End of project / funding,National Staff,Lebanon,G2,Logistics & IT,CT011499
+E13346,2026-10-26,Voluntary,Did not wish to renew,National Staff,Chad,G3,Finance & Compliance,CT010916
+E13572,2026-10-22,Voluntary,Did not wish to renew,International Staff,Myanmar,G4,Programme Management,CT009438
+E13600,2026-10-19,Voluntary,Did not wish to renew,National Staff,Chad,G2,Field Operations,CT009476
+E13609,2026-10-26,Involuntary,End of project / funding,National Staff,Niger,G2,Logistics & IT,CT009630
+E13737,2026-10-31,Involuntary,Contract not renewed,National Staff,Haiti,G2,HR & Administration,CT010926
+E13792,2026-10-01,Involuntary,Contract not renewed,National Staff,Syria,G2,HR & Administration,CT010718
+E13808,2026-10-10,Involuntary,Contract not renewed,National Staff,Colombia,G2,Field Operations,CT010738
+E13837,2026-10-23,Voluntary,Did not wish to renew,National Staff,Burkina Faso,G2,Finance & Compliance,CT010940
+E13919,2026-10-27,Involuntary,Contract not renewed,International Staff,Iraq,G4,HR & Administration,CT011343
+E10315,2026-10-29,Voluntary,Resignation,National Staff,Central African Republic,G2,Programme Management,CT003951
+E10535,2026-10-20,Voluntary,Resignation,National Staff,Democratic Republic of the Congo,G3,Logistics & IT,CT009920
+E10598,2026-10-20,Voluntary,Resignation,National Staff,Ethiopia,G2,HR & Administration,CT012011
+E10769,2026-10-29,Voluntary,Resignation,National Staff,Iraq,G3,Field Operations,CT010359
+E10817,2026-10-03,Voluntary,Resignation,Global non-HQ Staff,Jordan,G6,GIS & Data Management,CT007504
+E11308,2026-10-18,Voluntary,Resignation,National Staff,Nigeria,G3,Field Operations,CT001308
+E11369,2026-10-25,Voluntary,Resignation,National Staff,Senegal,G4,Research & Assessment,CT010092
+E11491,2026-10-19,Voluntary,Resignation,National Staff,Somalia,G2,HR & Administration,CT011846
+E11750,2026-10-04,Voluntary,Resignation,National Staff,Syria,G3,Field Operations,CT011656
+E11961,2026-10-22,Involuntary,Dismissal,National Staff,Ukraine,G3,HR & Administration,CT010842
+E12030,2026-10-26,Voluntary,Resignation,National Staff,Yemen,G4,Programme Management,CT010416
+E12202,2026-10-16,Voluntary,Resignation,HQ Staff,Switzerland,G6,Logistics & IT,CT008919
+E12213,2026-10-19,Voluntary,Resignation,National Staff,Kenya,G2,GIS & Data Management,CT007656
+E12598,2026-10-05,Voluntary,Resignation,National Staff,Democratic Republic of the Congo,G2,Field Operations,CT010442
+E12642,2026-10-28,Voluntary,Resignation,National Staff,Niger,G1,Research & Assessment,CT010002
+E12676,2026-10-23,Voluntary,Resignation,National Staff,Bangladesh,G2,GIS & Data Management,CT010236
+E13040,2026-10-18,Voluntary,Resignation,National Staff,Sudan,G5,HR & Administration,CT010667
+E13206,2026-10-02,Voluntary,Resignation,National Staff,South Sudan,G4,Finance & Compliance,CT010264
+E13427,2026-10-03,Voluntary,Resignation,International Staff,Chad,G4,Research & Assessment,CT011709
+E13805,2026-10-10,Voluntary,Resignation,National Staff,Iraq,G2,Logistics & IT,CT011939
+E13844,2026-10-03,Voluntary,Resignation,National Staff,Mozambique,G2,Field Operations,CT010950
+E13971,2026-10-01,Voluntary,Resignation,National Staff,Iraq,G2,GIS & Data Management,CT011561
+E14007,2026-10-04,Voluntary,Resignation,National Staff,Afghanistan,G3,Finance & Compliance,CT011745

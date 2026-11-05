@@ -1,0 +1,81 @@
+Issue key,Issue Type,Legacy Ref,Country,Created,Status,Role,Deployed Employee ID,Deployed Staff Category,Home Country,Deployment Start,Deployment End
+SURGE-101,Surge Request,SRG-2026-0273,Lebanon,2026-01-07,Done,Assessment Specialist,E12290,National Staff,Burkina Faso,2026-01-20,2026-03-05
+SURGE-102,Surge Request,SRG-2026-0274,Senegal,2026-01-28,Done,Assessment Specialist,E13544,National Staff,Sudan,2026-02-18,2026-05-10
+SURGE-103,Surge Request,SRG-2026-0275,Mali,2026-01-12,Done,Data Manager,E12101,Global non-HQ Staff,Jordan,2026-02-08,2026-04-27
+SURGE-104,Surge Request,SRG-2026-0276,Iraq,2026-01-14,Done,Research Manager,E13579,National Staff,Syria,2026-02-11,2026-03-28
+SURGE-105,Surge Request,SRG-2026-0277,Afghanistan,2026-01-10,Done,Assessment Specialist,E12599,International Staff,Mozambique,2026-02-08,2026-03-20
+SURGE-106,Surge Request,SRG-2026-0278,Ukraine,2026-01-04,Done,GIS Specialist,E13321,Global non-HQ Staff,Kenya,2026-01-20,2026-03-12
+SURGE-107,Surge Request,SRG-2026-0279,Senegal,2026-01-20,Done,Data Manager,E10921,International Staff,Kenya,2026-02-04,2026-04-13
+SURGE-108,Surge Request,SRG-2026-0280,Ukraine,2026-02-19,Done,GIS Specialist,E12408,International Staff,Libya,2026-03-17,2026-04-28
+SURGE-109,Surge Request,SRG-2026-0281,Senegal,2026-02-26,Done,Research Manager,E13341,International Staff,Syria,2026-03-09,2026-05-11
+SURGE-110,Surge Request,SRG-2026-0282,Lebanon,2026-02-16,Done,Assessment Specialist,E13617,National Staff,Somalia,2026-03-06,2026-04-27
+SURGE-111,Surge Request,SRG-2026-0283,South Sudan,2026-02-04,Done,Field Coordinator,E12758,International Staff,Central African Republic,2026-02-13,2026-03-20
+SURGE-112,Surge Request,SRG-2026-0284,Nigeria,2026-02-12,Done,Data Manager,E13369,International Staff,Mali,2026-03-04,2026-05-15
+SURGE-113,Surge Request,SRG-2026-0285,South Sudan,2026-02-15,Done,Assessment Specialist,E10585,International Staff,Democratic Republic of the Congo,2026-03-03,2026-04-11
+SURGE-114,Surge Request,SRG-2026-0286,Libya,2026-02-23,Done,Data Manager,E11984,National Staff,Yemen,2026-03-21,2026-05-03
+SURGE-115,Surge Request,SRG-2026-0287,Ethiopia,2026-02-12,Done,Field Coordinator,E12369,National Staff,Syria,2026-03-04,2026-05-25
+SURGE-116,Surge Request,SRG-2026-0288,Mozambique,2026-02-21,Done,Assessment Specialist,E10412,International Staff,Kenya,2026-03-13,2026-04-23
+SURGE-117,Surge Request,SRG-2026-0289,Sudan,2026-02-05,Done,Assessment Specialist,E12800,Global non-HQ Staff,Kenya,2026-03-01,2026-04-13
+SURGE-118,Surge Request,SRG-2026-0290,Sudan,2026-02-16,Done,Field Coordinator,E13319,International Staff,Lebanon,2026-03-06,2026-04-07
+SURGE-119,Surge Request,SRG-2026-0291,South Sudan,2026-03-15,Done,Assessment Specialist,E12289,International Staff,Syria,2026-03-29,2026-05-11
+SURGE-120,Surge Request,SRG-2026-0292,Senegal,2026-03-19,Done,Field Coordinator,E13427,International Staff,Chad,2026-04-07,2026-06-18
+SURGE-121,Surge Request,SRG-2026-0293,South Sudan,2026-03-22,Done,Assessment Specialist,E12733,International Staff,Democratic Republic of the Congo,2026-04-06,2026-05-23
+SURGE-122,Surge Request,SRG-2026-0294,South Sudan,2026-03-13,Done,Data Manager,E12110,Global non-HQ Staff,Senegal,2026-04-06,2026-05-22
+SURGE-123,Surge Request,SRG-2026-0295,Bangladesh,2026-03-20,Done,Assessment Specialist,E13662,International Staff,Lebanon,2026-04-17,2026-06-08
+SURGE-124,Surge Request,SRG-2026-0296,Chad,2026-03-24,Done,GIS Specialist,E11933,International Staff,Jordan,2026-04-02,2026-05-28
+SURGE-125,Surge Request,SRG-2026-0297,Ukraine,2026-03-30,Done,Assessment Specialist,E13536,Global non-HQ Staff,Jordan,2026-04-14,2026-05-28
+SURGE-126,Surge Request,SRG-2026-0298,Iraq,2026-03-18,Done,GIS Specialist,E12330,International Staff,Haiti,2026-04-10,2026-07-03
+SURGE-127,Surge Request,SRG-2026-0299,Syria,2026-03-11,Cancelled,Assessment Specialist,,,,,
+SURGE-128,Surge Request,SRG-2026-0300,Somalia,2026-03-12,Done,Field Coordinator,E13603,Global non-HQ Staff,Kenya,2026-03-31,2026-05-06
+SURGE-129,Surge Request,SRG-2026-0301,Ethiopia,2026-03-30,Done,Research Manager,E11127,National Staff,Myanmar,2026-04-21,2026-06-20
+SURGE-130,Surge Request,SRG-2026-0302,Sudan,2026-03-13,Done,Assessment Specialist,E13039,Global non-HQ Staff,Jordan,2026-03-28,2026-06-09
+SURGE-131,Surge Request,SRG-2026-0303,Sudan,2026-03-06,Done,Data Manager,E10672,International Staff,Ethiopia,2026-03-25,2026-05-01
+SURGE-132,Surge Request,SRG-2026-0304,Sudan,2026-03-11,Done,GIS Specialist,E13592,International Staff,Democratic Republic of the Congo,2026-03-25,2026-06-13
+SURGE-133,Surge Request,SRG-2026-0305,Mozambique,2026-03-26,Done,GIS Specialist,E13317,International Staff,Lebanon,2026-04-23,2026-06-28
+SURGE-134,Surge Request,SRG-2026-0306,Mozambique,2026-03-07,Done,Field Coordinator,E10489,National Staff,Democratic Republic of the Congo,2026-03-24,2026-04-28
+SURGE-135,Surge Request,SRG-2026-0307,Iraq,2026-04-28,Done,GIS Specialist,E13688,National Staff,Chad,2026-05-22,2026-06-24
+SURGE-136,Surge Request,SRG-2026-0308,Iraq,2026-04-27,Done,Research Manager,E11636,National Staff,Sudan,2026-05-12,2026-06-28
+SURGE-137,Surge Request,SRG-2026-0309,Somalia,2026-04-24,Done,GIS Specialist,E10672,International Staff,Ethiopia,2026-05-21,2026-07-15
+SURGE-138,Surge Request,SRG-2026-0310,Central African Republic,2026-04-30,Done,Assessment Specialist,E12837,Global non-HQ Staff,Senegal,2026-05-08,2026-06-08
+SURGE-139,Surge Request,SRG-2026-0311,Myanmar,2026-04-20,Done,Field Coordinator,E12101,Global non-HQ Staff,Jordan,2026-04-30,2026-07-27
+SURGE-140,Surge Request,SRG-2026-0312,South Sudan,2026-04-01,Done,Field Coordinator,E12579,International Staff,Haiti,2026-04-15,2026-07-01
+SURGE-141,Surge Request,SRG-2026-0313,Syria,2026-04-04,Done,Field Coordinator,E11334,National Staff,Nigeria,2026-04-18,2026-05-28
+SURGE-142,Surge Request,SRG-2026-0314,Sudan,2026-04-01,Done,Data Manager,E11901,National Staff,Ukraine,2026-04-25,2026-07-04
+SURGE-143,Surge Request,SRG-2026-0315,Sudan,2026-04-09,Done,Assessment Specialist,E13376,National Staff,Mozambique,2026-05-06,2026-07-12
+SURGE-144,Surge Request,SRG-2026-0316,Sudan,2026-04-29,Done,Assessment Specialist,E13630,National Staff,Senegal,2026-05-19,2026-08-06
+SURGE-145,Surge Request,SRG-2026-0317,Central African Republic,2026-05-14,Done,Field Coordinator,E13198,International Staff,Nigeria,2026-06-09,2026-07-23
+SURGE-146,Surge Request,SRG-2026-0318,Ethiopia,2026-05-23,Done,Research Manager,E13556,National Staff,Nigeria,2026-06-01,2026-08-13
+SURGE-147,Surge Request,SRG-2026-0319,South Sudan,2026-05-12,Done,GIS Specialist,E13603,Global non-HQ Staff,Kenya,2026-05-28,2026-06-29
+SURGE-148,Surge Request,SRG-2026-0320,South Sudan,2026-05-03,Done,Field Coordinator,E11965,International Staff,Ukraine,2026-05-26,2026-06-29
+SURGE-149,Surge Request,SRG-2026-0321,Burkina Faso,2026-05-13,Cancelled,Assessment Specialist,,,,,
+SURGE-150,Surge Request,SRG-2026-0322,South Sudan,2026-05-10,Done,Assessment Specialist,E13569,National Staff,Central African Republic,2026-06-03,2026-08-13
+SURGE-151,Surge Request,SRG-2026-0323,Yemen,2026-06-10,Done,Data Manager,E10077,National Staff,Afghanistan,2026-07-06,2026-09-09
+SURGE-152,Surge Request,SRG-2026-0324,Ukraine,2026-06-15,Done,Assessment Specialist,E12592,National Staff,Nigeria,2026-06-25,2026-08-04
+SURGE-153,Surge Request,SRG-2026-0325,Somalia,2026-06-16,Done,Data Manager,E12114,Global non-HQ Staff,Senegal,2026-07-10,2026-09-12
+SURGE-154,Surge Request,SRG-2026-0326,Colombia,2026-06-02,Done,Field Coordinator,E13571,International Staff,Burkina Faso,2026-06-16,2026-07-27
+SURGE-155,Surge Request,SRG-2026-0327,Afghanistan,2026-06-17,Done,Field Coordinator,E12096,Global non-HQ Staff,Kenya,2026-07-02,2026-09-03
+SURGE-156,Surge Request,SRG-2026-0328,Iraq,2026-06-25,Done,Assessment Specialist,E13099,International Staff,Bangladesh,2026-07-19,2026-10-07
+SURGE-157,Surge Request,SRG-2026-0329,Colombia,2026-07-27,Done,Research Manager,E12849,National Staff,Mozambique,2026-08-19,2026-10-17
+SURGE-158,Surge Request,SRG-2026-0330,Burkina Faso,2026-07-20,Done,Field Coordinator,E10129,National Staff,Bangladesh,2026-08-05,2026-10-14
+SURGE-159,Surge Request,SRG-2026-0331,Niger,2026-07-15,Done,Assessment Specialist,E13711,National Staff,South Sudan,2026-07-24,2026-10-07
+SURGE-160,Surge Request,SRG-2026-0332,Somalia,2026-07-13,Done,Field Coordinator,E10597,National Staff,Ethiopia,2026-07-31,2026-10-14
+SURGE-161,Surge Request,SRG-2026-0333,Somalia,2026-08-20,Done,GIS Specialist,E12430,International Staff,Lebanon,2026-09-12,2026-12-09
+SURGE-162,Surge Request,SRG-2026-0334,Burkina Faso,2026-08-18,Done,Research Manager,E10596,National Staff,Ethiopia,2026-09-01,2026-10-09
+SURGE-163,Surge Request,SRG-2026-0335,Iraq,2026-08-25,Done,Research Manager,E11016,Global non-HQ Staff,Kenya,2026-09-05,2026-10-26
+SURGE-164,Surge Request,SRG-2026-0336,Chad,2026-08-04,Done,Field Coordinator,E10898,National Staff,Kenya,2026-08-21,2026-10-23
+SURGE-165,Surge Request,SRG-2026-0337,Syria,2026-08-30,Cancelled,GIS Specialist,,,,,
+SURGE-166,Surge Request,SRG-2026-0338,South Sudan,2026-08-14,Done,GIS Specialist,E13644,International Staff,Iraq,2026-09-07,2026-11-08
+SURGE-167,Surge Request,SRG-2026-0339,Mozambique,2026-08-15,Done,Assessment Specialist,E13748,National Staff,Sudan,2026-08-26,2026-11-01
+SURGE-168,Surge Request,SRG-2026-0340,Somalia,2026-08-24,Done,Assessment Specialist,E13271,International Staff,Mozambique,2026-09-10,2026-11-04
+SURGE-169,Surge Request,SRG-2026-0341,Ukraine,2026-08-29,Done,Assessment Specialist,E12805,International Staff,Yemen,2026-09-22,2026-10-25
+SURGE-170,Surge Request,SRG-2026-0342,Nigeria,2026-08-23,Done,GIS Specialist,E11813,International Staff,Syria,2026-09-19,2026-10-26
+SURGE-171,Surge Request,SRG-2026-0343,Lebanon,2026-08-30,Done,Assessment Specialist,E12616,International Staff,Myanmar,2026-09-15,2026-11-24
+SURGE-172,Surge Request,SRG-2026-0344,Iraq,2026-09-12,Done,Field Coordinator,E13231,International Staff,Libya,2026-09-30,2026-11-20
+SURGE-173,Surge Request,SRG-2026-0345,Burkina Faso,2026-09-08,Done,Field Coordinator,E13800,International Staff,South Sudan,2026-09-26,2026-10-26
+SURGE-174,Surge Request,SRG-2026-0346,South Sudan,2026-09-29,Done,GIS Specialist,E12733,International Staff,Democratic Republic of the Congo,2026-10-14,2026-12-03
+SURGE-175,Surge Request,SRG-2026-0347,Mozambique,2026-09-21,Done,Assessment Specialist,E10328,National Staff,Central African Republic,2026-10-14,2026-12-03
+SURGE-176,Surge Request,SRG-2026-0348,Ukraine,2026-10-22,Open,Assessment Specialist,,,,,
+SURGE-177,Surge Request,SRG-2026-0349,Haiti,2026-10-11,Cancelled,GIS Specialist,,,,,
+SURGE-178,Surge Request,SRG-2026-0350,Afghanistan,2026-10-27,Open,Assessment Specialist,,,,,
+SURGE-179,Surge Request,SRG-2026-0351,Bangladesh,2026-10-31,Open,Assessment Specialist,,,,,
+SURGE-180,Surge Request,SRG-2026-0352,Mali,2026-10-14,Done,Data Manager,E10586,International Staff,Democratic Republic of the Congo,2026-10-22,2026-12-30

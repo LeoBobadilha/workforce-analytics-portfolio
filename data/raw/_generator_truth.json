@@ -1,0 +1,425 @@
+{
+ "seed": 20261031,
+ "employees": 4131,
+ "contracts": 12197,
+ "exits": 1894,
+ "vacancies": 2864,
+ "surges": 352,
+ "appraisals": 7599,
+ "monthly_headcount": {
+  "2023-01-31": {
+   "total": 2192,
+   "by_category": {
+    "National Staff": 1900,
+    "International Staff": 169,
+    "Global non-HQ Staff": 29,
+    "HQ Staff": 94
+   }
+  },
+  "2023-02-28": {
+   "total": 2175,
+   "by_category": {
+    "National Staff": 1891,
+    "International Staff": 163,
+    "Global non-HQ Staff": 29,
+    "HQ Staff": 92
+   }
+  },
+  "2023-03-31": {
+   "total": 2180,
+   "by_category": {
+    "National Staff": 1898,
+    "International Staff": 157,
+    "Global non-HQ Staff": 29,
+    "HQ Staff": 96
+   }
+  },
+  "2023-04-30": {
+   "total": 2180,
+   "by_category": {
+    "National Staff": 1903,
+    "International Staff": 153,
+    "Global non-HQ Staff": 29,
+    "HQ Staff": 95
+   }
+  },
+  "2023-05-31": {
+   "total": 2164,
+   "by_category": {
+    "National Staff": 1894,
+    "International Staff": 145,
+    "Global non-HQ Staff": 29,
+    "HQ Staff": 96
+   }
+  },
+  "2023-06-30": {
+   "total": 2146,
+   "by_category": {
+    "National Staff": 1879,
+    "International Staff": 143,
+    "Global non-HQ Staff": 29,
+    "HQ Staff": 95
+   }
+  },
+  "2023-07-31": {
+   "total": 2144,
+   "by_category": {
+    "National Staff": 1869,
+    "International Staff": 150,
+    "Global non-HQ Staff": 30,
+    "HQ Staff": 95
+   }
+  },
+  "2023-08-31": {
+   "total": 2136,
+   "by_category": {
+    "National Staff": 1855,
+    "International Staff": 155,
+    "Global non-HQ Staff": 31,
+    "HQ Staff": 95
+   }
+  },
+  "2023-09-30": {
+   "total": 2131,
+   "by_category": {
+    "National Staff": 1851,
+    "International Staff": 152,
+    "Global non-HQ Staff": 32,
+    "HQ Staff": 96
+   }
+  },
+  "2023-10-31": {
+   "total": 2148,
+   "by_category": {
+    "National Staff": 1863,
+    "International Staff": 157,
+    "Global non-HQ Staff": 31,
+    "HQ Staff": 97
+   }
+  },
+  "2023-11-30": {
+   "total": 2157,
+   "by_category": {
+    "National Staff": 1863,
+    "International Staff": 166,
+    "Global non-HQ Staff": 31,
+    "HQ Staff": 97
+   }
+  },
+  "2023-12-31": {
+   "total": 2166,
+   "by_category": {
+    "National Staff": 1870,
+    "International Staff": 168,
+    "Global non-HQ Staff": 32,
+    "HQ Staff": 96
+   }
+  },
+  "2024-01-31": {
+   "total": 2169,
+   "by_category": {
+    "National Staff": 1872,
+    "International Staff": 166,
+    "Global non-HQ Staff": 32,
+    "HQ Staff": 99
+   }
+  },
+  "2024-02-29": {
+   "total": 2173,
+   "by_category": {
+    "National Staff": 1876,
+    "International Staff": 166,
+    "Global non-HQ Staff": 30,
+    "HQ Staff": 101
+   }
+  },
+  "2024-03-31": {
+   "total": 2168,
+   "by_category": {
+    "National Staff": 1875,
+    "International Staff": 165,
+    "Global non-HQ Staff": 29,
+    "HQ Staff": 99
+   }
+  },
+  "2024-04-30": {
+   "total": 2168,
+   "by_category": {
+    "National Staff": 1877,
+    "International Staff": 163,
+    "Global non-HQ Staff": 28,
+    "HQ Staff": 100
+   }
+  },
+  "2024-05-31": {
+   "total": 2185,
+   "by_category": {
+    "National Staff": 1890,
+    "International Staff": 164,
+    "Global non-HQ Staff": 30,
+    "HQ Staff": 101
+   }
+  },
+  "2024-06-30": {
+   "total": 2178,
+   "by_category": {
+    "National Staff": 1882,
+    "International Staff": 164,
+    "Global non-HQ Staff": 32,
+    "HQ Staff": 100
+   }
+  },
+  "2024-07-31": {
+   "total": 2193,
+   "by_category": {
+    "National Staff": 1893,
+    "International Staff": 167,
+    "Global non-HQ Staff": 32,
+    "HQ Staff": 101
+   }
+  },
+  "2024-08-31": {
+   "total": 2215,
+   "by_category": {
+    "National Staff": 1913,
+    "International Staff": 171,
+    "Global non-HQ Staff": 31,
+    "HQ Staff": 100
+   }
+  },
+  "2024-09-30": {
+   "total": 2216,
+   "by_category": {
+    "National Staff": 1907,
+    "International Staff": 175,
+    "Global non-HQ Staff": 33,
+    "HQ Staff": 101
+   }
+  },
+  "2024-10-31": {
+   "total": 2222,
+   "by_category": {
+    "National Staff": 1908,
+    "International Staff": 174,
+    "Global non-HQ Staff": 35,
+    "HQ Staff": 105
+   }
+  },
+  "2024-11-30": {
+   "total": 2252,
+   "by_category": {
+    "National Staff": 1938,
+    "International Staff": 174,
+    "Global non-HQ Staff": 34,
+    "HQ Staff": 106
+   }
+  },
+  "2024-12-31": {
+   "total": 2268,
+   "by_category": {
+    "National Staff": 1959,
+    "International Staff": 171,
+    "Global non-HQ Staff": 34,
+    "HQ Staff": 104
+   }
+  },
+  "2025-01-31": {
+   "total": 2266,
+   "by_category": {
+    "National Staff": 1959,
+    "International Staff": 170,
+    "Global non-HQ Staff": 35,
+    "HQ Staff": 102
+   }
+  },
+  "2025-02-28": {
+   "total": 2273,
+   "by_category": {
+    "National Staff": 1966,
+    "International Staff": 167,
+    "Global non-HQ Staff": 37,
+    "HQ Staff": 103
+   }
+  },
+  "2025-03-31": {
+   "total": 2263,
+   "by_category": {
+    "National Staff": 1958,
+    "International Staff": 165,
+    "Global non-HQ Staff": 37,
+    "HQ Staff": 103
+   }
+  },
+  "2025-04-30": {
+   "total": 2272,
+   "by_category": {
+    "National Staff": 1965,
+    "International Staff": 168,
+    "Global non-HQ Staff": 35,
+    "HQ Staff": 104
+   }
+  },
+  "2025-05-31": {
+   "total": 2284,
+   "by_category": {
+    "National Staff": 1968,
+    "International Staff": 172,
+    "Global non-HQ Staff": 36,
+    "HQ Staff": 108
+   }
+  },
+  "2025-06-30": {
+   "total": 2277,
+   "by_category": {
+    "National Staff": 1962,
+    "International Staff": 173,
+    "Global non-HQ Staff": 35,
+    "HQ Staff": 107
+   }
+  },
+  "2025-07-31": {
+   "total": 2268,
+   "by_category": {
+    "National Staff": 1959,
+    "International Staff": 166,
+    "Global non-HQ Staff": 35,
+    "HQ Staff": 108
+   }
+  },
+  "2025-08-31": {
+   "total": 2275,
+   "by_category": {
+    "National Staff": 1964,
+    "International Staff": 165,
+    "Global non-HQ Staff": 37,
+    "HQ Staff": 109
+   }
+  },
+  "2025-09-30": {
+   "total": 2273,
+   "by_category": {
+    "National Staff": 1958,
+    "International Staff": 167,
+    "Global non-HQ Staff": 38,
+    "HQ Staff": 110
+   }
+  },
+  "2025-10-31": {
+   "total": 2273,
+   "by_category": {
+    "National Staff": 1949,
+    "International Staff": 175,
+    "Global non-HQ Staff": 39,
+    "HQ Staff": 110
+   }
+  },
+  "2025-11-30": {
+   "total": 2286,
+   "by_category": {
+    "National Staff": 1965,
+    "International Staff": 172,
+    "Global non-HQ Staff": 39,
+    "HQ Staff": 110
+   }
+  },
+  "2025-12-31": {
+   "total": 2308,
+   "by_category": {
+    "National Staff": 1981,
+    "International Staff": 177,
+    "Global non-HQ Staff": 39,
+    "HQ Staff": 111
+   }
+  },
+  "2026-01-31": {
+   "total": 2315,
+   "by_category": {
+    "National Staff": 1986,
+    "International Staff": 178,
+    "Global non-HQ Staff": 39,
+    "HQ Staff": 112
+   }
+  },
+  "2026-02-28": {
+   "total": 2312,
+   "by_category": {
+    "National Staff": 1982,
+    "International Staff": 179,
+    "Global non-HQ Staff": 38,
+    "HQ Staff": 113
+   }
+  },
+  "2026-03-31": {
+   "total": 2314,
+   "by_category": {
+    "National Staff": 1982,
+    "International Staff": 179,
+    "Global non-HQ Staff": 38,
+    "HQ Staff": 115
+   }
+  },
+  "2026-04-30": {
+   "total": 2320,
+   "by_category": {
+    "National Staff": 1989,
+    "International Staff": 180,
+    "Global non-HQ Staff": 37,
+    "HQ Staff": 114
+   }
+  },
+  "2026-05-31": {
+   "total": 2333,
+   "by_category": {
+    "National Staff": 2002,
+    "International Staff": 178,
+    "Global non-HQ Staff": 38,
+    "HQ Staff": 115
+   }
+  },
+  "2026-06-30": {
+   "total": 2331,
+   "by_category": {
+    "National Staff": 1998,
+    "International Staff": 180,
+    "Global non-HQ Staff": 39,
+    "HQ Staff": 114
+   }
+  },
+  "2026-07-31": {
+   "total": 2343,
+   "by_category": {
+    "National Staff": 2005,
+    "International Staff": 183,
+    "Global non-HQ Staff": 40,
+    "HQ Staff": 115
+   }
+  },
+  "2026-08-31": {
+   "total": 2355,
+   "by_category": {
+    "National Staff": 2014,
+    "International Staff": 182,
+    "Global non-HQ Staff": 41,
+    "HQ Staff": 118
+   }
+  },
+  "2026-09-30": {
+   "total": 2346,
+   "by_category": {
+    "National Staff": 2010,
+    "International Staff": 178,
+    "Global non-HQ Staff": 39,
+    "HQ Staff": 119
+   }
+  },
+  "2026-10-31": {
+   "total": 2337,
+   "by_category": {
+    "National Staff": 2003,
+    "International Staff": 174,
+    "Global non-HQ Staff": 41,
+    "HQ Staff": 119
+   }
+  }
+ }
+}

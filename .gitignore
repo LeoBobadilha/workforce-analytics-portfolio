@@ -1,0 +1,10 @@
+node_modules/
+dist/
+web/dist/
+__pycache__/
+*.pyc
+.pytest_cache/
+.vite/
+*.log
+.DS_Store
+Thumbs.db
