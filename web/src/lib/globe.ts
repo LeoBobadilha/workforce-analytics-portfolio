@@ -3,7 +3,7 @@
 // Convention: unit sphere, y up. Longitude 0 / latitude 0 faces +z, east is +x, north is +y.
 // Markers sit at the Natural Earth label point of each country of assignment (the same anchor as
 // the 2D map); they represent country totals, never individual locations.
-import type { CountryPoint } from './geo';
+import { compareByChange, type CountryPoint } from './geo';
 
 export type Vec3 = [number, number, number];
 const RAD = Math.PI / 180;
@@ -31,6 +31,13 @@ export function slerpLonLat(a: [number, number], b: [number, number], t: number)
   const k1 = Math.sin(t * ω) / s;
   return vec3ToLonLat([k0 * p[0] + k1 * q[0], k0 * p[1] + k1 * q[1], k0 * p[2] + k1 * q[2]]);
 }
+
+/**
+ * Camera centre used to focus a country: slightly south of it, so the country sits above the
+ * centre and its column is seen at an angle (a column pointing straight at the camera shows no length).
+ */
+export const FOCUS_TILT = 12;
+export const focusView = ([lon, lat]: [number, number]): [number, number] => [lon, Math.max(-65, lat - FOCUS_TILT)];
 
 /** Angular distance in degrees between two lon/lat positions. */
 export function angularDistance(a: [number, number], b: [number, number]): number {
@@ -185,8 +192,9 @@ export function tourStops(points: CountryPoint[], perSide = 3): TourStop[] {
   const side = (kind: 'increase' | 'reduction') => {
     const sign = kind === 'increase' ? 1 : -1;
     const pool = known.filter((p) => sign * p.change! > 0);
+    // increases in ranked-list order; reductions largest first with the same tie-break
     return pool
-      .sort((a, b) => sign * (b.change! - a.change!) || b.total - a.total || a.name.localeCompare(b.name))
+      .sort((a, b) => (sign > 0 ? compareByChange(a, b) : a.change! - b.change! || b.total - a.total || a.name.localeCompare(b.name)))
       .slice(0, perSide)
       .map((p) => ({
         iso3: p.iso3,

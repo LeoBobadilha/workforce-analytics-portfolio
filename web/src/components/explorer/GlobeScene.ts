@@ -81,6 +81,8 @@ interface Stats {
   frames: number;
   renderMs: number;
   gpu: { geometries: number; textures: number; drawCalls: number };
+  /** screen position (px within the canvas) of a country's marker base, or null when behind the planet */
+  screenOf?: (iso: string) => [number, number] | null;
 }
 const stats = (): Stats => {
   const w = window as unknown as { __globeStats?: Stats };
@@ -88,10 +90,14 @@ const stats = (): Stats => {
 };
 
 const FOV = 30;
-const H_MAX = 0.34; // tallest column, in globe radii
-const COL_R = 0.0125; // column radius (≈ 0.7°), so neighbouring countries stay distinguishable
-const FOOT_R = 0.026;
-const RING_R = 0.03;
+// Tallest column, in globe radii. Heights stay linear in the value; a shorter maximum keeps
+// columns near the limb from crossing their neighbours in the dense Africa / Middle East band.
+const H_MAX = 0.27;
+const COL_R = 0.0105; // column radius (≈ 0.6°), so neighbouring countries stay distinguishable
+const FOOT_R = 0.017;
+const RING_R = 0.024;
+/** surface colour that unselected markers fade towards while a country is selected */
+const DIM = new Color(GLOBE.ocean);
 const LAT_MIN = -65;
 const LAT_MAX = 75;
 const TEX_W = 2048;
@@ -194,6 +200,9 @@ export class GlobeScene {
   private rings: InstancedMesh;
   private selRing: Mesh;
   private selLines: LineSegments | null = null;
+  private hoverLines: LineSegments | null = null;
+  /** on-globe controls (region select, zoom buttons) that labels must not cover, in px */
+  private reserved: [number, number, number, number][] = [];
   private normals: Vector3[];
   private qUp: Quaternion[];
   private qFace: Quaternion[];
@@ -323,6 +332,7 @@ export class GlobeScene {
     const s = stats();
     s.live++;
     s.created++;
+    s.screenOf = this.screenOf;
   }
 
   // ----------------------------------------------------------------------------------------------
@@ -348,26 +358,33 @@ export class GlobeScene {
   setHovered(iso: string | null) {
     if (iso === this.hovered) return;
     this.hovered = iso;
+    // a light outline of the hovered country (the selected one already has a strong outline)
+    this.hoverLines = this.outline(this.hoverLines, iso && iso !== this.selected ? iso : null, 1.0018, 0.5);
     this.applyColours();
     this.requestRender();
+  }
+
+  /** Replace an outline mesh (one country's borders); geometry is built only on selection or hover changes. */
+  private outline(prev: LineSegments | null, iso: string | null, r: number, opacity: number): LineSegments | null {
+    if (prev) {
+      this.scene.remove(prev);
+      prev.geometry.dispose();
+      (prev.material as Material).dispose();
+    }
+    if (!iso) return null;
+    const f = this.o.features.filter((x) => x.properties.iso3 === iso);
+    const g = new BufferGeometry();
+    g.setAttribute('position', new Float32BufferAttribute(ringSegments(f, r), 3));
+    const lines = new LineSegments(g, new LineBasicMaterial({ color: GLOBE.selection, transparent: true, opacity, depthWrite: false }));
+    this.scene.add(lines);
+    return lines;
   }
 
   setSelected(iso: string | null) {
     if (iso === this.selected) return;
     this.selected = iso;
-    if (this.selLines) {
-      this.scene.remove(this.selLines);
-      this.selLines.geometry.dispose();
-      (this.selLines.material as Material).dispose();
-      this.selLines = null;
-    }
-    if (iso) {
-      const f = this.o.features.filter((x) => x.properties.iso3 === iso);
-      const g = new BufferGeometry();
-      g.setAttribute('position', new Float32BufferAttribute(ringSegments(f, 1.002), 3));
-      this.selLines = new LineSegments(g, new LineBasicMaterial({ color: GLOBE.selection, transparent: true, opacity: 0.95, depthWrite: false }));
-      this.scene.add(this.selLines);
-    }
+    this.selLines = this.outline(this.selLines, iso, 1.002, 0.95);
+    if (iso && iso === this.hovered) this.hoverLines = this.outline(this.hoverLines, null, 0, 0);
     this.applyColours();
     this.applyMarkers();
     this.requestRender();
@@ -442,7 +459,9 @@ export class GlobeScene {
     this.canvas.remove();
     this.labelLayer.remove();
     this.tooltip.remove();
-    stats().live--;
+    const st = stats();
+    st.live--;
+    if (st.screenOf === this.screenOf) delete st.screenOf;
   }
 
   get cameraState() {
@@ -519,7 +538,20 @@ export class GlobeScene {
     const half = Math.tan(((FOV / 2) * Math.PI) / 180) * Math.min(1, this.camera.aspect);
     this.fitDist = Math.sqrt(1 + (1.18 / half) ** 2);
     this.dist *= this.fitDist / prevFit;
+    this.measureReserved();
     this.requestRender();
+  }
+
+  /** Rectangles of the overlay controls ([data-globe-ui]) relative to the canvas. */
+  private measureReserved() {
+    const host = this.o.container.getBoundingClientRect();
+    const root = this.o.container.parentElement;
+    this.reserved = root
+      ? [...root.querySelectorAll('[data-globe-ui]')].map((el) => {
+          const r = el.getBoundingClientRect();
+          return [r.left - host.left - 4, r.top - host.top - 4, r.width + 8, r.height + 8] as [number, number, number, number];
+        })
+      : [];
   }
 
   private minDist = () => 1.32;
@@ -533,6 +565,8 @@ export class GlobeScene {
       const s = this.specs.get(iso);
       c.set(s ? GLOBE_STATUS[s.status].color : '#000000');
       if (iso === this.hovered || iso === this.selected) c.lerp(white, iso === this.selected ? 0.28 : 0.4);
+      // while a country is selected, the others recede so it stands out (colours keep their hue)
+      else if (this.selected) c.lerp(DIM, 0.5);
       this.columns.setColorAt(i, c);
       this.feet.setColorAt(i, c);
     }
@@ -588,6 +622,13 @@ export class GlobeScene {
     } else this.selRing.visible = false;
   }
 
+  screenOf = (iso: string): [number, number] | null => {
+    const i = this.slotOf.get(iso);
+    if (i == null) return null;
+    const n = this.normals[i];
+    return facesCamera([n.x, n.y, n.z], this.camVec(), 0.01) ? this.project([n.x, n.y, n.z]) : null;
+  };
+
   private project(v: Vec3): [number, number] {
     const p = new Vector3(...v).project(this.camera);
     return [((p.x + 1) / 2) * this.w, ((1 - p.y) / 2) * this.h];
@@ -599,7 +640,8 @@ export class GlobeScene {
 
   private updateLabels() {
     const cam = this.camVec();
-    const max = this.w < 520 ? 4 : 7;
+    const max = this.w < 520 ? 3 : 6;
+    if (!this.reserved.length) this.measureReserved();
     const order = [...this.specs.values()].sort((a, b) => {
       const pa = a.iso3 === this.selected ? 2 : a.iso3 === this.hovered ? 1 : 0;
       const pb = b.iso3 === this.selected ? 2 : b.iso3 === this.hovered ? 1 : 0;
@@ -636,7 +678,9 @@ export class GlobeScene {
       const lw = L.w || text.length * 6.5 + 12;
       const rect: [number, number, number, number] = [x - lw / 2, y - 22, lw, 18];
       const important = s.iso3 === this.selected || s.iso3 === this.hovered;
-      const hit = placed.some((r) => rect[0] < r[0] + r[2] + 3 && rect[0] + rect[2] + 3 > r[0] && rect[1] < r[1] + r[3] + 2 && rect[1] + rect[3] + 2 > r[1]);
+      const overlaps = (r: [number, number, number, number]) => rect[0] < r[0] + r[2] + 3 && rect[0] + rect[2] + 3 > r[0] && rect[1] < r[1] + r[3] + 2 && rect[1] + rect[3] + 2 > r[1];
+      if (this.reserved.some(overlaps)) continue; // never cover the on-globe controls
+      const hit = placed.some(overlaps);
       if (hit && !important) continue;
       if (rect[0] < 2 || rect[0] + lw > this.w - 2 || rect[1] < 2) continue;
       placed.push(rect);

@@ -3,12 +3,14 @@ import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { decodeModel } from '../data/decode';
 import { parseYm } from './dates';
-import { buildCube, countryPoints, scaleMaxima, summarise } from './geo';
+import { buildCube, compareByChange, countryPoints, joinNames, largestChanges, scaleMaxima, summarise, type CountryPoint } from './geo';
 import {
   angularDistance,
   countryAt,
   defaultCentre,
   facesCamera,
+  FOCUS_TILT,
+  focusView,
   lonLatToVec3,
   markerSpecs,
   MIN_COLUMN,
@@ -80,6 +82,15 @@ describe('3D globe coordinates', () => {
     const edge = (Math.acos(1 / 3.2) * 180) / Math.PI;
     expect(facesCamera(lonLatToVec3(lon + edge - 1, 0), lonLatToVec3(lon, 0, 3.2))).toBe(true);
     expect(facesCamera(lonLatToVec3(lon + edge + 1, 0), lonLatToVec3(lon, 0, 3.2))).toBe(false);
+  });
+
+  it('focusing a country centres the view just south of it, so the country is in view and its column is seen at an angle', () => {
+    for (const c of model.countries) {
+      const a = anchors.get(c.iso3)!;
+      const v = focusView(a);
+      expect(angularDistance(a, v), c.name).toBeCloseTo(FOCUS_TILT, 6);
+      expect(facesCamera(lonLatToVec3(a[0], a[1]), lonLatToVec3(v[0], v[1], 3.2)), c.name).toBe(true);
+    }
   });
 
   it('camera flights follow the great circle between the two positions', () => {
@@ -198,5 +209,79 @@ describe('default explorer view', () => {
     expect(initialView('full', { lowEnd: true })).toBe('2d');
     expect(initialView('software', { lowEnd: false })).toBe('2d');
     expect(initialView('none', { lowEnd: false })).toBe('2d');
+  });
+});
+
+describe('ranking ties are reported the same way in the summary, the list and the tour', () => {
+  const mk = (name: string, total: number, prev: number | null): CountryPoint => ({
+    name,
+    iso3: name.slice(0, 3).toUpperCase(),
+    index: 0,
+    total,
+    prev,
+    change: prev == null ? null : total - prev,
+    pct: prev ? (total - prev) / prev : null,
+    status: prev == null ? 'no-baseline' : total > prev ? 'growth' : total < prev ? 'reduction' : 'unchanged',
+    byCat: {} as CountryPoint['byCat'],
+  });
+
+  it('positive and negative ties list every tied country, ordered like the ranked list', () => {
+    const pts = [mk('Alpha', 40, 35), mk('Bravo', 90, 85), mk('Charlie', 20, 17), mk('Delta', 50, 54), mk('Echo', 70, 74), mk('Foxtrot', 30, 31)];
+    const { increase, reduction } = largestChanges(pts);
+    expect(increase!.change).toBe(5);
+    expect(increase!.countries.map((p) => p.name)).toEqual(['Bravo', 'Alpha']); // larger headcount first
+    expect(reduction!.change).toBe(-4);
+    expect(reduction!.countries.map((p) => p.name)).toEqual(['Echo', 'Delta']);
+    expect([...pts].sort(compareByChange).slice(0, 2).map((p) => p.name)).toEqual(['Bravo', 'Alpha']);
+    const stops = tourStops(pts, 3);
+    expect(stops.filter((s) => s.kind === 'increase').map((s) => [s.name, s.rank, s.tied])).toEqual([['Bravo', 1, true], ['Alpha', 1, true], ['Charlie', 3, false]]);
+    expect(stops.filter((s) => s.kind === 'reduction').map((s) => [s.name, s.rank, s.tied])).toEqual([['Echo', 1, true], ['Delta', 1, true], ['Foxtrot', 3, false]]);
+  });
+
+  it('names longer ties concisely', () => {
+    expect(joinNames(['Sudan'])).toBe('Sudan');
+    expect(joinNames(['Sudan', 'Chad'])).toBe('Sudan and Chad');
+    expect(joinNames(['Sudan', 'Chad', 'Kenya'])).toBe('Sudan, Chad and Kenya');
+    expect(joinNames(['Sudan', 'Chad', 'Kenya', 'Mali', 'Niger'])).toBe('Sudan, Chad and 3 others');
+  });
+
+  it('countries without a baseline never rank, and no change means no extreme', () => {
+    expect(largestChanges([mk('Alpha', 99, null), mk('Bravo', 10, 8)]).increase!.countries.map((p) => p.name)).toEqual(['Bravo']);
+    expect(largestChanges([mk('Alpha', 99, null), mk('Bravo', 10, null)])).toEqual({ increase: null, reduction: null });
+    expect(largestChanges([mk('Alpha', 10, 10)])).toEqual({ increase: null, reduction: null });
+    expect(largestChanges(countryPoints(cube, cube.m0, ALL))).toEqual({ increase: null, reduction: null });
+  });
+
+  it('on the model data the summary, the YoY list and the tour agree, with and without filters', () => {
+    const scenarios = [
+      { mi: OCT26, f: ALL },
+      { mi: parseYm('2025-06'), f: ALL },
+      { mi: OCT26, f: { country: null, category: 'International Staff' as const } },
+      { mi: OCT26, f: { country: null, category: 'National Staff' as const } },
+      { mi: OCT26, f: { country: 'Kenya', category: null } },
+    ];
+    for (const { mi, f } of scenarios) {
+      const pts = countryPoints(cube, mi, f);
+      const { increase, reduction } = largestChanges(pts);
+      const changes = pts.filter((p) => p.change != null).map((p) => p.change!);
+      const label = `${mi} ${JSON.stringify(f)}`;
+      if (increase) {
+        expect(increase.change, label).toBe(Math.max(...changes));
+        expect(increase.countries.length, label).toBe(changes.filter((c) => c === increase.change).length);
+        const list = [...pts].sort(compareByChange);
+        expect(list.slice(0, increase.countries.length).map((p) => p.iso3), label).toEqual(increase.countries.map((p) => p.iso3));
+        const first = tourStops(pts).filter((s) => s.kind === 'increase' && s.rank === 1);
+        expect(first.map((s) => s.iso3), label).toEqual(increase.countries.slice(0, 3).map((p) => p.iso3));
+        expect(first.every((s) => s.tied === increase.countries.length > 1), label).toBe(true);
+      } else expect(changes.every((c) => c <= 0), label).toBe(true);
+      if (reduction) {
+        expect(reduction.change, label).toBe(Math.min(...changes));
+        const first = tourStops(pts).filter((s) => s.kind === 'reduction' && s.rank === 1);
+        expect(first.map((s) => s.iso3), label).toEqual(reduction.countries.slice(0, 3).map((p) => p.iso3));
+      } else expect(changes.every((c) => c >= 0), label).toBe(true);
+    }
+    // the October 2026 tie at the top is reported as a tie (whichever countries it involves)
+    const oct = largestChanges(countryPoints(cube, OCT26, ALL)).increase!;
+    expect(oct.countries.length).toBeGreaterThan(1);
   });
 });

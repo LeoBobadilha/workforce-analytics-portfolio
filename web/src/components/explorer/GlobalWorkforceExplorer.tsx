@@ -55,7 +55,7 @@ export function GlobalWorkforceExplorer() {
 
   const dark = view === '3d';
   return (
-    <Card className={`min-w-0 p-5 transition-colors ${dark ? 'gwe-dark' : ''}`}>
+    <Card className={`min-w-0 p-3 transition-colors sm:p-5 ${dark ? 'gwe-dark' : ''}`}>
       <section ref={ref} id="global-workforce-explorer" aria-labelledby="gwe-title" data-view={view ?? 'pending'}>
         <header className="mb-3">
           <div className="flex items-center gap-1.5">

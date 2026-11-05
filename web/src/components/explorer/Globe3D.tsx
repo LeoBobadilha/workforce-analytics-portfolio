@@ -6,7 +6,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { esc, shortName } from '../../charts/options';
 import { fmtInt, fmtSignedInt, fmtSignedPct } from '../../lib/format';
 import type { CountryPoint } from '../../lib/geo';
-import { defaultCentre, markerSpecs, regionCentres, shapesFrom, type GlobeMode } from '../../lib/globe';
+import { defaultCentre, focusView, markerSpecs, regionCentres, shapesFrom, type GlobeMode } from '../../lib/globe';
 import { GlobeScene, type GlobeFeature } from './GlobeScene';
 import { GLOBE_STATUS } from './globeTheme';
 
@@ -63,7 +63,8 @@ export default function Globe3D(props: Props) {
   // one scene for the component's lifetime
   useEffect(() => {
     let s: GlobeScene;
-    const start = cb.current.pinned ? anchors.get(cb.current.pinned) ?? home : home;
+    const pinnedAt = cb.current.pinned ? anchors.get(cb.current.pinned) : undefined;
+    const start = pinnedAt ? focusView(pinnedAt) : home;
     try {
       s = new GlobeScene({
         container: host.current!,
@@ -142,7 +143,7 @@ export default function Globe3D(props: Props) {
   useEffect(() => {
     if (!focusSeq || !cb.current.pinned) return;
     const a = anchors.get(cb.current.pinned);
-    if (a) scene.current?.flyTo(a);
+    if (a) scene.current?.flyTo(focusView(a));
   }, [focusSeq, anchors]);
   useEffect(() => {
     if (!hint) return;
@@ -185,10 +186,10 @@ export default function Globe3D(props: Props) {
         data-globe-ready={ready ? 'true' : 'false'}
       />
       <div className="pointer-events-none absolute inset-x-0 top-0 flex items-start justify-between gap-2 p-2">
-        <label className="pointer-events-auto">
+        <label className="pointer-events-auto" data-globe-ui>
           <span className="sr-only">Focus the globe on a region</span>
           <select
-            className="select h-9 rounded-lg border border-white/15 bg-[#0A1628]/80 pl-2.5 text-xs text-[#DCE6F1] backdrop-blur-sm"
+            className={`select h-9 rounded-lg border border-white/15 bg-[#0A1628]/80 pl-2.5 text-xs text-[#DCE6F1] backdrop-blur-sm ${coarse ? 'w-[118px]' : ''}`}
             value=""
             onChange={(e) => {
               const r = regions.find((x) => x.region === e.target.value);
@@ -197,7 +198,7 @@ export default function Globe3D(props: Props) {
             }}
             aria-label="Focus the globe on a region"
           >
-            <option value="">Go to region…</option>
+            <option value="">{coarse ? 'Region…' : 'Go to region…'}</option>
             {regions.map((r) => (
               <option key={r.region} value={r.region}>
                 {r.region}
@@ -205,7 +206,7 @@ export default function Globe3D(props: Props) {
             ))}
           </select>
         </label>
-        <div className="pointer-events-auto flex flex-col gap-1.5">
+        <div className="pointer-events-auto flex flex-col gap-1.5" data-globe-ui>
           <button type="button" className={btn} aria-label="Zoom in" onClick={() => scene.current?.zoomBy(0.8)}>
             <Plus size={16} aria-hidden />
           </button>
@@ -217,11 +218,11 @@ export default function Globe3D(props: Props) {
           </button>
         </div>
       </div>
-      <p className="pointer-events-none absolute bottom-2 left-3 right-14 text-[11px] text-[#9FB0C4]">
+      <p className="pointer-events-none absolute bottom-2 left-3 right-14 text-[11px] text-[#9FB0C4]" data-globe-ui>
         {hint
           ? 'Click the globe first, then scroll to zoom (or use + / −).'
           : coarse
-            ? 'Drag sideways to rotate · pinch to zoom · tap a column for details'
+            ? 'Drag sideways to rotate · pinch to zoom · tap for details'
             : 'Drag to rotate · scroll to zoom after clicking · click a column for details'}
       </p>
       {!ready && <div className="absolute inset-0 grid place-items-center text-xs text-[#9FB0C4]">Preparing 3D globe…</div>}

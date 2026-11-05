@@ -54,6 +54,7 @@ asserts that both agree to 6 decimal places.
 | Globe column height | Linear in the value on a scale fixed across the selected period: headcount ÷ largest country headcount (Active staff), or \|YoY change\| ÷ largest \|change\| (YoY change); a minimum visible height of 1.2 % of the tallest column. In YoY mode, a country without a baseline is a ring with no column; in Active-staff mode it gets a column plus a ring. |
 | Globe marker position | The country's Natural Earth label point (the same anchor as the 2D bubble); it represents the country total, not a location of staff. |
 | Guided exploration | The 3 largest positive and 3 largest negative YoY changes at the selected month and filters (countries without a baseline excluded). Equal changes share a rank and are labelled *joint*; order within a tie follows the ranked list (larger headcount, then name). |
+| Largest increase / reduction (summary panel) | The largest positive and the most negative YoY change among countries with a baseline. Every country tied at that value is named (*Sudan and Chad ▲ +13 each*; more than three: *A, B and N others*, full list in the accessible label). Same ordering as the YoY ranked list and the tour. |
 
 ## 2 · Global Workforce Profile
 

@@ -305,6 +305,8 @@ const watch = (pg) => {
   pg.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
 };
 const anchorsOf = (pg) => pg.evaluate(async () => Object.fromEntries((await (await fetch('geo/world-110m.json')).json()).features.map((f) => [f.properties.iso3, f.properties.label])));
+// a focused country sits 12° above the view centre (FOCUS_TILT), so its column is seen at an angle
+const focusOf = (a) => [a[0], Math.max(-65, a[1] - 12)];
 const near = (cam, a, tol = 2) => Math.abs(((cam[0] - a[0] + 540) % 360) - 180) < tol && Math.abs(cam[1] - a[1]) < tol;
 const listRows = (pg) =>
   pg.locator(`${G} [aria-label="Countries ranked"] button`).evaluateAll((bs) =>
@@ -366,20 +368,40 @@ const gRows = await listRows(g);
 const labelOk = labels.length > 0 && labels.every((t) => gRows.some((r) => t === `${r.name} ${r.total.toLocaleString('en-GB')}`));
 check('3D: on-globe labels show the same values as the country list', labelOk, labels.slice(0, 4).join(', '));
 
+// the summary panel names every country tied for the largest increase / reduction
+{
+  const parse = (t) => Number((t.match(/[+\u2212-]\s?\d[\d,]*/)?.[0] ?? 'NaN').replace(/\u2212/, '-').replace(/[\s,+]/g, ''));
+  const known = gRows.filter((r) => Number.isFinite(parse(r.change)));
+  const up = Math.max(...known.map((r) => parse(r.change)));
+  const down = Math.min(...known.map((r) => parse(r.change)));
+  const upNames = known.filter((r) => parse(r.change) === up).map((r) => r.name);
+  const downNames = known.filter((r) => parse(r.change) === down).map((r) => r.name);
+  const inc = await gx.locator('[data-extreme="increase"]').innerText();
+  const red = await gx.locator('[data-extreme="reduction"]').innerText();
+  const tieOk = (txt, names, v) => names.every((n) => txt.includes(n) || /others/.test(txt)) && txt.includes(`${v > 0 ? '+' : '\u2212'}${Math.abs(v)}`) && (names.length > 1) === /each/.test(txt);
+  check('3D: summary panel names every country tied for the largest increase and reduction', tieOk(inc, upNames, up) && tieOk(red, downNames, down), `${inc.replace(/\n/g, ' ')} | ${red.replace(/\n/g, ' ')}`);
+}
+
 await gx.getByRole('list', { name: 'Countries ranked' }).getByRole('button', { name: /^Kenya/ }).click();
 await settle(g);
 const camK = await camOf(g);
-check('3D: selecting a country in the list brings it into view', near(camK, A.KEN) && (await gx.locator('[data-detail-name]').innerText()) === 'Kenya', `camera ${camK.slice(0, 2)} vs Kenya ${A.KEN}`);
+check('3D: selecting a country in the list brings it into view', near(camK, focusOf(A.KEN)) && (await gx.locator('[data-detail-name]').innerText()) === 'Kenya', `camera ${camK.slice(0, 2)} vs Kenya ${A.KEN}`);
 await gx.getByRole('button', { name: 'Clear map selection' }).click();
 await settle(g);
 const camAfterClear = await camOf(g);
 check('3D: clearing the selection does not move the camera', camAfterClear.join() === camK.join(), camAfterClear.join());
 let c = await canvasCentre(g);
-await g.mouse.move(c.x + 3, c.y + 2);
+const kenyaAt = async (pg) => {
+  const b = await globeOf(pg).boundingBox();
+  const p = await pg.evaluate(() => window.__globeStats.screenOf?.('KEN'));
+  return p && { x: b.x + p[0], y: b.y + p[1] };
+};
+const kAt = await kenyaAt(g);
+await g.mouse.move(kAt.x + 2, kAt.y + 1);
 await g.waitForTimeout(400);
 const tipText = await globeOf(g).locator('[role="tooltip"]').evaluate((t) => (t.style.display === 'block' ? t.textContent : ''));
 check('3D: hovering a country shows its figures', tipText.includes('Kenya') && tipText.includes('Active staff'), tipText.slice(0, 60));
-await g.mouse.click(c.x, c.y);
+await g.mouse.click(kAt.x, kAt.y);
 await g.waitForTimeout(400);
 check('3D: clicking the globe selects the country under the pointer', (await gx.locator('[data-detail-name]').innerText().catch(() => null)) === 'Kenya');
 await g.mouse.click(c.b.x + 6, c.b.y + c.b.height - 6); // corner of the stage, off the planet
@@ -432,6 +454,23 @@ check('3D: zoom, reset and region controls move the camera', camZoom[2] < camRes
 await gx.getByRole('button', { name: 'Reset globe view' }).click();
 await settle(g);
 
+// keyboard: the globe takes focus; arrows rotate, + zooms, 0 resets
+{
+  await globeOf(g).focus();
+  const k0 = await camOf(g);
+  await g.keyboard.press('ArrowRight');
+  await settle(g);
+  const k1 = await camOf(g);
+  await g.keyboard.press('+');
+  await settle(g);
+  const k2 = await camOf(g);
+  await g.keyboard.press('0');
+  await settle(g);
+  const k3 = await camOf(g);
+  const focused = await g.evaluate(() => document.activeElement?.hasAttribute('data-globe-ready'));
+  check('3D keyboard: focusable globe; arrow keys rotate, + zooms, 0 resets', focused && Math.abs(((k1[0] - k0[0] + 540) % 360) - 180 - 15) < 1 && k2[2] < k1[2] && k3.join() === camReset.join(), `${k0} -> ${k1} -> ${k2} -> ${k3}`);
+}
+
 // shared state: mode, month and selection survive switching between 3D and 2D
 await gx.getByRole('radio', { name: 'YoY change' }).click();
 const gSlider = gx.locator('input[type="range"]');
@@ -451,8 +490,8 @@ const camS = await camOf(g);
 const st3b = { m: await gx.locator('[data-month-label]').innerText(), p: await gx.locator('[data-detail-name]').innerText(), mode: await gx.getByRole('radio', { name: 'YoY change' }).getAttribute('aria-checked') };
 check(
   '3D: switching 3D ↔ 2D keeps month, selected country and analysis mode',
-  JSON.stringify(st3) === JSON.stringify(st2) && JSON.stringify(st2) === JSON.stringify(st3b) && st3.p === 'Sudan' && st3.mode === 'true' && near(camS, A.SDN),
-  `${st3.m}, ${st3.p}, yoy ${st3.mode}; camera at Sudan after remount: ${near(camS, A.SDN)}`,
+  JSON.stringify(st3) === JSON.stringify(st2) && JSON.stringify(st2) === JSON.stringify(st3b) && st3.p === 'Sudan' && st3.mode === 'true' && near(camS, focusOf(A.SDN)),
+  `${st3.m}, ${st3.p}, yoy ${st3.mode}; camera at Sudan after remount: ${near(camS, focusOf(A.SDN))}`,
 );
 await gx.getByRole('button', { name: 'Clear map selection' }).click();
 await gx.getByRole('radio', { name: 'Active staff' }).click();
@@ -498,7 +537,7 @@ await g.waitForTimeout(400);
 await settle(g);
 const camF = await camOf(g);
 const fRows = await gx.getByRole('list', { name: 'Countries ranked' }).getByRole('button').count();
-check('3D: category and country filters apply; a country filter focuses the globe', intlKpi === intlMap && fRows === 1 && near(camF, A.KEN), `intl ${intlMap} vs KPI ${intlKpi}; ${fRows} row; camera at Kenya ${near(camF, A.KEN)}`);
+check('3D: category and country filters apply; a country filter focuses the globe', intlKpi === intlMap && fRows === 1 && near(camF, focusOf(A.KEN)), `intl ${intlMap} vs KPI ${intlKpi}; ${fRows} row; camera at Kenya ${near(camF, focusOf(A.KEN))}`);
 await g.getByRole('button', { name: 'Clear filters' }).click();
 await g.waitForTimeout(400);
 await gx.scrollIntoViewIfNeeded();
@@ -514,9 +553,10 @@ const stop1 = await tourBox.locator('[data-tour-stop]').getAttribute('data-tour-
 const stop1Text = await tourBox.innerText();
 const camT = await camOf(g);
 const panelT = await gx.locator('[data-detail-name]').innerText();
+if (out) await gx.screenshot({ path: join(out, 'globe-tour.png') });
 check(
   '3D: guided exploration starts at the largest calculated increase and focuses it',
-  stop1Text.includes('1 / ') && /largest increase/i.test(stop1Text) && stop1Text.includes(`+${maxUp}`) && near(camT, A[stop1]) && stop1Text.includes(panelT),
+  stop1Text.includes('1 / ') && /largest increase/i.test(stop1Text) && stop1Text.includes(`+${maxUp}`) && near(camT, focusOf(A[stop1])) && stop1Text.includes(panelT),
   `${stop1} (${panelT}) +${maxUp}`,
 );
 await tourBox.getByRole('button', { name: 'Next country in guided exploration' }).click();
@@ -581,6 +621,13 @@ await ctx3.close();
   await pg.goto(`${base}#/`, { waitUntil: 'networkidle' });
   await open3d(pg);
   const px = pg.locator(G);
+  const lay = await px.evaluate((el) => {
+    const r = (s) => el.querySelector(s).getBoundingClientRect();
+    const slider = r('input[type="range"]');
+    const chip = r('[data-month-label]');
+    return { controls: Math.round(r('[data-explorer-controls]').height), globe: Math.round(r('[data-globe-ready]').height), width: Math.round(r('[data-globe-ready]').width), sameRow: Math.abs(slider.top + slider.height / 2 - (chip.top + chip.height / 2)) < 12 };
+  });
+  check('3D phone layout: two rows of controls, timeline on one row, globe stays prominent', lay.controls <= 80 && lay.sameRow && lay.globe >= 320 && lay.width >= 320, JSON.stringify(lay));
   const touchDrag = async (x0, y0, dx, dy) => {
     await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x: x0, y: y0 }] });
     for (let i = 1; i <= 12; i++) {
@@ -606,8 +653,9 @@ await ctx3.close();
   await settle(pg);
   await px.getByRole('button', { name: 'Clear map selection' }).click();
   await px.locator('[data-globe-ready]').scrollIntoViewIfNeeded();
-  cc = await canvasCentre(pg);
-  await pg.touchscreen.tap(cc.x, cc.y);
+  await settle(pg);
+  const kp = await kenyaAt(pg);
+  await pg.touchscreen.tap(kp.x, kp.y);
   await pg.waitForTimeout(400);
   const rowH = await px.getByRole('list', { name: 'Countries ranked' }).getByRole('button').first().evaluate((b) => b.getBoundingClientRect().height);
   check('3D touch: tapping a country selects it; list rows are comfortable touch targets', (await px.locator('[data-detail-name]').innerText().catch(() => null)) === 'Kenya' && rowH >= 40, `row height ${rowH}px`);
@@ -641,13 +689,13 @@ await ctx3.close();
   const s1 = await tb.locator('[data-tour-stop]').getAttribute('data-tour-stop');
   await pg.waitForTimeout(5600);
   const s2 = await tb.locator('[data-tour-stop]').getAttribute('data-tour-stop');
-  check('3D reduced motion: the camera jumps without animation and the tour never advances by itself', near(camR, pa.COL) && f1 - f0 <= 3 && s1 === s2 && (await tb.getByRole('button', { name: /Pause guided/ }).count()) === 0, `${f1 - f0} frame(s) for the move; stop ${s1} -> ${s2}`);
+  check('3D reduced motion: the camera jumps without animation and the tour never advances by itself', near(camR, focusOf(pa.COL)) && f1 - f0 <= 3 && s1 === s2 && (await tb.getByRole('button', { name: /Pause guided/ }).count()) === 0, `${f1 - f0} frame(s) for the move; stop ${s1} -> ${s2}`);
   await ctx.close();
 }
 
 // no WebGL: 2D map is used and the 3D option is disabled with an explanation
 {
-  const ctx = await browser.newContext({ viewport: { width: 1366, height: 900 } });
+  const ctx = await browser.newContext({ viewport: { width: 1600, height: 1000 } });
   await ctx.addInitScript(() => {
     const orig = HTMLCanvasElement.prototype.getContext;
     HTMLCanvasElement.prototype.getContext = function (type, ...a) {
@@ -661,6 +709,10 @@ await ctx3.close();
   await px.scrollIntoViewIfNeeded();
   await px.locator('[data-map-ready="true"]').waitFor({ timeout: 20000 });
   const radio = px.getByRole('radio', { name: '3D Globe' });
+  if (out) {
+    await pg.waitForTimeout(400);
+    await px.screenshot({ path: join(out, 'explorer.png') });
+  }
   check('3D unavailable (no WebGL): 2D map shown, 3D option disabled with a reason', (await px.getAttribute('data-view')) === '2d' && (await radio.isDisabled()) && /WebGL/.test((await radio.getAttribute('title')) ?? ''), await radio.getAttribute('title'));
   await ctx.close();
 }

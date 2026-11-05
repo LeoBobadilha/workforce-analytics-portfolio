@@ -52,7 +52,8 @@ nationality diversity.
 Full-page captures of each dashboard are in [`docs/screenshots/full/`](docs/screenshots/full/). Interaction evidence:
 [tooltip](docs/screenshots/tooltip.png) · [GN/GS toggle](docs/screenshots/diversity-gs-toggle.png) ·
 [empty state](docs/screenshots/empty-state.png) · [mobile layout](docs/screenshots/mobile-contracts.png) ·
-[map country selected](docs/screenshots/explorer-selected.png) · [globe country selected](docs/screenshots/globe-selected.png).
+[map country selected](docs/screenshots/explorer-selected.png) · [globe country selected](docs/screenshots/globe-selected.png) ·
+[guided exploration](docs/screenshots/globe-tour.png).
 
 ## Global Workforce Explorer
 
@@ -72,19 +73,25 @@ interactive **3D globe** and the **2D map**.
   location. Height is linear in the value, on a scale fixed across the selected period: active headcount ÷ the
   largest country headcount (*Active staff*), or |YoY change| ÷ the largest |change| (*YoY change*). Colour is
   the YoY direction (teal growth, burgundy reduction, grey unchanged), with ▲ ▼ = in every label and list. A ring
-  marks countries with no prior-year baseline. Columns are thin (about 0.7°), so neighbours such as Lebanon, Syria
-  and Jordan stay separate. Markers on the far side of the planet are hidden and cannot be selected.
+  marks countries with no prior-year baseline. Columns are thin (about 0.6°) and at most 0.27 globe radii tall, so
+  neighbours such as Lebanon, Syria and Jordan stay separate. Markers on the far side of the planet are hidden and
+  cannot be selected. A selected country is outlined and the other columns recede; hovering outlines a country
+  lightly. Labels go to the selected, hovered and largest countries and never cover the on-globe controls.
 - **Interaction**: drag to rotate, pinch or scroll to zoom, the + / − / reset buttons, region shortcuts derived from
   the model's regions, and arrow keys, + / − and 0 when the globe has keyboard focus. The scroll wheel zooms only
   after the globe has been clicked; until then it scrolls the page. On phones, a sideways drag rotates and a vertical
   drag scrolls the page as usual. Click or tap a column or country to pin its details. Selecting a country anywhere
-  (globe, list, dashboard filter or guided exploration) turns it into view. The camera never moves on its own while
-  you read the panel.
+  (globe, list, dashboard filter or guided exploration) turns it into view, centred slightly to its south so its
+  column is seen at an angle rather than end-on. The camera never moves on its own while you read the panel.
 - **Explore workforce changes**: an optional guided sequence of the three largest increases and the three largest
-  reductions for the selected month and filters, ranked from the model; ties are labelled *joint*. Each stop turns
+  reductions for the selected month and filters, ranked from the model. Each stop turns
   the globe to the country and shows its verified figures. You can pause, skip or exit at any time. It reports
   headcount changes only: no causes are implied and no movement arcs are drawn, because the data has no transfer
   records.
+- **One ranking rule** for the YoY list, the summary panel and the tour: larger change first, then larger headcount,
+  then name. Ties are stated, never resolved silently: the summary reads *Largest increase: Sudan and Chad ▲ +13
+  each* (longer ties: *A, B and 3 others*, with the full list in its accessible label), and the tour labels them
+  *joint*.
 
 <img src="docs/screenshots/globe-mobile.png" alt="3D globe on a phone" width="300" />
 
@@ -125,6 +132,13 @@ interactive **3D globe** and the **2D map**.
 | Frames drawn while idle · draw calls · textures | — | 0 · 8 · 1 |
 
 The phone profile emulates a slower CPU on a desktop GPU, so it does not measure a phone's GPU.
+
+The presentation refinements (shorter and thinner columns, focus framing, selection and hover emphasis, compact
+phone layout) were measured against the first globe release (`258a2fb`) in alternating runs. Globe readiness, camera
+frame rate (60–61 frames/s), timeline steps (median 31 ms on the laptop profile), idle rendering (none) and draw
+calls (8) are unchanged. On the phone profile, first dashboard content was a median 0.2 s slower over 12 pairs.
+The main bundle is unchanged apart from a file name and one class name, and the same build served twice differed
+by up to 0.2 s, so this is within run-to-run variation on this machine.
 
 - **Lazy loading**: Three.js is never in the main bundle. It loads only when the 3D view is shown, after the section
   approaches the viewport; other pages never load it.
@@ -236,8 +250,8 @@ Discrepancies are reported, not hidden: the *Contracts & Data Quality* page list
 | Check | What it proves |
 |---|---|
 | `pytest` (36 tests) | Unique keys, valid reference values, no overlapping contracts, referential integrity (contracts, hires, surges, appraisals), date ordering, a monotonic funnel, and **exact reproduction of the simulated monthly headcount by category** after merging the sources; KPI formulas checked on a hand-calculated toy dataset; the world map is reproducible from its source, within its size budget and covers every model country |
-| `vitest` (33 tests) | The TypeScript KPI engine matches the pandas reference across 6 filter scenarios (29 KPIs each), with one contract per employee at every month-end; the map's headcount cube equals the active-contract logic for every month × country × category, its totals and YoY values match the KPIs, and every model country maps to a boundary containing its bubble anchor; the 3D globe's coordinates, horizon and picking geometry, column heights and values (reconciled with the KPIs under filters), the no-baseline state, the guided-exploration ranking (including ties) and the default-view rule |
-| `scripts/e2e.mjs` (68 checks) | Real-browser navigation of all pages, filters changing KPIs, persistence, clear filters, empty states, GN/GS toggle partition, table search / sort / status filter, chart tooltips, no mobile overflow, no runtime errors; for the map: lazy loading, totals vs KPIs, timeline steps and latency, modes, selection and reset, global filters, playback and cleanup, reduced motion, and layout at 1920, 1366, 768 and 390 px; for the 3D globe: Three.js loaded only for the 3D view, default view by WebGL capability, totals and labels vs the list, camera focus on selection, hover, click and empty-space picking, drag, wheel-vs-page-scroll, zoom / reset / regions, state kept across 3D ↔ 2D, filters, timeline latency with no scene rebuild and no idle rendering, guided exploration, context loss and recovery, disposal after navigation, touch rotate vs page scroll and tap, reduced motion, no-WebGL fallback, and the four layouts |
+| `vitest` (38 tests) | The TypeScript KPI engine matches the pandas reference across 6 filter scenarios (29 KPIs each), with one contract per employee at every month-end; the map's headcount cube equals the active-contract logic for every month × country × category, its totals and YoY values match the KPIs, and every model country maps to a boundary containing its bubble anchor; the 3D globe's coordinates, horizon and picking geometry, column heights and values (reconciled with the KPIs under filters), the no-baseline state, the guided-exploration ranking, ties in the summary, list and tour (positive, negative, longer ties, missing baselines, filtered selections), the focus framing and the default-view rule |
+| `scripts/e2e.mjs` (71 checks) | Real-browser navigation of all pages, filters changing KPIs, persistence, clear filters, empty states, GN/GS toggle partition, table search / sort / status filter, chart tooltips, no mobile overflow, no runtime errors; for the map: lazy loading, totals vs KPIs, timeline steps and latency, modes, selection and reset, global filters, playback and cleanup, reduced motion, and layout at 1920, 1366, 768 and 390 px; for the 3D globe: Three.js loaded only for the 3D view, default view by WebGL capability, totals and labels vs the list, camera focus on selection, hover, click and empty-space picking, drag, wheel-vs-page-scroll, zoom / reset / regions, state kept across 3D ↔ 2D, filters, timeline latency with no scene rebuild and no idle rendering, guided exploration, context loss and recovery, disposal after navigation, touch rotate vs page scroll and tap, reduced motion, no-WebGL fallback, the summary panel's tie wording, globe keyboard control, the compact phone layout, and the four layouts |
 
 All three suites run automatically in GitHub Actions on every push to `main`, and the site is deployed only if they pass.
 `scripts/perf.mjs` measures load timings, long tasks, explorer loading and timeline latency on laptop and throttled mobile profiles, and with `--view=3d` the globe's frame rate, idle frames, heap, draw calls and cleanup.
@@ -301,9 +315,10 @@ guiding the requirements, reviewing results and refining the reporting logic.
 - **Global North / South** uses an illustrative list (high-income OECD-DAC countries) that should be replaced by the
   organisation's reference list.
 - **Staff categories and grades** (G1–G7) are a modelling choice for a multi-country workforce, not the classification of any real organisation.
-- **3D globe on real phones**: performance was measured with CPU throttling on a desktop GPU, not on phone hardware.
-  Low-end devices and software-only WebGL default to the 2D map, and both views are always available. On the globe,
-  the tightest clusters (Lebanon, Syria, Jordan) still need zooming in or the ranked list.
+- **3D globe on real phones**: no physical Android or iOS device was available for testing. Performance was
+  measured with CPU throttling and touch emulation on a desktop GPU, which does not show phone GPU speed, heat or
+  sustained throttling. Low-end devices and software-only WebGL default to the 2D map, and both views are always
+  available. On the globe, the tightest clusters (Lebanon, Syria, Jordan) still need zooming in or the ranked list.
 
 Map data: [Natural Earth](https://www.naturalearthdata.com/) 1:110m Admin 0 – Countries (public domain). Country
 boundaries are shown for orientation only.

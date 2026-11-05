@@ -112,6 +112,51 @@ export function countryPoints(cube: GeoCube, mi: number, f: { country: string | 
   return out;
 }
 
+// ---------------------------------------------------------------------------------------------
+// Ranking by YoY change: one rule for the ranked list, the summary panel and the guided tour.
+
+/**
+ * Larger change first; countries without a baseline last; equal changes by larger headcount,
+ * then name. Used for the YoY ranked list and, mirrored for reductions, by the tour.
+ */
+export function compareByChange(a: CountryPoint, b: CountryPoint): number {
+  const ca = a.change ?? -Infinity;
+  const cb = b.change ?? -Infinity;
+  return (ca === cb ? 0 : cb - ca) || b.total - a.total || a.name.localeCompare(b.name);
+}
+
+/** Equal changes: larger headcount, then name (the tie-break shared by every ranking). */
+const tieBreak = (a: CountryPoint, b: CountryPoint) => b.total - a.total || a.name.localeCompare(b.name);
+
+export interface Extreme {
+  change: number;
+  /** every country sharing this change, in ranked-list order */
+  countries: CountryPoint[];
+}
+
+/**
+ * The largest increase and the largest reduction among countries with a baseline, with all
+ * countries tied at that value (null when there is no increase / reduction or no baseline).
+ */
+export function largestChanges(points: CountryPoint[]): { increase: Extreme | null; reduction: Extreme | null } {
+  const known = points.filter((p) => p.change != null);
+  const pick = (sign: 1 | -1): Extreme | null => {
+    const pool = known.filter((p) => sign * p.change! > 0);
+    if (!pool.length) return null;
+    const change = sign > 0 ? Math.max(...pool.map((p) => p.change!)) : Math.min(...pool.map((p) => p.change!));
+    return { change, countries: pool.filter((p) => p.change === change).sort(tieBreak) };
+  };
+  return { increase: pick(1), reduction: pick(-1) };
+}
+
+/** "Sudan", "Sudan and Chad", "Sudan, Chad and Kenya", "Sudan, Chad and 2 others". */
+export function joinNames(names: string[], max = 3): string {
+  if (names.length <= 1) return names[0] ?? '';
+  if (names.length <= max) return `${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}`;
+  const rest = names.length - (max - 1);
+  return `${names.slice(0, max - 1).join(', ')} and ${rest} others`;
+}
+
 /** Largest country headcount and largest absolute YoY change over a month range (fixed bubble scales). */
 export function scaleMaxima(cube: GeoCube, from: number, to: number, f: { country: string | null; category: Category | null }) {
   let total = 0;

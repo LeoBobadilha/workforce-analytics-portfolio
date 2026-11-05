@@ -8,7 +8,7 @@ import { CATEGORY_COLOR } from '../../charts/theme';
 import { CATEGORIES } from '../../data/types';
 import { fmtDay, fmtMonth, fmtMonthShort, monthEndDay } from '../../lib/dates';
 import { fmtInt, fmtSignedInt, fmtSignedPct } from '../../lib/format';
-import { buildCube, countryPoints, scaleMaxima, summarise, type CountryPoint } from '../../lib/geo';
+import { buildCube, compareByChange, countryPoints, joinNames, largestChanges, scaleMaxima, summarise, type CountryPoint, type Extreme } from '../../lib/geo';
 import { tourStops, type TourStop } from '../../lib/globe';
 import type { ExplorerView, WebGLSupport } from '../../lib/webgl';
 import { useApp } from '../../state/AppData';
@@ -187,6 +187,7 @@ export default function ExplorerBody({ visible, view, setView, support }: { visi
     return () => window.clearTimeout(id);
   }, [tour, visible, reduced, pinTo]);
   const stops = useMemo(() => tourStops(points), [points]);
+  const extremes = useMemo(() => largestChanges(points), [points]);
   const startTour = () => {
     if (!stops.length) return;
     setPlaying(false);
@@ -203,7 +204,7 @@ export default function ExplorerBody({ visible, view, setView, support }: { visi
   const width = useWidth(box);
   const narrow = width > 0 && width < 640;
   const mapHeight = Math.round(Math.min(520, Math.max(230, width * 0.5)));
-  const globeHeight = Math.round(Math.min(560, Math.max(320, width * 0.56)));
+  const globeHeight = Math.round(Math.min(560, Math.max(narrow ? 330 : 320, width * 0.56)));
   const maxD = Math.round(Math.min(40, Math.max(18, width * (extent === 'focus' ? 0.042 : 0.034))));
 
   const onHover = useCallback((iso: string | null) => setHovered(iso), []);
@@ -240,7 +241,7 @@ export default function ExplorerBody({ visible, view, setView, support }: { visi
   const ranked = useMemo(
     () =>
       [...points].sort((a, b) =>
-        mode === 'active' ? b.total - a.total || a.name.localeCompare(b.name) : (b.change ?? -Infinity) - (a.change ?? -Infinity) || b.total - a.total,
+        mode === 'active' ? b.total - a.total || a.name.localeCompare(b.name) : compareByChange(a, b),
       ),
     [points, mode],
   );
@@ -266,7 +267,7 @@ export default function ExplorerBody({ visible, view, setView, support }: { visi
         setPinned(null);
       }}
     >
-      <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
+      <div className="mb-3 flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
         <p className="text-xs text-muted" aria-live="polite">
           <b className="font-semibold text-ink">{monthLabel}</b> · {fmtInt(summary.total)} active staff ·{' '}
           {summary.countriesOfOperation} countries of operation{summary.countries > summary.countriesOfOperation ? ' + HQ' : ''} · YoY{' '}
@@ -275,7 +276,7 @@ export default function ExplorerBody({ visible, view, setView, support }: { visi
           </b>
           {filters.category && <> · {filters.category} only</>}
         </p>
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2" data-explorer-controls>
           <Segmented
             label="Explorer view"
             value={view}
@@ -299,13 +300,15 @@ export default function ExplorerBody({ visible, view, setView, support }: { visi
             onClick={() => (tour ? setTour(null) : startTour())}
             disabled={!tour && !stops.length}
             aria-pressed={!!tour}
+            aria-label="Explore workforce changes"
             title={!stops.length ? 'Needs a prior-year baseline: choose a month at least 12 months after the data starts' : 'Visit the largest increases and reductions'}
             className={`inline-flex h-[30px] items-center gap-1.5 rounded-lg border px-2.5 text-xs font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${
               tour ? 'border-teal/50 bg-teal-50 text-teal' : 'border-line bg-white text-ink-2 hover:bg-page'
             }`}
           >
             <Compass size={14} aria-hidden />
-            Explore workforce changes
+            <span className="sm:hidden">Explore changes</span>
+            <span className="hidden sm:inline">Explore workforce changes</span>
           </button>
         </div>
       </div>
@@ -507,8 +510,8 @@ export default function ExplorerBody({ visible, view, setView, support }: { visi
                 <RotateCcw size={14} aria-hidden />
               </button>
             </div>
-            <div className="flex min-w-[200px] flex-1 items-center gap-3">
-              <span className="text-[11px] tabular text-faint">{fmtMonthShort(filters.from)}</span>
+            <div className="flex min-w-[120px] flex-1 items-center gap-3">
+              <span className="hidden text-[11px] tabular text-faint sm:inline">{fmtMonthShort(filters.from)}</span>
               <input
                 type="range"
                 min={filters.from}
@@ -525,7 +528,7 @@ export default function ExplorerBody({ visible, view, setView, support }: { visi
                 aria-valuetext={fmtMonth(month)}
                 className="h-1.5 flex-1 cursor-pointer accent-[#168A80]"
               />
-              <span className="text-[11px] tabular text-faint">{fmtMonthShort(filters.to)}</span>
+              <span className="hidden text-[11px] tabular text-faint sm:inline">{fmtMonthShort(filters.to)}</span>
             </div>
             <span data-month-label className="min-w-[72px] rounded-md bg-teal-50 px-2 py-1 text-center text-xs font-semibold tabular text-teal">
               {fmtMonth(month)}
@@ -541,7 +544,7 @@ export default function ExplorerBody({ visible, view, setView, support }: { visi
           {is3d ? (
             <GlobeLegend mode={mode} ticks={sizeTicks} max={mode === 'active' ? maxima.total : maxima.change} />
           ) : (
-            <div className="mt-3 flex flex-wrap items-end gap-x-8 gap-y-3 text-[11px] text-muted">
+            <div className="mt-3 flex flex-wrap items-end gap-x-8 gap-y-2 text-[11px] text-muted sm:gap-y-3">
               <div>
                 <p className="mb-1 font-medium text-ink-2">{mode === 'active' ? 'Bubble area = active staff' : 'Bubble area = YoY change (employees)'}</p>
                 <div className="flex items-end gap-3">
@@ -590,7 +593,7 @@ export default function ExplorerBody({ visible, view, setView, support }: { visi
             month={month}
             summary={summary}
             yoy={yoy}
-            ranked={ranked}
+            extremes={extremes}
             globalCountry={filters.country}
             onClear={() => {
               setTour(null);
@@ -639,7 +642,7 @@ export default function ExplorerBody({ visible, view, setView, support }: { visi
 function GlobeLegend({ mode, ticks, max }: { mode: MapMode; ticks: number[]; max: number }) {
   const H = 40;
   return (
-    <div className="mt-3 flex flex-wrap items-end gap-x-8 gap-y-3 text-[11px] text-muted">
+    <div className="mt-3 flex flex-wrap items-end gap-x-8 gap-y-2 text-[11px] text-muted sm:gap-y-3">
       <div>
         <p className="mb-1 font-medium text-ink-2">{mode === 'active' ? 'Column height = active staff (linear scale)' : 'Column height = size of the YoY change (linear)'}</p>
         <div className="flex items-end gap-4">
@@ -685,13 +688,13 @@ function DetailPanel(props: {
   month: number;
   summary: ReturnType<typeof summarise>;
   yoy: number | null;
-  ranked: CountryPoint[];
+  extremes: { increase: Extreme | null; reduction: Extreme | null };
   globalCountry: string | null;
   onClear: () => void;
   onApply: (name: string) => void;
   onClearFilter: () => void;
 }) {
-  const { name, point: p, pinned, month, summary, yoy, ranked, globalCountry } = props;
+  const { name, point: p, pinned, month, summary, yoy, extremes, globalCountry } = props;
   const D = fmtDay(monthEndDay(month));
   const prevD = fmtDay(monthEndDay(month - 12));
   const stat = (label: string, value: string, cls = 'text-ink') => (
@@ -702,9 +705,21 @@ function DetailPanel(props: {
   );
 
   if (!name) {
-    const movers = ranked.filter((x) => x.change != null);
-    const up = [...movers].sort((a, b) => (b.change ?? 0) - (a.change ?? 0))[0];
-    const down = [...movers].sort((a, b) => (a.change ?? 0) - (b.change ?? 0))[0];
+    const extreme = (label: string, e: Extreme | null, cls: string) => {
+      if (!e) return null;
+      const names = e.countries.map((c) => shortName(c.name));
+      const tie = names.length > 1;
+      const value = `${joinNames(names)} ${e.change > 0 ? '▲' : '▼'} ${fmtSignedInt(e.change)}${tie ? ' each' : ''}`;
+      const full = `${label}: ${names.join(', ')}, ${fmtSignedInt(e.change)}${tie ? ` each (${names.length}-way tie)` : ''}`;
+      return (
+        <div className="flex items-baseline justify-between gap-3 py-1" title={full} data-extreme={e.change > 0 ? 'increase' : 'reduction'}>
+          <dt className="flex-none text-muted">{label}</dt>
+          <dd className={`text-right tabular font-semibold ${cls}`} aria-label={full}>
+            {value}
+          </dd>
+        </div>
+      );
+    };
     return (
       <div className="rounded-lg border border-line-2 bg-page/60 p-3 text-xs" data-detail="summary">
         <p className="font-semibold text-ink">All countries in the selection</p>
@@ -713,8 +728,8 @@ function DetailPanel(props: {
           {stat('Active staff', fmtInt(summary.total))}
           {stat(`One year earlier (${prevD})`, summary.prev == null ? 'No baseline' : fmtInt(summary.prev))}
           {stat('YoY change', yoy == null ? 'No baseline' : fmtSignedInt(yoy), yoy == null ? 'text-muted' : yoy > 0 ? 'text-teal' : yoy < 0 ? 'text-burgundy' : 'text-ink')}
-          {up && up.change! > 0 && stat('Largest increase', `${shortName(up.name)} ▲ ${fmtSignedInt(up.change)}`, 'text-teal')}
-          {down && down.change! < 0 && stat('Largest reduction', `${shortName(down.name)} ▼ ${fmtSignedInt(down.change)}`, 'text-burgundy')}
+          {extreme('Largest increase', extremes.increase, 'text-teal')}
+          {extreme('Largest reduction', extremes.reduction, 'text-burgundy')}
         </dl>
         <p className="mt-2 text-muted">Hover over or select a country on the map or in the list for its details.</p>
       </div>
