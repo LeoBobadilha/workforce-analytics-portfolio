@@ -8,6 +8,7 @@ import { chromium } from 'playwright-core';
 const args = process.argv.slice(2);
 const base = args.find((a) => !a.startsWith('--')) ?? 'http://127.0.0.1:4317/';
 const runs = Number(args.find((a) => a.startsWith('--runs='))?.split('=')[1] ?? 3);
+const only = args.find((a) => a.startsWith('--profile='))?.split('=')[1]; // laptop | mobile
 
 const PROFILES = [
   { name: 'laptop 1366x768', viewport: { width: 1366, height: 768 }, cpu: 1, mobile: false },
@@ -109,7 +110,7 @@ async function measure(profile) {
   return out;
 }
 
-for (const profile of PROFILES) {
+for (const profile of PROFILES.filter((p) => !only || p.name.startsWith(only))) {
   const results = [];
   for (let i = 0; i < runs; i++) results.push(await measure(profile));
   const m = (k) => r(median(results.map((x) => x[k])));

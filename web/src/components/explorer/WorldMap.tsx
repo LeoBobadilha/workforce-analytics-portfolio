@@ -69,6 +69,8 @@ export default function WorldMap(props: Props) {
   const byIso = useMemo(() => new Map(points.map((p) => [p.iso3, p])), [points]);
   const lookup = useRef(byIso);
   lookup.current = byIso;
+  const monthRef = useRef(monthLabel);
+  monthRef.current = monthLabel;
 
   useEffect(() => {
     if (!echarts.getMap('world-110m')) echarts.registerMap('world-110m', geoJson as never);
@@ -154,7 +156,7 @@ export default function WorldMap(props: Props) {
           if (!f) return '';
           if (!covered.has(iso)) return `<div style="color:${C.muted}">${esc(f.name)} · not covered by the workforce model</div>`;
           const p = lookup.current.get(iso);
-          if (!p) return title(f.name) + `<div style="color:${C.muted}">No active staff in this selection · ${esc(monthLabel)}</div>`;
+          if (!p) return title(f.name) + `<div style="color:${C.muted}">No active staff in this selection · ${esc(monthRef.current)}</div>`;
           const st = STATUS_STYLE[p.status];
           const yoy =
             p.change == null ? 'No baseline' : p.status === 'new' ? `${fmtSignedInt(p.change)} · new` : `${st.glyph} ${fmtSignedInt(p.change)}${p.pct != null ? ` (${fmtSignedPct(p.pct)})` : ''}`;
@@ -162,7 +164,7 @@ export default function WorldMap(props: Props) {
             title(f.name) +
             row(C.teal, 'Active staff', fmtInt(p.total), true) +
             row(st.dashed ? '#CBD5E1' : st.fill, 'YoY change', esc(yoy)) +
-            `<div style="margin-top:6px;color:${C.muted}">${esc(monthLabel)} · click to pin details</div>`
+            `<div style="margin-top:6px;color:${C.muted}">${esc(monthRef.current)} · click to pin details</div>`
           );
         },
       },
@@ -182,6 +184,12 @@ export default function WorldMap(props: Props) {
         label: { show: false },
         regions,
       },
+    });
+  }, [regions, bounds, reducedMotion, tooltip, features, covered]);
+
+  // Month, mode and filter changes touch only the bubble series, not the 175 country shapes.
+  useEffect(() => {
+    chart.current?.setOption({
       series: [
         {
           id: 'bubbles',
@@ -193,7 +201,7 @@ export default function WorldMap(props: Props) {
         },
       ],
     });
-  }, [data, regions, bounds, reducedMotion, tooltip, features, covered, monthLabel]);
+  }, [data]);
 
   return (
     <div
