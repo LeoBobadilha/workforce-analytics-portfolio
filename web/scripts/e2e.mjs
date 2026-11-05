@@ -123,6 +123,153 @@ const tip = await page.locator('main [role="img"] div').filter({ hasText: 'Total
 check('chart tooltip shows on hover', tip > 0);
 if (out) await page.screenshot({ path: join(out, 'tooltip.png'), clip: { x: box.x - 10, y: Math.max(0, box.y - 80), width: box.width + 20, height: box.height + 100 } });
 
+// 8. Global Workforce Explorer (map)
+const ex = page.locator('#global-workforce-explorer');
+const exSummary = () => ex.locator('p[aria-live]').innerText();
+const exTotal = async () => Number((await exSummary()).match(/([\d,]+) active staff/)[1].replace(/,/g, ''));
+const exLabel = () => ex.locator('[data-month-label]').innerText();
+const panelName = () => ex.locator('[data-detail-name]').innerText().catch(() => null);
+const openExplorer = async () => {
+  await ex.scrollIntoViewIfNeeded();
+  await ex.locator('[data-map-ready="true"]').waitFor({ timeout: 20000 });
+  await page.waitForTimeout(400);
+};
+const mapResources = () =>
+  page.evaluate(() => {
+    const res = performance.getEntriesByType('resource');
+    const geo = res.find((e) => e.name.includes('/geo/'));
+    const chunk = res.find((e) => e.name.includes('ExplorerBody'));
+    const model = res.find((e) => e.name.includes('hr_model.json'));
+    return { geo: geo ? geo.startTime : null, chunk: chunk ? chunk.startTime : null, modelEnd: model ? model.responseEnd : null };
+  });
+await page.goto(`${base}#/profile`, { waitUntil: 'networkidle' });
+await page.reload({ waitUntil: 'networkidle' });
+await page.waitForTimeout(800);
+const onProfile = await mapResources();
+await page.goto(`${base}#/`, { waitUntil: 'networkidle' });
+await page.reload({ waitUntil: 'networkidle' });
+await page.waitForSelector('main h1');
+await openExplorer();
+const onOverview = await mapResources();
+const mapPaths = await ex.locator('[data-map-ready] svg path').count();
+check(
+  'map: code and boundaries load lazily (never on other pages, after the dashboard data on Overview)',
+  onProfile.geo === null && onProfile.chunk === null && onOverview.chunk > onOverview.modelEnd && onOverview.geo > onOverview.modelEnd && mapPaths > 150,
+  `profile: none loaded; overview: data ${Math.round(onOverview.modelEnd)} ms, map chunk ${Math.round(onOverview.chunk)} ms, geo ${Math.round(onOverview.geo)} ms; ${mapPaths} paths`,
+);
+const kpiTotal = Number((await kpi('Total Active Staff')).replace(/,/g, ''));
+check('map: total equals Total Active Staff KPI', (await exTotal()) === kpiTotal, `${await exTotal()} vs ${kpiTotal}`);
+
+const slider = ex.locator('input[type="range"]');
+const reportingBefore = await page.locator('main > header').innerText();
+await slider.focus();
+await page.keyboard.press('Home');
+await page.waitForTimeout(400);
+const firstLabel = await exLabel();
+const firstTotal = await exTotal();
+await page.keyboard.press('ArrowRight');
+await page.waitForTimeout(400);
+check('map: timeline moves month by month', firstLabel === 'Jan 2024' && (await exLabel()) === 'Feb 2024', `${firstLabel} -> ${await exLabel()}`);
+check('map: timeline is local (dashboard reporting date unchanged)', (await page.locator('main > header').innerText()) === reportingBefore && (await kpi('Total Active Staff')).replace(/,/g, '') === String(kpiTotal), `Jan 2024 total ${firstTotal}`);
+const stepTimes = [];
+for (let i = 0; i < 8; i++) {
+  stepTimes.push(await page.evaluate(async () => {
+    const input = document.querySelector('#global-workforce-explorer input[type="range"]');
+    const label = document.querySelector('#global-workforce-explorer [data-month-label]');
+    const prev = label.textContent;
+    const t = performance.now();
+    Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set.call(input, String(Number(input.value) + 1));
+    input.dispatchEvent(new Event('input', { bubbles: true }));
+    while (label.textContent === prev && performance.now() - t < 3000) await new Promise((r) => requestAnimationFrame(r));
+    await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+    return performance.now() - t;
+  }));
+}
+stepTimes.sort((a, b) => a - b);
+check('map: manual timeline step stays responsive', stepTimes[3] < 250, `median ${Math.round(stepTimes[3])} ms`);
+await page.keyboard.press('End');
+
+await ex.getByRole('radio', { name: 'YoY change' }).click();
+await page.waitForTimeout(400);
+check('map: YoY mode re-ranks the country list', (await ex.getByText(/ranked by YoY change/i).count()) === 1);
+await ex.getByRole('radio', { name: 'Active staff' }).click();
+
+await ex.getByRole('list', { name: 'Countries ranked' }).getByRole('button', { name: /^Kenya/ }).click();
+await page.waitForTimeout(300);
+const kenyaActive = Number((await ex.locator('[data-detail="country"] dd').first().innerText()).replace(/,/g, ''));
+const parts = await ex.locator('[aria-label="Active staff by category"] li span.tabular').allInnerTexts();
+const partSum = parts.reduce((s, v) => s + Number(v.replace(/,/g, '')), 0);
+check('map: country list selects a country; categories sum to its total', (await panelName()) === 'Kenya' && partSum === kenyaActive, `Kenya ${kenyaActive} = ${parts.join(' + ')}`);
+if (out) await ex.screenshot({ path: join(out, 'explorer-selected.png') });
+await ex.getByRole('button', { name: 'Clear map selection' }).click();
+check('map: selection can be cleared', (await ex.locator('[data-detail="summary"]').count()) === 1);
+
+// click a bubble on the map itself (largest teal symbol)
+const bubble = await ex.locator('[data-map-ready] svg path[fill="#0A9A8B"]').evaluateAll((els) => {
+  const b = els.map((e) => e.getBoundingClientRect()).filter((r) => r.width > 8).sort((x, y) => y.width - x.width)[0];
+  return b && { x: b.x + b.width / 2, y: b.y + b.height / 2 };
+});
+if (bubble) await page.mouse.click(bubble.x, bubble.y);
+await page.waitForTimeout(400);
+check('map: clicking a bubble pins that country', !!bubble && (await panelName()) !== null, `${await panelName()}`);
+await page.keyboard.press('Escape');
+
+const cats = selects().nth(4);
+await cats.selectOption('International Staff');
+await page.waitForTimeout(500);
+check('map: staff-category filter is reflected', (await exTotal()) === Number((await kpi('Total Active Staff')).replace(/,/g, '')), `map ${await exTotal()} vs KPI ${await kpi('Total Active Staff')}`);
+await page.getByRole('button', { name: 'Clear filters' }).click();
+await page.waitForTimeout(300);
+await selects().nth(3).selectOption('Kenya');
+await page.waitForTimeout(500);
+const rows = await ex.getByRole('list', { name: 'Countries ranked' }).getByRole('button').count();
+check('map: global country filter highlights that country only', (await panelName()) === 'Kenya' && rows === 1, `${await panelName()}, ${rows} row(s)`);
+await page.getByRole('button', { name: 'Clear filters' }).click();
+await page.waitForTimeout(300);
+await ex.getByRole('list', { name: 'Countries ranked' }).getByRole('button', { name: /^Sudan/ }).first().click();
+await ex.getByRole('button', { name: /Filter whole dashboard to Sudan/ }).click();
+await page.waitForTimeout(400);
+check('map: applying a selection to the dashboard is explicit and works', (await selects().nth(3).inputValue()) === 'Sudan' && (await kpi('Countries of Operation')) === '1');
+await page.getByRole('button', { name: 'Clear filters' }).click();
+await page.waitForTimeout(300);
+
+await ex.getByRole('button', { name: /Restart playback/ }).click();
+await page.waitForTimeout(1800);
+const playedTo = await exLabel();
+await ex.getByRole('button', { name: /Pause playback/ }).click();
+const paused = await exLabel();
+await page.waitForTimeout(1200);
+check('map: playback advances and pause stops it', playedTo !== 'Jan 2024' && paused === (await exLabel()), `${playedTo}, paused at ${paused}`);
+await ex.getByRole('button', { name: /Play timeline/ }).click();
+await page.locator('aside').getByRole('link', { name: 'Diversity & Mobility' }).click(); // unmount while playing
+await page.waitForTimeout(1200);
+await page.locator('aside').getByRole('link', { name: 'Workforce Overview' }).click();
+await page.waitForTimeout(500);
+
+const rm = await browser.newContext({ viewport: { width: 1366, height: 900 }, reducedMotion: 'reduce' });
+const rmPage = await rm.newPage();
+await rmPage.goto(`${base}#/`, { waitUntil: 'networkidle' });
+const rmEx = rmPage.locator('#global-workforce-explorer');
+await rmEx.scrollIntoViewIfNeeded();
+await rmEx.locator('[data-map-ready="true"]').waitFor({ timeout: 20000 });
+check('map: reduced motion disables playback', await rmEx.getByRole('button', { name: /Play timeline/ }).isDisabled());
+await rm.close();
+
+for (const vp of [{ width: 1920, height: 1080 }, { width: 1366, height: 768 }, { width: 768, height: 1024 }, { width: 390, height: 844 }]) {
+  await page.setViewportSize(vp);
+  await page.goto(`${base}#/`, { waitUntil: 'networkidle' });
+  await page.reload({ waitUntil: 'networkidle' });
+  await openExplorer();
+  const geom = await page.evaluate(() => {
+    const box = document.querySelector('#global-workforce-explorer [data-map-ready]').getBoundingClientRect();
+    return { overflow: document.documentElement.scrollWidth - window.innerWidth, w: Math.round(box.width), h: Math.round(box.height) };
+  });
+  await ex.getByRole('list', { name: 'Countries ranked' }).getByRole('button').first().click();
+  const sel = await panelName();
+  check(`map at ${vp.width}x${vp.height}: fits, no page overflow, list selection works`, geom.overflow <= 1 && geom.w <= vp.width && geom.h >= 200 && !!sel, `${geom.w}x${geom.h}, overflow ${geom.overflow}px, ${sel}`);
+  if (out && vp.width === 390) await ex.screenshot({ path: join(out, 'explorer-mobile.png') });
+}
+
 // 7. Mobile layout: no horizontal overflow
 await page.setViewportSize({ width: 390, height: 844 });
 for (const r of ['/', '/recruitment', '/contracts']) {

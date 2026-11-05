@@ -57,6 +57,15 @@ const KPIS: { group: string; items: [string, string][] }[] = [
     ],
   },
   {
+    group: 'Global Workforce Explorer',
+    items: [
+      ['Active staff by country', 'Contracts active at the selected month-end (start ≤ D ≤ end) by country of assignment; HQ staff are counted in the HQ country. Same rule as Total Active Staff, so the map total equals the KPI.'],
+      ['YoY change', 'Headcount(month-end) − headcount(same month-end one year earlier). % only when the earlier headcount is above zero; zero → "new"; month before the data → "no baseline".'],
+      ['Not Workforce Growth by Country', 'That chart compares the reporting date with the start of the selected period; the map always compares with one year earlier.'],
+      ['Bubbles and timeline', 'Bubble area ∝ value, on a scale fixed across the selected period. The month slider is local to the map and stays within the global period, country and category filters.'],
+    ],
+  },
+  {
     group: 'Contracts',
     items: [
       ['Expiring in 4 months', 'Active contracts with planned end in [D, end of the 4th following month] (contracts ending on D included).'],

@@ -17,9 +17,9 @@ const SHORT: Record<string, string> = {
 };
 export const shortName = (s: string) => SHORT[s] ?? s;
 
-const esc = (s: string) => s.replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' })[c]!);
+export const esc = (s: string) => s.replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' })[c]!);
 
-const tooltipBase = {
+export const tooltipBase = {
   backgroundColor: '#FFFFFF',
   borderColor: '#E2E8F0',
   borderWidth: 1,

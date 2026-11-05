@@ -24,7 +24,7 @@ export function FilterBar() {
   const countries = [...model.countries].sort((a, b) => a.name.localeCompare(b.name));
 
   return (
-    <div className="sticky top-[60px] z-30 -mx-1 rounded-xl border border-line bg-white/95 p-3 shadow-[var(--shadow-card)] backdrop-blur lg:top-3">
+    <div className="z-30 -mx-1 rounded-xl md:sticky md:top-[60px] border border-line bg-white/95 p-3 shadow-[var(--shadow-card)] backdrop-blur lg:top-3">
       <div className="flex flex-wrap items-center gap-2">
         <span className="mr-1 hidden items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-muted 2xl:inline-flex">
           <SlidersHorizontal size={14} aria-hidden /> Filters

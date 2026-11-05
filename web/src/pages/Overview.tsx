@@ -4,6 +4,7 @@ import { EChart } from '../charts/EChart';
 import { bars, donut, foot, lines, row } from '../charts/options';
 import { C, CATEGORY_COLOR, GENDER_COLOR } from '../charts/theme';
 import { DataTable, type Column } from '../components/DataTable';
+import { GlobalWorkforceExplorer } from '../components/explorer/GlobalWorkforceExplorer';
 import { Layout } from '../components/Layout';
 import { ChartCard, KpiCard, Segmented, StatRow, ValueLegend } from '../components/ui';
 import { CATEGORIES } from '../data/types';
@@ -208,6 +209,8 @@ export default function Overview() {
           </div>
         </ChartCard>
       </div>
+
+      <GlobalWorkforceExplorer />
 
       <div className="grid grid-cols-1 gap-5 xl:grid-cols-2">
         <ChartCard title="Staff by Country" subtitle={`Active staff by country of assignment and category · ${labels.asOf}`} empty={!countryRows.length}

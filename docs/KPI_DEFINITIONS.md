@@ -40,6 +40,18 @@ asserts that both agree to 6 decimal places.
 | Countries of Operation | Distinct countries of assignment with ≥ 1 active contract on D, excluding Switzerland (HQ). |
 | Workforce Growth by Country | `Headcount(D) − Headcount(day before period start)` per country. |
 
+### Global Workforce Explorer (map on the Workforce Overview)
+
+| Metric | Definition |
+|---|---|
+| Map month (M) | Local timeline month, within the global period; defaults to the reporting month. Changing it does not change the dashboard reporting date. |
+| Active staff by country | Contracts active on the last day of M (`start ≤ D ≤ end`) by country of assignment, under the global country and staff-category filters. HQ staff are counted in the HQ country. Summed over countries it equals Total Active Staff for the same date and filters. |
+| YoY change | `Headcount(M) − Headcount(M − 12 months)` per country. |
+| YoY change % | `YoY change ÷ Headcount(M − 12 months)`, only when that headcount is above zero. Zero → shown as *new (no prior-year staff)*; a comparison month before the data starts → *no baseline* (never shown as zero growth). |
+| Difference from Workforce Growth by Country | That chart compares D with the day before the selected period starts; the map always compares with the same month-end one year earlier. |
+| Bubble size | Area proportional to the value (diameter ∝ √value), on a scale fixed across the selected period so months are comparable; values below the 5 px visibility floor are enlarged to it. |
+| Colour | Direction of the YoY change: teal growth, burgundy reduction, grey unchanged, dashed outline no baseline. Each state also has a ▲ ▼ = – glyph in labels and lists. |
+
 ## 2 · Global Workforce Profile
 
 | KPI | Formula |

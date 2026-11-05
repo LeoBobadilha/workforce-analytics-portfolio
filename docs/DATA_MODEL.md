@@ -58,6 +58,19 @@ Monthly loop over 26 countries of operation plus headquarters (Switzerland) and 
 | Exclusions | Implausible birth dates (EMP-05) are excluded from age metrics; vacancies resolved before creation (VAC-05) are excluded from recruitment metrics. |
 | Reconciliation | Monthly national headcount snapshots and the expatriation tracker are compared with the contract-level model (REC-01..03). Expatriation differences that fall within the number of staff with no recorded nationality are treated as explainable rather than counted as breaks; missing nationality is one identified source of mismatch, not the only one. |
 
+## Geographic data
+
+`pipeline/build_geo.py` reduces Natural Earth 1:110m Admin 0 – Countries v5.1.2 (public domain, vendored in
+`data/external/`) to `web/public/geo/world-110m.json` (146 KB, 42 KB gzipped): ISO3, name and label point per
+country, coordinates rounded to 0.1°, Antarctica removed. Countries are linked to the workforce model by ISO3
+(`countries[].iso3` in `hr_model.json`). Natural Earth uses `-99` for a few features: France and Norway take
+`ISO_A3_EH`; Somaliland is merged into Somalia, matching ISO 3166-1. All 27 model countries are present; a test
+checks that each one's label point (the bubble anchor) lies inside its own boundary.
+
+The explorer aggregates headcount in the browser: one pass over contracts builds a month × country × category
+cube (46 months × 27 countries × 4 categories, about 5,000 cells), so timeline and filter changes are array lookups.
+Vitest checks every cell against the canonical `activeAt` logic.
+
 ## Web model encoding
 
 `hr_model.json` is column-oriented: each table has `columns`, `dicts` (dictionary encoding for categorical fields)

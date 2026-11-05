@@ -35,7 +35,7 @@ nationality diversity.
 
 | # | Dashboard | Highlights |
 |---|---|---|
-| 1 | **Workforce Overview** | Active staff, YoY growth, staff categories, gender balance, countries of operation, monthly evolution, National vs International split by country, growth by country, sortable country table |
+| 1 | **Workforce Overview** | Active staff, YoY growth, staff categories, gender balance, countries of operation, monthly evolution, **Global Workforce Explorer** map, National vs International split by country, growth by country, sortable country table |
 | 2 | **Global Workforce Profile** | Global (HQ + Global non-HQ) vs International evolution, current vs previous-year comparison by country and category, grades, contract types, average-age evolution |
 | 3 | **Diversity & Mobility** | Global South / North share and history, diversity by grade, a GN/GS toggle that filters the whole profile (gender, contract types, nationality ranking, geography, expatriation), surges by National vs International staff |
 | 4 | **Recruitment & Vacancies** | Open vacancies, vacancy rate, due-vacancy rate, time to hire vs planned duration (by country and grade), New vs Replacement, internal vs external, closure outcomes, funnel, open-vacancy register |
@@ -51,7 +51,37 @@ nationality diversity.
 
 Full-page captures of each dashboard are in [`docs/screenshots/full/`](docs/screenshots/full/). Interaction evidence:
 [tooltip](docs/screenshots/tooltip.png) · [GN/GS toggle](docs/screenshots/diversity-gs-toggle.png) ·
-[empty state](docs/screenshots/empty-state.png) · [mobile layout](docs/screenshots/mobile-contracts.png).
+[empty state](docs/screenshots/empty-state.png) · [mobile layout](docs/screenshots/mobile-contracts.png) ·
+[map country selected](docs/screenshots/explorer-selected.png).
+
+## Global Workforce Explorer
+
+A geographic view on the Workforce Overview: where the workforce is, and how each country's headcount has changed.
+A map makes concentration and regional shifts visible at a glance (in the year to October 2026: growth in Sudan,
+Chad and DR Congo, reductions in Ukraine and Mali), which a ranked bar chart shows less directly.
+
+![Global Workforce Explorer](docs/screenshots/explorer.png)
+
+- **Active staff mode**: bubble area is proportional to active headcount by country of assignment at the selected
+  month-end; colour shows the direction of the year-over-year change (teal growth, burgundy reduction, grey unchanged,
+  dashed outline when no prior-year baseline exists), with ▲ ▼ glyphs so colour is never the only cue.
+- **YoY change mode**: bubble area is the absolute change against the same month-end one year earlier; the detail
+  panel adds the percentage when the earlier headcount is above zero and labels new countries separately.
+- **Monthly timeline**: a slider (and optional play / pause / restart) moves the map through any month in the global
+  period. It is local to the map, so the dashboard's reporting date does not change; bubble scales stay fixed across
+  the period so months are comparable. Playback is off when the system requests reduced motion.
+- **Country details**: hover for a tooltip; click a bubble, a country or a row in the ranked list to pin a panel with
+  headcount, the prior-year value, YoY change and the four staff categories (which sum to the total). Applying a
+  country to the whole dashboard is a separate, labelled button.
+- **Filters**: the global period, country and staff-category filters apply; a country filter highlights that country.
+- **Linked to the model**: the map is computed from the same contract records as every KPI. One pass builds a
+  month × country × category headcount cube, and tests check every cell against the canonical active-contract logic,
+  so the map total always equals *Total Active Staff*. Countries join the boundaries by ISO3 code.
+- **Lightweight**: ECharts' geo component (already a dependency) with a simplified Natural Earth 1:110m map
+  (public domain, 42 KB gzipped). The map code (25 KB gzipped) and boundaries load only when the section approaches
+  the viewport and the browser is idle; other pages never load them. No map tiles, API keys or external services.
+
+<img src="docs/screenshots/explorer-mobile.png" alt="Global Workforce Explorer on a phone" width="300" />
 
 ## Key features
 
@@ -71,8 +101,8 @@ Full-page captures of each dashboard are in [`docs/screenshots/full/`](docs/scre
 
 | Layer | Stack |
 |---|---|
-| Front end | React 19 · TypeScript · Vite · Tailwind CSS 4 · Apache ECharts 6 (SVG renderer) · Lucide icons · React Router (hash routing) |
-| Data | Python 3 · pandas · NumPy · openpyxl, with synthetic CSV / XLSX sources and a compact JSON model |
+| Front end | React 19 · TypeScript · Vite · Tailwind CSS 4 · Apache ECharts 6 (SVG renderer, geo component) · Lucide icons · React Router (hash routing) |
+| Data | Python 3 · pandas · NumPy · openpyxl, with synthetic CSV / XLSX sources and a compact JSON model; Natural Earth 1:110m country boundaries |
 | Quality | pytest (data integrity & KPI logic) · Vitest (TypeScript vs pandas KPI parity) · Playwright (end-to-end interaction checks & screenshots) |
 | Delivery | GitHub Actions (tests → build → deploy) · GitHub Pages (static, no backend, no external APIs at runtime) |
 
@@ -151,11 +181,12 @@ Discrepancies are reported, not hidden: the *Contracts & Data Quality* page list
 
 | Check | What it proves |
 |---|---|
-| `pytest` (32 tests) | Unique keys, valid reference values, no overlapping contracts, referential integrity (contracts, hires, surges, appraisals), date ordering, a monotonic funnel, and **exact reproduction of the simulated monthly headcount by category** after merging the sources; KPI formulas checked on a hand-calculated toy dataset |
-| `vitest` (8 tests) | The TypeScript KPI engine matches the pandas reference across 6 filter scenarios (29 KPIs each), with one contract per employee at every month-end |
-| `scripts/e2e.mjs` (23 checks) | Real-browser navigation of all pages, filters changing KPIs, persistence, clear filters, empty states, GN/GS toggle partition, table search / sort / status filter, chart tooltips, no mobile overflow, no runtime errors |
+| `pytest` (36 tests) | Unique keys, valid reference values, no overlapping contracts, referential integrity (contracts, hires, surges, appraisals), date ordering, a monotonic funnel, and **exact reproduction of the simulated monthly headcount by category** after merging the sources; KPI formulas checked on a hand-calculated toy dataset; the world map is reproducible from its source, within its size budget and covers every model country |
+| `vitest` (21 tests) | The TypeScript KPI engine matches the pandas reference across 6 filter scenarios (29 KPIs each), with one contract per employee at every month-end; the map's headcount cube equals the active-contract logic for every month × country × category, its totals and YoY values match the KPIs, and every model country maps to a boundary containing its bubble anchor |
+| `scripts/e2e.mjs` (41 checks) | Real-browser navigation of all pages, filters changing KPIs, persistence, clear filters, empty states, GN/GS toggle partition, table search / sort / status filter, chart tooltips, no mobile overflow, no runtime errors; for the map: lazy loading, totals vs KPIs, timeline steps and latency, modes, selection and reset, global filters, playback and cleanup, reduced motion, and layout at 1920, 1366, 768 and 390 px |
 
 All three suites run automatically in GitHub Actions on every push to `main`, and the site is deployed only if they pass.
+`scripts/perf.mjs` measures load timings, long tasks, map loading and timeline latency on laptop and throttled mobile profiles.
 
 ## Run locally
 
@@ -167,6 +198,7 @@ pip install -r requirements.txt
 python pipeline/generate_sources.py   # -> data/raw/          (CORE HR, JIRA, Excel trackers)
 python pipeline/build_model.py        # -> data/processed/, web/public/data/
 python pipeline/kpis.py               # -> data/processed/reference_kpis.json
+python pipeline/build_geo.py          # -> web/public/geo/world-110m.json (Natural Earth, simplified)
 python -m pytest -q
 
 # 2. Web app
@@ -186,14 +218,17 @@ The generated data is committed, so the web app runs without step 1. Browser che
 ├── pipeline/                 Python: config, simulation, ETL & validation, reference KPIs
 ├── data/
 │   ├── raw/                  Simulated sources: core_hr/, jira/, excel_trackers/
+│   ├── external/             Natural Earth 1:110m country boundaries (public domain)
 │   └── processed/            Consolidated model (CSV), data_quality_report.json, reference_kpis.json
 ├── tests/                    pytest suite (data integrity + KPI logic)
 ├── web/
 │   ├── public/data/          hr_model.json, data_quality.json (served to the app)
+│   ├── public/geo/           world-110m.json (simplified map for the Global Workforce Explorer)
 │   ├── src/lib/metrics.ts    KPI engine (+ metrics.test.ts parity tests)
+│   ├── src/lib/geo.ts        Map headcount cube (+ geo.test.ts reconciliation tests)
 │   ├── src/pages/            The six dashboards + methodology
 │   ├── src/charts/           ECharts wrapper, shared chart builders and palette
-│   └── scripts/              Playwright e2e checks and screenshot capture
+│   └── scripts/              Playwright e2e checks, performance measurements and screenshot capture
 ├── docs/                     KPI definitions, data model, screenshots
 └── .github/workflows/        Test → build → deploy to GitHub Pages
 ```
@@ -212,6 +247,9 @@ guiding the requirements, reviewing results and refining the reporting logic.
 - **Global North / South** uses an illustrative list (high-income OECD-DAC countries) that should be replaced by the
   organisation's reference list.
 - **Staff categories and grades** (G1–G7) are a modelling choice for a multi-country workforce, not the classification of any real organisation.
+
+Map data: [Natural Earth](https://www.naturalearthdata.com/) 1:110m Admin 0 – Countries (public domain). Country
+boundaries are shown for orientation only.
 
 ## Disclaimer
 
